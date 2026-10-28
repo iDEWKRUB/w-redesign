@@ -440,20 +440,37 @@ V.process = () => phead(crumbs('ขั้นตอนการทำงาน'),
   <details><summary>รับประกันอะไรบ้าง</summary><p>โครงสร้าง 20 ปี หลังคา 5 ปี งานสถาปัตยกรรมและงานระบบไฟฟ้าประปา 1 ปี นับจากวันรับมอบบ้าน</p></details>
   <details><summary>รับสร้างบ้านพื้นที่ไหนบ้าง</summary><p>กรุงเทพฯ ปริมณฑล และเขาใหญ่ ครอบคลุมสุขุมวิท พระราม 9 ราชพฤกษ์ เลียบด่วน บางนา รังสิต รวมถึงต่างจังหวัด เช่น นนทบุรี สมุทรสาคร เพชรบุรี และเชียงใหม่</p></details></div></div>
   </div></div>`;
-V.about = () => phead(crumbs('เกี่ยวกับเรา'), 'About Us', 'บริษัท ดับบลิว เฮ้าส์ จำกัด<br><em>บริษัทรับสร้างบ้านมาตรฐานสูง</em>')
-  + `<div class="aband">${img('02', 'The Creston Hills', '100vw')}</div>
-  <div class="wrap sec"><div class="story2"><div><span class="eyebrow">Our Story</span><h2 style="margin-top:10px">ก่อตั้ง พ.ศ. 2543 ด้วยทุนจดทะเบียน 15 ล้านบาท</h2></div>
-  <div class="dtext"><p>W House ก่อตั้งขึ้นพร้อมจุดมุ่งหมายในการรังสรรค์บ้านหรูที่มีความสวยงามโดดเด่นร่วมสมัย และบ่งบอกถึงสไตล์ของผู้อยู่อาศัย ครบครันด้วยคุณภาพและนวัตกรรมเพื่ออนาคต</p><p>ด้วยประสบการณ์และความเชี่ยวชาญ เราให้บริการครบวงจร ตั้งแต่การออกแบบ การก่อสร้าง ไปจนถึงการส่งมอบบ้านที่มีคุณภาพในมาตรฐานระดับสูง จนเป็นที่บอกต่อและได้รับการยอมรับในฐานะบริษัทรับสร้างบ้านหรู</p></div></div></div>
-  <div class="wrap"><div class="statsbig"><div><b>26 ปี</b><small>ประสบการณ์</small></div><div><b>ISO</b><small>9001:2015 Quality Management</small></div><div><b>Full</b><small>Service · Design &amp; Construction</small></div><div><b>Expert</b><small>Team · Professionals</small></div></div></div>
-  <div class="wrap sec"><div class="vals"><div class="val">${u('pen')}<b>สร้างบ้านหรู</b><p>ออกแบบเฉพาะคุณ</p></div><div class="val">${u('style')}<b>บ้านสไตล์โมเดิร์น</b><p>ทันสมัย ฟังก์ชันตอบโจทย์</p></div><div class="val">${u('shield')}<b>มีคุณภาพ · มาตรฐานสูง</b><p>ควบคุมมาตรฐานทุกขั้นตอน วัสดุคุณภาพ งานระดับพรีเมียม</p></div></div></div>
-  <div class="wrap" style="padding-bottom:72px">${head('Our Journey', 'เส้นทางของ W House')}<div class="timeline">
-   <div class="tl"><span class="y">2000</span><b>ก่อตั้งบริษัท</b><p>สร้างบ้านหลังแรก กรุงเทพฯ 2,550 ตร.ม.</p></div>
-   <div class="tl"><span class="y">2010</span><b>ขยายตลาด</b><p>รับสร้างบ้านทั่วประเทศ</p></div>
-   <div class="tl"><span class="y">2014</span><b>ISO 9001</b><p>ได้รับรองมาตรฐานคุณภาพ และเข้าเป็นสมาชิกสมาคมธุรกิจรับสร้างบ้าน</p></div>
-   <div class="tl"><span class="y">2024</span><b>รางวัลประหยัดพลังงาน</b><p>ขยายตลาดโซนตะวันออก ใต้ตอนบน และภาคเหนือ</p></div>
-   <div class="tl"><span class="y" style="font-size:12px">ปัจจุบัน</span><b>26 ปี</b><p>บ้านหรูในกรุงเทพฯ ปริมณฑล และเขาใหญ่</p></div></div></div>
-  <div class="wrap" style="padding-bottom:72px">${head('Service Area', 'เราพร้อมดูแลคุณในทุกทำเลคุณภาพ', '#projects', 'ดูผลงาน')}<div class="zones">${['สุขุมวิท', 'พระราม 9', 'ราชพฤกษ์', 'เลียบด่วน', 'บางนา', 'รังสิต', 'นนทบุรี', 'สมุทรสาคร', 'เพชรบุรี', 'เขาใหญ่'].map(z => `<span>${u('pin')}${z}</span>`).join('')}</div></div>
-  <div class="wrap" style="padding-bottom:88px">${head('Leadership', 'ผู้บริหาร')}<div class="team" style="grid-template-columns:repeat(2,minmax(0,1fr));max-width:640px"><div class="tm"><span class="av">จ</span><b>คุณเจตน์ กาญจนกูล</b><small>รองประธานบริหาร</small></div><div class="tm"><span class="av">ว</span><b>คุณวรวุฒิ กาญจนกูล</b><small>ผู้บริหาร · วิทยากร HOME BUILDER EXPERT</small></div></div><p class="note-s" style="margin-top:12px">ชื่อและตำแหน่งจากข่าวกิจกรรมบนเว็บจริง · ใส่รูปเมื่อได้ภาพจากลูกค้า</p></div>`;
+V.about = () => phead(crumbs('เกี่ยวกับเรา'), 'About Us', 'บริษัท ดับบลิว เฮ้าส์ จำกัด<br><em>บริษัทรับสร้างบ้านมาตรฐานสูง</em>', 'รังสรรค์บ้านหรูที่โดดเด่นร่วมสมัยและบ่งบอกสไตล์ของผู้อยู่อาศัย ตั้งแต่ปี 2543', `<div class="phstats"><span><b class="n">26</b>ปีประสบการณ์</span><span><b>${u('check')}</b>ISO 9001:2015</span><span><b>${u('shield')}</b>รับประกันโครงสร้าง 20 ปี</span></div>`)
+  + `<div class="wrap abp">
+  <section class="abs"><div class="absph">${img('02', 'The Creston Hills เขาใหญ่', '(max-width:900px) 100vw, 50vw')}<span class="cap">${u('pin')}The Creston Hills เขาใหญ่</span></div>
+   <div class="abstx"><span class="eyebrow">Our Story</span><h2>ก่อตั้ง พ.ศ. <span class="n">2543</span><br><em>ด้วยทุนจดทะเบียน <span class="n">15</span> ล้านบาท</em></h2>
+    <p>W House ก่อตั้งขึ้นพร้อมจุดมุ่งหมายในการรังสรรค์บ้านหรูที่มีความสวยงามโดดเด่นร่วมสมัย และบ่งบอกถึงสไตล์ของผู้อยู่อาศัย ครบครันด้วยคุณภาพและนวัตกรรมเพื่ออนาคต</p>
+    <p>ด้วยประสบการณ์และความเชี่ยวชาญ เราให้บริการครบวงจร ตั้งแต่การออกแบบ การก่อสร้าง ไปจนถึงการส่งมอบบ้านที่มีคุณภาพในมาตรฐานระดับสูง จนเป็นที่ยอมรับในฐานะบริษัทรับสร้างบ้านหรู</p>
+    <ul class="absl"><li>${u('check')}ออกแบบและก่อสร้างครบในทีมเดียว</li><li>${u('check')}สมาชิกสมาคมธุรกิจรับสร้างบ้าน</li><li>${u('check')}ระบบบริหารคุณภาพ ISO 9001:2015</li></ul></div></section>
+  </div>
+  <section class="abn"><div class="wrap abnin">
+   <div><b class="n">26</b><span>ปี</span><small>ประสบการณ์สร้างบ้านหรู</small></div>
+   <div><b class="n">${PJ.length}</b><span>หลัง</span><small>ผลงานที่แล้วเสร็จบนเว็บไซต์</small></div>
+   <div><b class="n">20</b><span>ปี</span><small>รับประกันโครงสร้าง</small></div>
+   <div><b class="n">${DS.length}</b><span>แบบ</span><small>แบบบ้านให้เลือกปรับ</small></div></div></section>
+  <div class="wrap abp">
+  <section class="abv">${head('What We Do', 'สิ่งที่เรายึดมั่น')}<div class="abvg">
+   <a class="abvc" href="#design">${img('10', 'บ้านหรูออกแบบเฉพาะคุณ', '(max-width:900px) 100vw, 33vw')}<span class="tx"><span class="no n">01</span><b>สร้างบ้านหรู</b><small>ออกแบบเฉพาะคุณ จากความต้องการและการใช้ชีวิตจริง</small></span></a>
+   <a class="abvc" href="#design-modern">${img('22', 'บ้านสไตล์โมเดิร์น', '(max-width:900px) 100vw, 33vw')}<span class="tx"><span class="no n">02</span><b>บ้านสไตล์โมเดิร์น</b><small>ทันสมัย ฟังก์ชันตอบโจทย์ทุกช่วงชีวิต</small></span></a>
+   <a class="abvc" href="#process">${img('14', 'คุณภาพมาตรฐานสูง', '(max-width:900px) 100vw, 33vw')}<span class="tx"><span class="no n">03</span><b>คุณภาพ · มาตรฐานสูง</b><small>ควบคุมทุกขั้นตอน วัสดุคุณภาพ งานระดับพรีเมียม</small></span></a></div></section>
+  <section class="abj">${head('Our Journey', 'เส้นทางของ W House')}<ol class="abjl">
+   <li><span class="y n">2000</span><b>ก่อตั้งบริษัท</b><p>สร้างบ้านหลังแรก กรุงเทพฯ 2,550 ตร.ม.</p></li>
+   <li><span class="y n">2010</span><b>ขยายตลาด</b><p>รับสร้างบ้านทั่วประเทศ</p></li>
+   <li><span class="y n">2014</span><b>ISO 9001</b><p>ได้รับรองมาตรฐานคุณภาพ และเข้าเป็นสมาชิกสมาคมธุรกิจรับสร้างบ้าน</p></li>
+   <li><span class="y n">2024</span><b>รางวัลประหยัดพลังงาน</b><p>ขยายตลาดโซนตะวันออก ใต้ตอนบน และภาคเหนือ</p></li>
+   <li class="now"><span class="y">ปัจจุบัน</span><b>26 ปี</b><p>บ้านหรูในกรุงเทพฯ ปริมณฑล และเขาใหญ่</p></li></ol></section>
+  <section class="abz">
+   <div class="abzc"><span class="eyebrow">Service Area</span><h2>พร้อมดูแลคุณในทุกทำเลคุณภาพ</h2><div class="zones">${['สุขุมวิท', 'พระราม 9', 'ราชพฤกษ์', 'เลียบด่วน', 'บางนา', 'รังสิต', 'นนทบุรี', 'สมุทรสาคร', 'เพชรบุรี', 'เขาใหญ่'].map(z => `<span>${u('pin')}${z}</span>`).join('')}</div><a class="more" href="#projects">ดูผลงานในแต่ละทำเล ${u('arr')}</a></div>
+   <div class="abzc"><span class="eyebrow">Leadership</span><h2>ผู้บริหาร</h2><div class="abld">
+    <div><span class="av">จ</span><span><b>คุณเจตน์ กาญจนกูล</b><small>รองประธานบริหาร</small></span></div>
+    <div><span class="av">ว</span><span><b>คุณวรวุฒิ กาญจนกูล</b><small>ผู้บริหาร · วิทยากร HOME BUILDER EXPERT</small></span></div></div>
+    <a class="btn gold" href="#contact">${u('cal')}นัดคุยกับทีมสถาปนิก</a></div></section>
+  </div>`;
 V.contact = () => {
   const days = []; const x = new Date(); while (days.length < 5) { x.setDate(x.getDate() + 1); if (x.getDay() > 0 && x.getDay() < 6) days.push(new Date(x)); }
   const TD = ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'];
