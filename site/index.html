@@ -1405,6 +1405,14 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
 @media(max-width:1000px){.abs,.abz{grid-template-columns:1fr}.abnin{grid-template-columns:1fr 1fr;row-gap:28px}.abnin div:nth-child(3){border-left:0;padding-left:0}.abjl{grid-template-columns:repeat(2,minmax(0,1fr))}.abvg{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.abp{gap:64px;padding-block:56px}.abvg{grid-template-columns:1fr}.abvc{aspect-ratio:4/3.4}.abjl{grid-template-columns:1fr}.abzc{padding:26px 22px}.abnin div{padding:4px 16px}}
 @media(max-width:600px){.abjl{grid-template-columns:1fr 1fr;gap:10px}.abjl li{padding:16px 14px}.abjl .y{font-size:28px}.abjl .now{grid-column:1/-1}.abvg{gap:14px}}
+
+/* ---- images: placeholder shimmer + fade-in ---- */
+.view img.ld{opacity:0}
+.view img.fin{animation:imgIn .6s ease both}
+@keyframes imgIn{from{opacity:0}to{opacity:1}}
+.view :not(#himg):has(> img.ld){background-color:#EFE7E9;background-image:linear-gradient(100deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.6) 50%,rgba(255,255,255,0) 70%);background-size:220% 100%;animation:imgShim 1.3s linear infinite}
+@keyframes imgShim{from{background-position:130% 0}to{background-position:-30% 0}}
+@media(prefers-reduced-motion:reduce){.view img.fin{animation:none}.view :has(> img.ld){animation:none}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1578,7 +1586,7 @@ const thDate = s => { const d = new Date(s); return `${d.getDate()} ${TH_M[d.get
 const fmt = n => n == null ? '—' : n.toLocaleString('en-US');
 const crumbs = (...a) => `<div class="crumbs"><a href="#home">หน้าแรก</a>${a.map(x => `<i></i>${Array.isArray(x) ? `<a href="${x[1]}">${esc(x[0])}</a>` : `<span>${esc(x)}</span>`}`).join('')}</div>`;
 const PHBG = { 'W House Style': 'render', 'Reviews': '10', 'News & Event': '02', 'Blog': '03', 'News': '18', 'Event': '20', 'Work Process': '17', 'About Us': '05', 'Get in Touch': '09', 'Saved': '13' };
-const phImg = k => isX(k) ? SRC(k, 'm') : (/^s-/.test(k) ? `img/${k}.jpg` : SRC(k, 'm'));
+const phImg = k => isX(k) ? SRC(k, 'm') : (/^s-/.test(k) ? `img/${k}.webp` : SRC(k, 'm'));
 const phead = (cr, eb, h1, lead, extra, bg) => { bg = bg || PHBG[eb]; return `<div class="phead${bg ? ' pimg' : ''}">${bg ? `<img class="phbg" src="${phImg(bg)}" alt="" aria-hidden="true" fetchpriority="high">` : ''}<div class="wrap">${cr}${eb ? `<span class="eyebrow">${eb}</span>` : ''}<h1>${h1}</h1>${lead ? `<p class="lead">${lead}</p>` : ''}${extra || ''}</div></div>`; };
 const head = (eb, h2, link, label) => `<div class="head"><div><span class="eyebrow">${eb}</span><h2>${h2}</h2></div>${link ? `<a class="more" href="${link}">${label || 'ดูทั้งหมด'} ${u('arr')}</a>` : ''}</div>`;
 
@@ -1648,9 +1656,9 @@ function postCard(p, big) {
 const HERO = () => {
   const cr = PJ.find(p => p.rich === 'creston').id, mv = PJ.find(p => p.rich === 'miracles').id;
   return [
-    { img: 'img/x/hero-orig.jpg', s: 'img/x/s/hero-orig.jpg', eb: 'Signature Residence', h: 'Homes That <em>Define</em> You', th: 'บ้านที่ออกแบบจากชีวิตของคุณ', p: 'ประสบการณ์กว่า 26 ปีในการออกแบบและสร้างบ้านหรู ทีมเดียวดูแลตั้งแต่ภาพร่างแรกจนถึงวันรับกุญแจ', tag: 'W House · Luxury Modern Design', href: '#design', c1: ['ดูแบบบ้าน', '#design'], c2: ['ดูผลงานที่สร้างแล้ว', '#projects'] },
-    { img: 'img/01.jpg', s: 'img/x/s/hero-01.jpg', eb: 'ISO 9001:2015', h: 'Built to <em>Last</em>', th: 'มาตรฐาน ISO · รับประกัน 20 ปี', p: 'ก่อสร้างตามแผนงานและตรวจบ้านร่วมกับวิศวกรผู้ดูแลของบริษัททุกขั้นตอน แบ่งชำระตามผลงานจริง', tag: 'ผลงาน · The Creston Hills เขาใหญ่', href: '#project-' + cr, c1: ['ขั้นตอนการทำงาน', '#process'], c2: ['ดูแบบบ้านทั้งหมด', '#design'] },
-    { img: 'img/x/hero-timeless.jpg', s: 'img/x/s/hero-timeless.jpg', eb: 'New Collection · A Life of Style', h: 'Timeless <em>White</em>', th: 'Modern Luxury · 660 ตร.ม.', p: '3 ห้องนอน · 4 ห้องน้ำ · 3 ที่จอดรถ จากคอนเซปต์ A Life of Style นิยามแห่งสถาปัตยกรรมที่สะท้อนตัวตน', tag: 'แบบบ้าน · Timeless White', href: '#plan-timeless-white-modern-luxury', c1: ['ดูแบบบ้านนี้', '#plan-timeless-white-modern-luxury'], c2: ['ดูคอลเลกชัน', '#a-life-of-style'] }
+    { img: 'img/x/hero-orig.webp', s: 'img/x/s/hero-orig.webp', eb: 'Signature Residence', h: 'Homes That <em>Define</em> You', th: 'บ้านที่ออกแบบจากชีวิตของคุณ', p: 'ประสบการณ์กว่า 26 ปีในการออกแบบและสร้างบ้านหรู ทีมเดียวดูแลตั้งแต่ภาพร่างแรกจนถึงวันรับกุญแจ', tag: 'W House · Luxury Modern Design', href: '#design', c1: ['ดูแบบบ้าน', '#design'], c2: ['ดูผลงานที่สร้างแล้ว', '#projects'] },
+    { img: 'img/01.webp', s: 'img/x/s/hero-01.webp', eb: 'ISO 9001:2015', h: 'Built to <em>Last</em>', th: 'มาตรฐาน ISO · รับประกัน 20 ปี', p: 'ก่อสร้างตามแผนงานและตรวจบ้านร่วมกับวิศวกรผู้ดูแลของบริษัททุกขั้นตอน แบ่งชำระตามผลงานจริง', tag: 'ผลงาน · The Creston Hills เขาใหญ่', href: '#project-' + cr, c1: ['ขั้นตอนการทำงาน', '#process'], c2: ['ดูแบบบ้านทั้งหมด', '#design'] },
+    { img: 'img/x/hero-timeless.webp', s: 'img/x/s/hero-timeless.webp', eb: 'New Collection · A Life of Style', h: 'Timeless <em>White</em>', th: 'Modern Luxury · 660 ตร.ม.', p: '3 ห้องนอน · 4 ห้องน้ำ · 3 ที่จอดรถ จากคอนเซปต์ A Life of Style นิยามแห่งสถาปัตยกรรมที่สะท้อนตัวตน', tag: 'แบบบ้าน · Timeless White', href: '#plan-timeless-white-modern-luxury', c1: ['ดูแบบบ้านนี้', '#plan-timeless-white-modern-luxury'], c2: ['ดูคอลเลกชัน', '#a-life-of-style'] }
   ];
 };
 const heroCopy = (x) => `<span class="eyebrow">${x.eb}</span><h1>${x.h}<span class="th">${x.th}</span></h1><p>${x.p}</p><div class="hero-cta"><a class="btn dark" href="${x.c1[1]}">${x.c1[0]} ${u('arr')}</a><a class="btn line" href="${x.c2[1]}">${x.c2[0]}</a></div>`;
@@ -1696,7 +1704,7 @@ function styleFlow() {
   const cards = keys.map((k, i) => {
     const s = STY[k]; const list = DS.filter(d => d.st.includes(k)); const ar = list.map(d => d.area).filter(Boolean);
     const range = ar.length ? `${fmt(Math.min(...ar))}–${fmt(Math.max(...ar))}` : '';
-    return `<article class="fcard" data-sfi="${i}" aria-label="สไตล์ ${s.n}"><img src="${isX(s.img) ? SRC(s.img, 'm') : 'img/' + s.img + '.jpg'}" alt="${esc('บ้านสไตล์' + s.th)}" decoding="async"${i < 3 ? '' : ' loading="lazy"'}>
+    return `<article class="fcard" data-sfi="${i}" aria-label="สไตล์ ${s.n}"><img src="${isX(s.img) ? SRC(s.img, 'm') : 'img/' + s.img + '.webp'}" alt="${esc('บ้านสไตล์' + s.th)}" decoding="async"${i < 3 ? '' : ' loading="lazy"'}>
     <span class="fnum">${String(i + 1).padStart(2, '0')}/${String(keys.length).padStart(2, '0')}</span>
     <div class="fbody"><span class="fth">สไตล์${s.th}</span><h3>${s.n}</h3><div class="fmeta"><span>${u('home')}<b class="n">${list.length}</b> แบบบ้าน</span>${range ? `<span>${u('area')}<b class="n">${range}</b> ตร.ม.</span>` : ''}</div>
     <div class="fcta"><a class="btn white" href="#design-${k}">ดูแบบบ้านสไตล์นี้ ${u('arr')}</a><a class="fround" href="#contact" aria-label="ปรึกษาสไตล์ ${s.n}">${u('chat')}</a></div></div></article>`;
@@ -1839,7 +1847,7 @@ function conceptBanners() {
   <article class="ccard dark"><a class="cimg" href="#more-is-more" aria-label="More Is More">${img('d-s019', 'More Is More · The Moon', '(max-width:900px) 100vw, 50vw')}<span class="cno">01</span></a>
    <div class="cbody"><span class="k">W House Concept</span><h3>More Is More</h3><p>คฤหาสน์ Super Luxury ที่งดงามที่สุดเมื่อไร้ขีดจำกัด 6 หลัง 6 แรงบันดาลใจ ตั้งแต่ดวงจันทร์จนถึงผืนป่า</p>
    ${thumbs(mim)}<div class="cfoot"><span class="cmeta"><b class="n">${mim.length}</b> คฤหาสน์ · <span class="n">${rng(mim)}</span></span><a class="btn" href="#more-is-more">ดูคอลเลกชัน ${u('arr')}</a></div></div></article>
-  <article class="ccard light"><a class="cimg" href="#a-life-of-style" aria-label="A Life of Style">${'<img src="img/x/hero-timeless.jpg" srcset="img/x/s/hero-timeless.jpg 900w, img/x/hero-timeless.jpg 1920w" sizes="(max-width:900px) 100vw, 50vw" alt="A Life of Style · Timeless White" loading="lazy">'}<span class="cno">02</span></a>
+  <article class="ccard light"><a class="cimg" href="#a-life-of-style" aria-label="A Life of Style">${'<img src="img/x/hero-timeless.webp" srcset="img/x/s/hero-timeless.webp 900w, img/x/hero-timeless.webp 1920w" sizes="(max-width:900px) 100vw, 50vw" alt="A Life of Style · Timeless White" loading="lazy">'}<span class="cno">02</span></a>
    <div class="cbody"><span class="k">W House Concept</span><h3>A Life of Style</h3><p>“ทุกสถานที่ มีเรื่องราว” แบบบ้านคอลเลกชันใหม่ที่สะท้อนตัวตนของผู้อยู่อาศัย พร้อมวิดีโอนำชม</p>
    ${thumbs(al)}<div class="cfoot"><span class="cmeta"><b class="n">${al.length}</b> แบบบ้าน · <span class="n">${rng(al)}</span></span><a class="btn" href="#a-life-of-style">ดูคอลเลกชัน ${u('arr')}</a></div></div></article></div>`;
 }
@@ -2247,10 +2255,33 @@ dr.addEventListener('click', e => { if (e.target.closest('[data-close]') || e.ta
 document.getElementById('mega').innerHTML = `<div class="mg-styles"><span class="mg-k">สไตล์บ้าน</span>${Object.entries(STY).map(([k, s]) => `<a href="#design-${k}"><img class="mi" src="${SRC(s.img, 's')}" alt=""><span>${s.n}<small>${s.th.split(' · ')[0]} · ${DS.filter(d => d.st.includes(k)).length} แบบ</small></span></a>`).join('')}</div>
   <div class="mg-side"><span class="mg-k">คอลเลกชันพิเศษ</span>
    <a class="mg-feat" href="#more-is-more"><img src="${SRC('d-s019', 's')}" alt=""><span class="mg-ft"><b>More Is More</b><small>6 คฤหาสน์ Super Luxury</small></span></a>
-   <a class="mg-feat sm" href="#a-life-of-style"><img src="img/x/s/hero-timeless.jpg" alt=""><span class="mg-ft"><b>A Life of Style</b><small>3 แบบบ้านคอลเลกชันใหม่</small></span></a></div>
+   <a class="mg-feat sm" href="#a-life-of-style"><img src="img/x/s/hero-timeless.webp" alt=""><span class="mg-ft"><b>A Life of Style</b><small>3 แบบบ้านคอลเลกชันใหม่</small></span></a></div>
   <a class="mg-all" href="#design"><span>ดูแบบบ้านทั้งหมด <b class="n">${DS.length}</b> แบบ</span>${u('arr')}</a>`;
 document.querySelectorAll('.dd .panel a').forEach(a => a.addEventListener('click', () => document.querySelectorAll('.dd.open').forEach(x => x.classList.remove('open'))));
 
+/* ---------- images: soft fade-in + load ahead before scrolling ---------- */
+function imgMark(im) {
+  if (im.dataset.lz || im.closest('#himg')) return; im.dataset.lz = 1;
+  if (im.complete && im.naturalWidth) return;
+  im.classList.add('ld');
+  const done = () => { im.classList.remove('ld'); im.classList.add('fin'); };
+  im.addEventListener('load', done, { once: true }); im.addEventListener('error', done, { once: true });
+}
+let pfT;
+function prefetchLazy() {
+  clearTimeout(pfT);
+  const go = () => {
+    const q = [...document.querySelectorAll('.view.on img[loading="lazy"]')];
+    const step = () => { q.splice(0, 4).forEach(im => { im.loading = 'eager'; }); if (q.length) pfT = setTimeout(step, 250); };
+    pfT = setTimeout(step, 500);
+  };
+  if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true });
+}
+new MutationObserver(ms => {
+  let any = false;
+  for (const m of ms) m.addedNodes.forEach(n => { if (n.nodeType !== 1) return; if (n.tagName === 'IMG') { imgMark(n); any = true; } else n.querySelectorAll('img').forEach(i => { imgMark(i); any = true; }); });
+  if (any) prefetchLazy();
+}).observe(document.getElementById('app'), { childList: true, subtree: true });
 syncSaved(); route();
 
 </script>

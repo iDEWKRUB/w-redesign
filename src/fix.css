@@ -608,3 +608,11 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
 @media(max-width:1000px){.abs,.abz{grid-template-columns:1fr}.abnin{grid-template-columns:1fr 1fr;row-gap:28px}.abnin div:nth-child(3){border-left:0;padding-left:0}.abjl{grid-template-columns:repeat(2,minmax(0,1fr))}.abvg{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.abp{gap:64px;padding-block:56px}.abvg{grid-template-columns:1fr}.abvc{aspect-ratio:4/3.4}.abjl{grid-template-columns:1fr}.abzc{padding:26px 22px}.abnin div{padding:4px 16px}}
 @media(max-width:600px){.abjl{grid-template-columns:1fr 1fr;gap:10px}.abjl li{padding:16px 14px}.abjl .y{font-size:28px}.abjl .now{grid-column:1/-1}.abvg{gap:14px}}
+
+/* ---- images: placeholder shimmer + fade-in ---- */
+.view img.ld{opacity:0}
+.view img.fin{animation:imgIn .6s ease both}
+@keyframes imgIn{from{opacity:0}to{opacity:1}}
+.view :not(#himg):has(> img.ld){background-color:#EFE7E9;background-image:linear-gradient(100deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.6) 50%,rgba(255,255,255,0) 70%);background-size:220% 100%;animation:imgShim 1.3s linear infinite}
+@keyframes imgShim{from{background-position:130% 0}to{background-position:-30% 0}}
+@media(prefers-reduced-motion:reduce){.view img.fin{animation:none}.view :has(> img.ld){animation:none}}
