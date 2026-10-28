@@ -1,0 +1,1287 @@
+<title>W House Option D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/m/22.jpg" imagesrcset="img/s/22.jpg 640w, img/m/22.jpg 1200w, img/22.jpg 1800w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Noto+Serif+Thai:wght@400;500&family=Figtree:wght@400;500;600&family=Sarabun:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: real-estate landing — white page, serif headline left, photo bleeding off the right edge, a floating "plan your home" bar, then card rows */
+:root{
+  --page:#FFFFFF; --mist:#F7F4F4; --ink:#2B2B2B; --soft:#6E6A6B; --line:#ECE6E7;
+  --navy:#2B2B2B; --gold:#80192D; --goldSoft:#F6E8EB; --wineDeep:#5E1221; --rose:#C98A97;
+  --serif:"Fraunces","Noto Serif Thai",Georgia,serif;
+  --sans:"Figtree","Sarabun",system-ui,-apple-system,sans-serif;
+  --wrap:1240px; --r:14px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,select{font:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border-radius:8px;font-weight:600;font-size:14px;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.dark{background:var(--navy);color:#fff}
+.btn.line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn.gold{background:var(--gold);color:#fff}
+.btn.white{background:#fff;color:var(--ink)}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:#fff}
+.bar{display:flex;align-items:center;gap:28px;height:76px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:34px;width:auto}
+nav{display:flex;gap:26px;margin-left:auto;font-size:14px;font-weight:500}
+nav a{padding:6px 0;border-bottom:2px solid transparent}
+nav a.on{color:var(--gold);border-color:var(--gold)}
+.tel{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;white-space:nowrap}
+.tel span{width:34px;height:34px;border-radius:50%;background:var(--mist);display:grid;place-items:center}
+.bar .btn{min-height:40px;padding:0 16px;font-size:13px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;place-items:center}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero{min-height:calc(100vh - 126px);min-height:calc(100svh - 126px);display:flex;align-items:center}
+.hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:center}
+.hero-copy{position:relative;z-index:2;padding-block:64px 140px;display:grid;gap:22px;max-width:520px}
+.hero h1{font-size:clamp(40px,5.2vw,70px);line-height:1.08}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero h1 .th{display:block;font-size:.5em;line-height:1.5;margin-top:10px;color:var(--ink)}
+.hero-copy p{color:var(--soft);font-size:16.5px;max-width:420px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hero-img{position:absolute;inset:0;z-index:1}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.97) 30%,rgba(255,255,255,.75) 41%,rgba(255,255,255,0) 58%)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:80% 55%}
+.hero-tag{position:absolute;z-index:2;right:max(32px,env(safe-area-inset-right,0px));top:28px;background:rgba(255,255,255,.9);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:500;display:flex;gap:8px;align-items:center}
+.hero-tag i{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero h1 em{font-style:italic}
+
+/* planner bar */
+.planner{position:relative;z-index:3;margin-top:-62px}
+.pbox{background:#fff;border-radius:16px;box-shadow:0 24px 50px -24px rgba(43,20,26,.28),0 0 0 1px var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;align-items:center;padding:14px}
+.fld{display:flex;gap:12px;align-items:center;padding:8px 18px;border-right:1px solid var(--line);min-width:0}
+.fld:nth-child(4){border-right:0}
+.fld svg{color:var(--soft)}
+.fld label{display:block;font-size:12px;color:var(--soft)}
+.fld select{appearance:none;-webkit-appearance:none;border:0;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2314181F' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right center;font-weight:600;font-size:14.5px;color:var(--ink);width:100%;padding:2px 20px 2px 0;cursor:pointer}
+.pbox .btn{margin-left:8px;min-height:52px}
+
+/* section heads */
+section{padding-block:88px 0}
+.head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.head h2{font-size:clamp(28px,3.2vw,40px);line-height:1.2;margin-top:8px}
+.more{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-weight:600;font-size:14px;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* project cards */
+.rail{position:relative}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+.card:hover{box-shadow:0 22px 40px -26px rgba(43,20,26,.4);transform:translateY(-3px)}
+.card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .ph img{transform:scale(1.05)}
+.heart{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#fff;border:0;display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.heart.on{color:var(--gold)} .heart.on svg{fill:currentColor}
+.card .bd{padding:16px 18px 18px;display:grid;gap:8px;flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--mist);color:var(--soft);padding:4px 9px;border-radius:5px}
+.chip.g{background:var(--goldSoft);color:var(--gold)}
+.card h3{font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.4}
+.loc{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--soft)}
+.loc .ico{width:14px;height:14px}
+.specs{display:flex;gap:14px;font-size:12.5px;color:var(--ink);padding-top:6px;flex-wrap:wrap}
+.specs span{display:flex;gap:5px;align-items:center}
+.specs .ico{width:15px;height:15px;color:var(--gold)}
+.area{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+.area b{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--gold)}
+.area small{color:var(--soft);font-size:12.5px}
+.nav-btn{position:absolute;top:34%;width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 6px 16px -8px rgba(0,0,0,.25);display:grid;place-items:center;cursor:pointer;z-index:2}
+.nav-btn.l{left:-21px}.nav-btn.r{right:-21px}
+
+/* about + why */
+.duo{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:20px}
+.about{position:relative;border-radius:var(--r);overflow:hidden;color:#fff;min-height:440px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--navy)}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.about .tx{padding:36px 32px;display:grid;gap:16px;align-content:center}
+.about .eyebrow{color:var(--rose)}
+.about h2{font-size:28px;line-height:1.3}
+.about p{color:rgba(255,255,255,.72);font-size:14px}
+.about ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px}
+.about li{display:flex;gap:10px;align-items:center}
+.about li span{width:28px;height:28px;border-radius:50%;background:rgba(201,138,151,.2);color:var(--rose);display:grid;place-items:center}
+.about li .ico{width:14px;height:14px}
+.about .btn{justify-self:start;margin-top:6px}
+.side{display:grid;gap:20px;align-content:start}
+.stats{background:var(--mist);border-radius:var(--r);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:22px 10px}
+.stat{display:flex;gap:12px;align-items:center;padding:0 14px;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat .ico{width:30px;height:30px;color:var(--ink);stroke-width:1.3}
+.stat b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.1}
+.stat small{font-size:12px;color:var(--soft);line-height:1.35;display:block}
+.why h3{font-size:26px;margin:6px 0 18px}
+.wgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.w{border:1px solid var(--line);border-radius:12px;padding:22px 16px;text-align:center;display:grid;gap:8px;justify-items:center}
+.w .ico{width:34px;height:34px;color:var(--gold);stroke-width:1.3}
+.w b{font-size:14.5px;font-weight:600;line-height:1.35}
+.w small{font-size:12.5px;color:var(--soft);line-height:1.5}
+
+/* styles */
+.types{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.type{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3.3;color:#fff}
+.type img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.type:hover img{transform:scale(1.06)}
+.type::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(10,12,16,.72))}
+.type .cap{position:absolute;z-index:1;left:16px;right:16px;bottom:14px;display:flex;align-items:end;justify-content:space-between;gap:8px}
+.type b{font-family:var(--serif);font-weight:400;font-size:20px;display:block;line-height:1.2}
+.type small{font-size:12px;opacity:.85}
+.type .go{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;flex:none}
+.type .go .ico{width:15px;height:15px}
+
+/* story */
+.story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;padding-bottom:88px}
+.quote{display:grid;gap:22px}
+.quote blockquote{margin:0;font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.45}
+.who{display:flex;gap:14px;align-items:center}
+.av{width:52px;height:52px;border-radius:50%;background:var(--goldSoft);color:var(--gold);display:grid;place-items:center;font-family:var(--serif);font-size:20px}
+.who b{display:block;font-size:15px}
+.who small{color:var(--soft);font-size:13px}
+.note{font-size:12px;color:var(--soft);background:var(--mist);border-radius:6px;padding:6px 10px;justify-self:start}
+.qnav{display:flex;gap:10px}
+.qnav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer}
+.video{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10}
+.video img{width:100%;height:100%;object-fit:cover}
+.video::after{content:"";position:absolute;inset:0;background:rgba(10,12,16,.18)}
+.play{position:absolute;z-index:1;inset:0;display:grid;place-items:center;align-content:center;gap:12px;color:#fff;font-size:13.5px;font-weight:500}
+.play span{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(255,255,255,.25)}
+
+/* cta + footer */
+.cta{background:var(--gold);color:#fff}
+.cta .btn.gold{background:#fff;color:var(--gold)}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:56px;flex-wrap:wrap}
+.cta h2{font-size:clamp(26px,3vw,38px)}
+.cta h2 em{font-style:italic;color:#fff;opacity:.85}
+.cta p{color:rgba(255,255,255,.7);margin-top:8px}
+footer{background:var(--mist);color:var(--soft);font-size:13.5px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:28px;padding-block:44px}
+footer h4{color:var(--ink);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer .copy{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;font-size:12px}
+
+/* responsive */
+@media(max-width:1100px){
+  nav,.tel{display:none}.burger{display:grid}.bar .btn{display:none}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav-btn{display:none}
+  .duo{grid-template-columns:1fr}
+  .types{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  .hero{display:block;min-height:0}.hero .wrap{grid-template-columns:1fr;padding-left:0;padding-right:0}
+  .hero-img{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:4/3;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+  .hero-copy{padding-block:0 92px;margin-top:-20px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .hero-tag{top:14px}.hero-img::after{display:none}
+  .pbox{grid-template-columns:1fr 1fr;gap:4px}
+  .fld{border-right:0;border-bottom:1px solid var(--line);padding:10px 8px}
+  .fld:nth-child(3),.fld:nth-child(4){border-bottom:0}
+  .pbox .btn{grid-column:1/-1;margin:8px 0 0;justify-content:center;min-height:50px}
+  .story{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  section{padding-block:64px 0}
+  .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 16px 6px;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 78%;scroll-snap-align:start}
+  .about{grid-template-columns:1fr;min-height:0}
+  .about .ph{aspect-ratio:16/10}
+  .stats{grid-template-columns:1fr 1fr;row-gap:18px}
+  .stat:nth-child(2){border:0}
+  .wgrid{grid-template-columns:1fr 1fr}
+  .types{grid-template-columns:1fr 1fr}
+  .types .type:last-child{grid-column:1/-1;aspect-ratio:16/8}
+  .hero-cta .btn{flex:1;justify-content:center}
+  .fld select{font-size:16px}
+}
+@media(max-width:420px){.pbox{grid-template-columns:1fr}.fld{border-bottom:1px solid var(--line)!important}.fld:nth-child(4){border-bottom:0!important}footer .wrap{grid-template-columns:1fr}}
+@media(hover:none){.card:hover,.btn:hover{transform:none}.card:hover .ph img,.type:hover img{transform:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ===== multi-page ===== */
+.view{display:none}.view.on{display:block;animation:vin .35s ease}
+@keyframes vin{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.crumbs{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--soft);flex-wrap:wrap}
+.crumbs a:hover{color:var(--gold)}
+.crumbs i{width:4px;height:4px;border-radius:50%;background:var(--rose)}
+.phead{background:var(--mist);position:relative;overflow:hidden}
+.phead::after{content:"";position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;border:1px solid var(--line);box-shadow:0 0 0 70px rgba(128,25,45,.025),0 0 0 140px rgba(128,25,45,.02)}
+.phead .wrap{position:relative;z-index:1;padding-block:54px 50px;display:grid;gap:14px}
+.phead h1{font-size:clamp(34px,4.4vw,56px);line-height:1.12}
+.phead h1 em{font-style:italic;color:var(--gold)}
+.phead p.lead{color:var(--soft);font-size:16.5px;max-width:620px}
+.sec{padding-block:64px}
+.sec.tight{padding-block:40px 72px}
+.note-s{font-size:11.5px;color:var(--soft)}
+.note-s b{color:var(--gold);font-weight:600}
+
+/* header extras */
+nav a{cursor:pointer}
+.savedlink{position:relative;width:40px;height:40px;border-radius:50%;background:var(--mist);display:grid;place-items:center;color:var(--ink)}
+.savedlink em{position:absolute;top:-3px;right:-3px;min-width:18px;height:18px;border-radius:9px;background:var(--gold);color:#fff;font-style:normal;font-size:10.5px;font-weight:600;display:grid;place-items:center;padding:0 4px}
+.savedlink em[data-n="0"]{display:none}
+
+/* drawer */
+.drawer{position:fixed;inset:0;z-index:60;visibility:hidden}
+.drawer.open{visibility:visible}
+.drawer .scrim{position:absolute;inset:0;background:rgba(30,16,20,.45);opacity:0;transition:opacity .25s}
+.drawer.open .scrim{opacity:1}
+.drawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(340px,86vw);background:#fff;transform:translateX(100%);transition:transform .3s ease;padding:calc(20px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) 24px;display:flex;flex-direction:column;gap:6px}
+.drawer.open .panel{transform:none}
+.drawer .x{align-self:flex-end;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:20px;cursor:pointer}
+.drawer a.dl{font-family:var(--serif);font-size:24px;padding:10px 0;border-bottom:1px solid var(--line)}
+.drawer a.dl.on{color:var(--gold)}
+.drawer .btn{margin-top:auto;justify-content:center}
+
+/* filters + project grid */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.fchip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font-size:13.5px;font-weight:500;cursor:pointer;color:var(--ink);min-height:40px}
+.fchip span{color:var(--soft);margin-left:4px;font-weight:400}
+.fchip.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.fchip.on span{color:rgba(255,255,255,.75)}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.pgrid .card .ph{aspect-ratio:4/3.1}
+.empty{border:1px dashed var(--line);border-radius:var(--r);padding:56px 24px;text-align:center;display:grid;gap:12px;justify-items:center;color:var(--soft)}
+.empty .ico{width:40px;height:40px;color:var(--rose);stroke-width:1.2}
+.empty b{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--ink)}
+.card{cursor:pointer}
+.yr{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);border-radius:6px;padding:4px 9px;font-size:11.5px;font-weight:600}
+
+/* project detail */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:230px 230px;gap:10px;border-radius:var(--r);overflow:hidden;position:relative}
+.gal button{border:0;padding:0;cursor:zoom-in;overflow:hidden;background:var(--mist)}
+.gal button:first-child{grid-row:1/3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.04)}
+.gal.one{grid-template-columns:1fr;grid-template-rows:480px}
+.gal.one button:first-child{grid-row:auto}
+.gal.three{grid-template-columns:2fr 1fr}
+.gal .all{position:absolute;right:14px;bottom:14px;background:#fff;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:600;display:flex;gap:8px;align-items:center;box-shadow:0 6px 18px -8px rgba(0,0,0,.3);cursor:pointer;border:0}
+.dlay{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:48px;margin-top:36px;align-items:start}
+.dlay h1{font-size:clamp(30px,3.6vw,46px);line-height:1.15;margin:10px 0 8px}
+.bigspecs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;margin:26px 0}
+.bigspecs div{padding:16px 18px;border-right:1px solid var(--line);display:grid;gap:4px}
+.bigspecs div:last-child{border:0}
+.bigspecs .ico{color:var(--gold);width:20px;height:20px}
+.bigspecs b{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.1}
+.bigspecs small{font-size:12px;color:var(--soft)}
+.dtext{display:grid;gap:14px;color:#4A4546;font-size:15.5px;max-width:640px}
+.dtext h2{font-size:24px;color:var(--ink);margin-top:14px}
+.feat{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.feat li{display:flex;gap:10px;align-items:flex-start}
+.feat .ico{color:var(--gold);margin-top:3px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;font-size:14px;margin:0}
+.facts dt{color:var(--soft)}
+.facts dd{margin:0;font-weight:500}
+.side-card{position:sticky;top:96px;border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:16px;box-shadow:0 24px 50px -36px rgba(43,20,26,.35)}
+.side-card .area{border:0;padding:0;margin:0}
+.side-card .btn{justify-content:center}
+.side-card hr{border:0;border-top:1px solid var(--line);margin:0;width:100%}
+.agent{display:flex;gap:12px;align-items:center}
+.agent .av{width:46px;height:46px;font-size:17px}
+.agent b{display:block;font-size:14.5px}
+.agent small{font-size:12.5px;color:var(--soft)}
+.related{margin-top:72px}
+
+/* lightbox + video */
+.lb{position:fixed;inset:0;z-index:70;background:rgba(16,10,12,.94);display:grid;grid-template-rows:auto 1fr auto;color:#fff;padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb[hidden]{display:none!important}
+.lb .top{display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:12px}
+.lb .cbtn{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}
+.lb .stage{position:relative;display:grid;place-items:center;min-height:0;padding:12px 0}
+.lb .stage img{max-height:100%;max-width:100%;object-fit:contain;border-radius:8px}
+.lb .pv,.lb .nx{position:absolute;top:50%;transform:translateY(-50%)}
+.lb .pv{left:0}.lb .nx{right:0}
+.lb .thumbs{display:flex;gap:8px;justify-content:center;overflow-x:auto;padding-top:6px}
+.lb .thumbs button{width:72px;height:50px;border-radius:6px;overflow:hidden;border:2px solid transparent;padding:0;opacity:.55;cursor:pointer;flex:none;background:none}
+.lb .thumbs button.on{border-color:#fff;opacity:1}
+.lb .thumbs img{width:100%;height:100%;object-fit:cover}
+.vid .stage img{width:min(1100px,100%);aspect-ratio:16/9;max-height:none;object-fit:cover;animation:kb 7s ease-in-out both}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.vid .bar2{height:3px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden;width:min(1100px,100%);margin:0 auto}
+.vid .bar2 i{display:block;height:100%;background:var(--rose);width:0}
+
+/* styles page */
+.srow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:36px;border-bottom:1px solid var(--line)}
+.srow:last-child{border:0}
+.srow:nth-child(even) .simg{order:2}
+.simg{border-radius:var(--r);overflow:hidden;aspect-ratio:16/11}
+.simg img{width:100%;height:100%;object-fit:cover}
+.stx{display:grid;gap:14px}
+.stx h2{font-size:clamp(30px,3.4vw,44px)}
+.stx h2 small{display:block;font-family:var(--sans);font-size:15px;color:var(--soft);margin-top:4px}
+.stx p{color:#4A4546;max-width:480px}
+.stx .chips{gap:8px}
+.stx .btn{justify-self:start}
+
+/* about */
+.aband{position:relative;height:clamp(260px,38vw,460px);overflow:hidden}
+.aband img{width:100%;height:100%;object-fit:cover}
+.aband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(30,12,16,.5))}
+.story2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.story2 h2{font-size:clamp(28px,3vw,40px);line-height:1.25}
+.story2 .dtext{max-width:none}
+.vals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.val{background:var(--mist);border-radius:var(--r);padding:28px;display:grid;gap:10px;align-content:start}
+.val .ico{width:30px;height:30px;color:var(--gold);stroke-width:1.3}
+.val b{font-family:var(--serif);font-weight:400;font-size:21px}
+.val p{color:var(--soft);font-size:14px}
+.team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.tm{border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:6px;justify-items:start}
+.tm .av{width:56px;height:56px;margin-bottom:8px}
+.tm b{font-size:15px}
+.tm small{color:var(--soft);font-size:13px}
+.statsbig{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-block:1px solid var(--line)}
+.statsbig div{padding:30px 22px;border-right:1px solid var(--line)}
+.statsbig div:last-child{border:0}
+.statsbig b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(36px,4vw,52px);line-height:1;color:var(--gold)}
+.statsbig small{color:var(--soft);font-size:13.5px}
+
+/* process */
+.steps2{display:grid;gap:0;position:relative}
+.st2{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(0,.9fr);gap:32px;padding-block:34px;border-bottom:1px solid var(--line);align-items:start}
+.st2 .n{font-family:var(--serif);font-size:54px;line-height:.9;color:var(--gold)}
+.st2 h3{font-size:26px;margin-bottom:8px}
+.st2 p{color:#4A4546}
+.dur{display:inline-flex;gap:6px;align-items:center;background:var(--goldSoft);color:var(--gold);font-size:12.5px;font-weight:600;border-radius:999px;padding:5px 12px;margin-bottom:12px}
+.dur .ico{width:14px;height:14px}
+.get{background:var(--mist);border-radius:12px;padding:18px 20px;font-size:14px}
+.get b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:8px}
+.get ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.faq{display:grid;gap:10px;max-width:860px}
+.faq details{border:1px solid var(--line);border-radius:12px;padding:0 20px;background:#fff}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--gold);font-weight:400;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:18px;color:#4A4546;margin:0}
+
+/* reviews */
+.rsum{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.rsum .big{font-family:var(--serif);font-size:64px;line-height:1;color:var(--gold)}
+.stars{color:#C99A2E;letter-spacing:2px;font-size:15px}
+.rgrid{columns:3 300px;column-gap:20px}
+.rv{break-inside:avoid;border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:20px;display:grid;gap:14px;background:#fff}
+.rv blockquote{margin:0;font-family:var(--serif);font-size:18px;line-height:1.55}
+.rv .proj{font-size:12.5px;color:var(--gold);font-weight:600;display:inline-flex;gap:6px;align-items:center}
+.rv .proj .ico{width:14px;height:14px}
+.rv.ph{padding:0;overflow:hidden}
+.rv.ph img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.rv.ph .in{padding:0 24px 24px;display:grid;gap:12px}
+
+/* contact */
+.cgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:28px;align-items:start}
+.formcard{border:1px solid var(--line);border-radius:18px;padding:32px;display:grid;gap:22px;background:#fff;box-shadow:0 30px 60px -44px rgba(43,20,26,.4)}
+.formcard h2{font-size:28px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fi{display:grid;gap:6px;min-width:0}
+.fi.full{grid-column:1/-1}
+.fi label{font-size:13px;font-weight:600}
+.fi label span{color:var(--gold)}
+.fi input,.fi select,.fi textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;background:#fff;color:var(--ink);min-height:48px}
+.fi textarea{min-height:110px;resize:vertical}
+.fi input:focus,.fi select:focus,.fi textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--goldSoft)}
+.fi.err input{border-color:#C0392B}
+.fi .msg{font-size:12px;color:#C0392B;display:none}
+.fi.err .msg{display:block}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg label{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center;cursor:pointer;font-weight:500;font-size:14px}
+.fi .seg input{accent-color:var(--gold);width:18px;height:18px;min-height:0;padding:0;flex:none}
+.seg label:has(input:checked){border-color:var(--gold);background:var(--goldSoft)}
+.seg small{display:block;font-weight:400;color:var(--soft);font-size:12px}
+.slots{display:flex;gap:8px;flex-wrap:wrap}
+.slots label{position:relative;border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;font-size:13.5px;display:grid;text-align:center;line-height:1.3;min-width:66px}
+.slots label small{font-size:11px;color:var(--soft)}
+.fi .slots input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;min-height:0;padding:0;border:0}
+.slots label:has(input:checked){background:var(--gold);border-color:var(--gold);color:#fff}
+.slots label:has(input:checked) small{color:rgba(255,255,255,.8)}
+.slots label:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
+.done{text-align:center;display:grid;gap:14px;justify-items:center;padding:30px 10px}
+.done .ok{width:72px;height:72px;border-radius:50%;background:var(--goldSoft);color:var(--gold);display:grid;place-items:center}
+.done .ok .ico{width:34px;height:34px;stroke-width:2}
+.done h2{font-size:30px}
+.done .sum{background:var(--mist);border-radius:12px;padding:18px 22px;text-align:left;font-size:14px;width:100%;max-width:440px}
+.done .sum div{display:flex;justify-content:space-between;gap:16px;padding:4px 0}
+.done .sum span{color:var(--soft)}
+.cinfo{display:grid;gap:14px}
+.ci{border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start}
+.ci .icb{width:42px;height:42px;border-radius:12px;background:var(--goldSoft);color:var(--gold);display:grid;place-items:center;flex:none}
+.ci b{display:block;font-size:14.5px}
+.ci p{color:var(--soft);font-size:13.5px}
+.ci .copy{margin-top:8px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer;font-weight:600;min-height:34px}
+.mapcard{border-radius:14px;overflow:hidden;position:relative;aspect-ratio:4/3;background:var(--mist)}
+.mapcard svg.map{width:100%;height:100%}
+.mapcard .pinb{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);background:var(--gold);color:#fff;border-radius:10px;padding:8px 12px;font-size:12.5px;font-weight:600;white-space:nowrap;box-shadow:0 10px 20px -8px rgba(128,25,45,.6)}
+.mapcard .pinb::after{content:"";position:absolute;left:50%;bottom:-6px;width:12px;height:12px;background:var(--gold);transform:translateX(-50%) rotate(45deg)}
+.mapcard a{position:absolute;left:12px;right:12px;bottom:12px;justify-content:center}
+
+/* responsive (pages) */
+@media(max-width:1100px){
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dlay{grid-template-columns:1fr}
+  .side-card{position:static}
+  .team{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cgrid{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  .srow,.story2{grid-template-columns:1fr;gap:24px}
+  .srow:nth-child(even) .simg{order:0}
+  .st2{grid-template-columns:56px minmax(0,1fr);gap:18px}
+  .st2 .get{grid-column:2}
+  .st2 .n{font-size:40px}
+  .vals{grid-template-columns:1fr}
+  .statsbig{grid-template-columns:1fr 1fr}
+  .statsbig div:nth-child(2){border-right:0}
+  .statsbig div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:700px){
+  .pgrid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-template-rows:240px 120px}
+  .gal button:first-child{grid-column:1/-1;grid-row:auto}
+  .gal button:nth-child(n+4){display:none}
+  .gal.one{grid-template-rows:280px}
+  .gal.three{grid-template-columns:1fr 1fr}
+  .bigspecs{grid-template-columns:1fr 1fr}
+  .bigspecs div:nth-child(2){border-right:0}
+  .bigspecs div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .feat{grid-template-columns:1fr}
+  .fg,.seg{grid-template-columns:1fr}
+  .formcard{padding:22px}
+  .team{grid-template-columns:1fr 1fr}
+  .phead .wrap{padding-block:40px 36px}
+  .lb .pv,.lb .nx{display:none}
+  .fi input,.fi select,.fi textarea{font-size:16px}
+}
+
+.video{display:block;width:100%;background:none}
+.lb .stage img{max-height:calc(100vh - 200px);max-height:calc(100svh - 200px)}
+.vid .stage img{max-height:calc(100svh - 230px)}
+a.w{transition:border-color .2s,transform .2s}a.w:hover{border-color:var(--rose);transform:translateY(-2px)}
+nav{gap:22px}
+@media(max-width:1360px){.tel{display:none}}
+@media(max-width:1100px){.savedlink{margin-left:auto}.burger{margin-left:8px}}
+
+/* ===== completed projects page ===== */
+.cp-hero{background:var(--mist);overflow:hidden}
+.cp-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:44px 52px}
+.cp-copy{display:grid;gap:16px;align-content:center}
+.cp-copy h1{font-size:clamp(36px,4.6vw,60px);line-height:1.1}
+.cp-copy h1 em{font-style:italic;color:var(--gold)}
+.cp-copy .lead{color:var(--soft);font-size:16px;max-width:480px}
+.cp-tabs{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px;justify-self:start;margin-top:6px}
+.cp-tabs button{border:0;background:none;border-radius:9px;padding:10px 18px;font-weight:600;font-size:14px;cursor:pointer;color:var(--soft);min-height:42px}
+.cp-tabs button span{font-weight:500;font-size:12px;margin-left:4px;opacity:.75}
+.cp-tabs button.on{background:var(--gold);color:#fff}
+.cp-stats{display:flex;gap:0;margin-top:10px}
+.cp-stats div{padding-right:26px;margin-right:26px;border-right:1px solid var(--line)}
+.cp-stats div:last-child{border:0;margin:0;padding:0}
+.cp-stats b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.1;color:var(--ink)}
+.cp-stats small{color:var(--soft);font-size:13px}
+.cp-mosaic{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:200px 200px;gap:12px}
+.cp-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.cp-mosaic .a{grid-row:1/3;border-radius:200px 200px 14px 14px}
+
+.feat-card{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);margin-top:56px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:box-shadow .25s}
+.feat-card:hover{box-shadow:0 30px 60px -40px rgba(43,20,26,.45)}
+.fimg{position:relative;min-height:380px}
+.fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.feat-card:hover .fimg img{transform:scale(1.03)}
+.flag{position:absolute;left:18px;top:18px;background:var(--gold);color:#fff;font-size:12px;font-weight:600;border-radius:999px;padding:6px 14px}
+.ftx{padding:40px 38px;display:grid;gap:14px;align-content:center}
+.ftx h2{font-size:clamp(28px,3vw,40px)}
+.ftx .loc{font-size:14px}
+.ftx p{color:#4A4546}
+.fspec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid var(--line);margin:4px 0 6px}
+.fspec div{padding:14px 0}
+.fspec b{display:block;font-family:var(--serif);font-weight:500;font-size:22px;color:var(--gold);line-height:1.1}
+.fspec small{font-size:12px;color:var(--soft)}
+.ftx .btn{justify-self:start}
+
+.toolbar-wrap{position:sticky;top:calc(76px + env(safe-area-inset-top,0px));z-index:15;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:56px}
+.toolbar{display:flex;gap:14px;align-items:center;padding-block:14px;flex-wrap:wrap}
+.toolbar .filters{margin:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;min-width:0;order:3;flex:1 1 100%}
+.tsel{margin-left:auto}
+.toolbar .filters::-webkit-scrollbar{display:none}
+.toolbar .fchip{white-space:nowrap}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:0 14px;min-height:42px;width:240px;flex:none}
+.search .ico{color:var(--soft);width:16px;height:16px}
+.search input{border:0;outline:0;background:none;font-size:14px;width:100%;min-width:0;color:var(--ink)}
+.search:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px var(--goldSoft)}
+.tsel{display:flex;gap:8px;align-items:center;flex:none}
+.tsel select{appearance:none;-webkit-appearance:none;border:1px solid var(--line);border-radius:10px;min-height:42px;padding:0 32px 0 12px;font-size:13.5px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232B2B2B' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;color:var(--ink);cursor:pointer}
+.vtog{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.vtog button{width:42px;height:40px;border:0;background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--soft)}
+.vtog button.on{background:var(--ink);color:#fff}
+.rcount{font-size:14px;color:var(--soft);margin-bottom:18px}
+.rcount b{color:var(--ink)}
+.rcount button{border:0;background:none;color:var(--gold);font-weight:600;cursor:pointer;margin-left:8px;text-decoration:underline;padding:4px}
+
+.pgrid.list{grid-template-columns:1fr;gap:16px}
+.pgrid.list .card{display:grid;grid-template-columns:340px minmax(0,1fr)}
+.pgrid.list .card .ph{aspect-ratio:auto;min-height:220px}
+.pgrid.list .card .ph img{position:absolute;inset:0}
+.pgrid.list .card .bd{padding:24px 28px;align-content:center}
+.pgrid.list .card h3{font-size:19px}
+.pgrid.list .card .desc{display:block}
+.card .desc{display:none;color:var(--soft);font-size:14px}
+
+.pager{display:grid;justify-items:center;gap:12px;margin-top:44px;text-align:center}
+.pager p{font-size:14px;color:var(--soft)}
+.pager p b{color:var(--ink)}
+.pbar{width:220px;height:3px;border-radius:2px;background:var(--line);overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--gold);width:20%;transition:width .4s}
+
+.areas{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ar{position:relative;border:0;padding:0;border-radius:16px;overflow:hidden;aspect-ratio:16/8;cursor:pointer;color:#fff;text-align:left}
+.ar img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.ar:hover img{transform:scale(1.04)}
+.ar::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(30,10,16,.7))}
+.ar .cap{position:absolute;z-index:1;left:26px;right:26px;bottom:22px;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.ar small{display:block;font-size:13px;opacity:.85}
+.ar b{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1.15}
+.ar em{font-style:normal;background:#fff;color:var(--gold);font-weight:600;font-size:13px;border-radius:999px;padding:8px 14px;white-space:nowrap}
+
+.prog{display:grid;gap:6px;margin-top:4px}
+.prog .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--soft)}
+.prog .row b{color:var(--gold)}
+.prog .bar{height:6px;border-radius:3px;background:var(--goldSoft);overflow:hidden}
+.prog .bar i{display:block;height:100%;background:var(--gold);border-radius:3px}
+.ongo-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:end;margin-bottom:24px}
+
+@media(max-width:1100px){
+  .toolbar .filters{order:3;flex:1 1 100%}
+  .search{flex:1;width:auto}
+  .pgrid.list .card{grid-template-columns:260px minmax(0,1fr)}
+}
+@media(max-width:900px){
+  .cp-in{grid-template-columns:1fr;gap:28px;padding-block:32px 40px}
+  .cp-mosaic{grid-template-rows:150px 150px}
+  .feat-card{grid-template-columns:1fr}
+  .fimg{min-height:0;aspect-ratio:16/10}
+  .ftx{padding:24px}
+}
+@media(max-width:700px){
+  .tsel{flex:1 1 100%;overflow-x:auto;scrollbar-width:none}
+  .tsel select{font-size:16px;flex:none}
+  .toolbar{gap:10px;padding-block:10px}
+  .search input{font-size:16px}
+  .pgrid.list .card{grid-template-columns:1fr}
+  .pgrid.list .card .ph{aspect-ratio:4/3;min-height:0}
+  .areas{grid-template-columns:1fr}
+  .ar{aspect-ratio:16/10}
+  .cp-stats b{font-size:28px}
+  .cp-stats div{padding-right:18px;margin-right:18px}
+  .fspec b{font-size:19px}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+  <symbol id="i-arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arl" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="1.6"/></symbol>
+  <symbol id="i-bath" viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M6 12V6a2 2 0 0 1 4 0"/><path d="M7 19l-1 2M17 19l1 2"/></symbol>
+  <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-style" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10z"/><path d="M4 14h16"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7M5 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></symbol>
+  <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M3 17h18M5 17v-3a7 7 0 0 1 14 0v3"/><path d="M10 7v4M14 7v4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15z"/><path d="M5 19 13 11"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></symbol>
+</svg>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-land" viewBox="0 0 24 24"><path d="M3 18 9 8l4 6 3-4 5 8z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 5h14v10H10l-4 4v-4H5z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#home" aria-label="W House หน้าแรก"><img src="img/brand/logo-footer.png" width="147" height="34" alt="W House"></a>
+    <nav aria-label="เมนูหลัก" id="mainnav">
+      <a href="#home" data-nav="home">หน้าแรก</a><a href="#projects" data-nav="projects">ผลงาน</a><a href="#styles" data-nav="styles">สไตล์บ้าน</a><a href="#process" data-nav="process">ขั้นตอน</a><a href="#about" data-nav="about">เกี่ยวกับเรา</a><a href="#reviews" data-nav="reviews">รีวิว</a><a href="#contact" data-nav="contact">ติดต่อ</a>
+    </nav>
+    <div class="tel"><span><svg class="ico"><use href="#i-phone"/></svg></span>093-555-0596</div>
+    <a class="savedlink" href="#saved" aria-label="บ้านที่บันทึกไว้"><svg class="ico"><use href="#i-heart"/></svg><em class="savedn" data-n="0">0</em></a>
+    <a class="btn dark" href="#contact">นัดคุยสถาปนิก</a>
+    <button class="burger" id="burger" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="drawer"><svg class="ico"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="scrim" data-close></div>
+  <div class="panel" role="dialog" aria-label="เมนู">
+    <button class="x" data-close aria-label="ปิดเมนู">×</button>
+    <a class="dl" href="#home" data-nav="home">หน้าแรก</a>
+    <a class="dl" href="#projects" data-nav="projects">ผลงาน</a>
+    <a class="dl" href="#styles" data-nav="styles">สไตล์บ้าน</a>
+    <a class="dl" href="#process" data-nav="process">ขั้นตอนการทำงาน</a>
+    <a class="dl" href="#about" data-nav="about">เกี่ยวกับเรา</a>
+    <a class="dl" href="#reviews" data-nav="reviews">รีวิว</a>
+    <a class="dl" href="#saved" data-nav="saved">บ้านที่บันทึกไว้ (<span class="savedn2">0</span>)</a>
+    <a class="dl" href="#contact" data-nav="contact">ติดต่อ</a>
+    <a class="btn gold" href="#contact">นัดคุยสถาปนิก</a>
+  </div>
+</div>
+
+<main>
+<!-- ============ HOME ============ -->
+<div class="view" data-view="home">
+  <section class="hero" style="padding:0">
+    <div class="hero-img">
+      <img src="img/m/22.jpg" srcset="img/s/22.jpg 640w, img/m/22.jpg 1200w, img/22.jpg 1800w" sizes="100vw" alt="บ้านพักอาศัย 2 ชั้น ผลงาน W House" fetchpriority="high">
+    </div>
+    <a class="hero-tag" href="#project-miracles"><i></i>ผลงาน · Miracles V เขาใหญ่</a>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Design · Build · Live</span>
+        <h1>Homes That <em>Define</em> You<span class="th">บ้านที่ออกแบบจากชีวิตของคุณ</span></h1>
+        <p>สถาปนิกและวิศวกรของ W House ดูแลตั้งแต่ภาพร่างแรกจนถึงวันรับกุญแจ บ้านทุกหลังออกแบบเฉพาะ ไม่มีแบบสำเร็จรูป</p>
+        <div class="hero-cta">
+          <a class="btn dark" href="#projects">ดูผลงานทั้งหมด <svg class="ico"><use href="#i-arr"/></svg></a>
+          <a class="btn line" href="#process">ขั้นตอนการทำงาน</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap planner">
+    <form class="pbox" id="planner" aria-label="วางแผนบ้านของคุณ">
+      <div class="fld"><svg class="ico"><use href="#i-pin"/></svg><div style="min-width:0;flex:1"><label for="f-loc">ทำเลที่ดิน</label><select id="f-loc"><option>กรุงเทพฯ และปริมณฑล</option><option>เขาใหญ่ / ปากช่อง</option><option>หัวหิน / ชะอำ</option><option>ต่างจังหวัดอื่น ๆ</option></select></div></div>
+      <div class="fld"><svg class="ico"><use href="#i-style"/></svg><div style="min-width:0;flex:1"><label for="f-style">สไตล์บ้าน</label><select id="f-style"><option>ทุกสไตล์</option><option>Modern</option><option>Tropical</option><option>Contemporary</option><option>Classic</option><option>Villa</option></select></div></div>
+      <div class="fld"><svg class="ico"><use href="#i-coin"/></svg><div style="min-width:0;flex:1"><label for="f-budget">งบก่อสร้าง</label><select id="f-budget"><option>5 – 10 ล้านบาท</option><option>10 – 20 ล้านบาท</option><option>20 ล้านบาทขึ้นไป</option><option>ยังไม่แน่ใจ</option></select></div></div>
+      <div class="fld"><svg class="ico"><use href="#i-area"/></svg><div style="min-width:0;flex:1"><label for="f-size">พื้นที่ใช้สอย</label><select id="f-size"><option>300 – 500 ตร.ม.</option><option>500 – 800 ตร.ม.</option><option>800 ตร.ม. ขึ้นไป</option></select></div></div>
+      <button class="btn gold" type="submit">เริ่มวางแผนบ้าน <svg class="ico"><use href="#i-arr"/></svg></button>
+    </form>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Signature Residences</span><h2>ผลงานบ้านที่เราภูมิใจ</h2></div>
+        <a class="more" href="#projects">ดูผลงานทั้งหมด <svg class="ico" style="width:15px;height:15px"><use href="#i-arr"/></svg></a>
+      </div>
+      <div class="rail">
+        <button class="nav-btn l" aria-label="ผลงานก่อนหน้า"><svg class="ico"><use href="#i-arl"/></svg></button>
+        <div class="cards" id="cards"></div>
+        <button class="nav-btn r" aria-label="ผลงานถัดไป"><svg class="ico"><use href="#i-arr"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap duo">
+      <div class="about">
+        <div class="ph"><img src="img/m/10.jpg" srcset="img/s/10.jpg 640w, img/m/10.jpg 1200w" sizes="(max-width:700px) 100vw, 26vw" alt="ห้องนั่งเล่นผนังกระจกมองเห็นภูเขา" loading="lazy"></div>
+        <div class="tx">
+          <span class="eyebrow">About W House</span>
+          <h2>มากกว่าการสร้างบ้าน เราออกแบบวิถีชีวิต</h2>
+          <p>เริ่มจากการฟังว่าครอบครัวของคุณใช้ชีวิตอย่างไร แล้วออกแบบทุกห้องให้ตอบโจทย์นั้น พร้อมคุมงานก่อสร้างเองจนส่งมอบ</p>
+          <ul>
+            <li><span><svg class="ico"><use href="#i-check"/></svg></span>ออกแบบเฉพาะหลัง</li>
+            <li><span><svg class="ico"><use href="#i-check"/></svg></span>วิศวกรคุมงานหน้างาน</li>
+            <li><span><svg class="ico"><use href="#i-check"/></svg></span>สัญญาและงวดงานโปร่งใส</li>
+          </ul>
+          <a class="btn white" href="#about">รู้จัก W House <svg class="ico"><use href="#i-arr"/></svg></a>
+        </div>
+      </div>
+      <div class="side">
+        <div class="stats" aria-label="ตัวเลขบริษัท">
+          <div class="stat"><svg class="ico"><use href="#i-award"/></svg><div><b>15+</b><small>ปีประสบการณ์</small></div></div>
+          <div class="stat"><svg class="ico"><use href="#i-home"/></svg><div><b>200+</b><small>หลังที่ส่งมอบ</small></div></div>
+          <div class="stat"><svg class="ico"><use href="#i-team"/></svg><div><b>35</b><small>สถาปนิกและวิศวกร</small></div></div>
+          <div class="stat"><svg class="ico"><use href="#i-shield"/></svg><div><b>10 ปี</b><small>รับประกันโครงสร้าง</small></div></div>
+        </div>
+        <div class="why">
+          <span class="eyebrow">Why W House</span>
+          <h3>ทำไมเจ้าของบ้านเลือกเรา</h3>
+          <div class="wgrid">
+            <a class="w" href="#process"><svg class="ico"><use href="#i-pen"/></svg><b>ออกแบบเฉพาะหลัง</b><small>วางผังตามที่ดิน ทิศแดด และวิถีชีวิต</small></a>
+            <a class="w" href="#process"><svg class="ico"><use href="#i-helmet"/></svg><b>วิศวกรคุมงานเอง</b><small>ไม่ส่งต่อผู้รับเหมาช่วง</small></a>
+            <a class="w" href="#process"><svg class="ico"><use href="#i-leaf"/></svg><b>วัสดุตามภูมิอากาศ</b><small>เลือกวัสดุที่ทนแดดและฝนเมืองไทย</small></a>
+            <a class="w" href="#process"><svg class="ico"><use href="#i-shield"/></svg><b>ดูแลหลังส่งมอบ</b><small>ทีมเดิมดูแลต่อหลังเข้าอยู่</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">House Styles</span><h2>เลือกสไตล์บ้านที่ใช่</h2></div>
+        <a class="more" href="#styles">ดูทุกสไตล์ <svg class="ico" style="width:15px;height:15px"><use href="#i-arr"/></svg></a>
+      </div>
+      <div class="types" id="types"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap story">
+      <div class="quote">
+        <span class="eyebrow">What Homeowners Say</span>
+        <blockquote id="hq"></blockquote>
+        <div class="who"><span class="av" id="hqa"></span><div><b id="hqn"></b><small id="hqp"></small></div></div>
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+          <div class="qnav"><button id="qprev" aria-label="รีวิวก่อนหน้า"><svg class="ico"><use href="#i-arl"/></svg></button><button id="qnext" aria-label="รีวิวถัดไป"><svg class="ico"><use href="#i-arr"/></svg></button></div>
+          <a class="more" href="#reviews">อ่านรีวิวทั้งหมด <svg class="ico" style="width:15px;height:15px"><use href="#i-arr"/></svg></a>
+        </div>
+      </div>
+      <button class="video" id="playvid" aria-label="ชมวิดีโอ The Creston Hills" style="border:0;padding:0;cursor:pointer">
+        <img src="img/m/01.jpg" srcset="img/s/01.jpg 640w, img/m/01.jpg 1200w, img/01.jpg 1800w" sizes="(max-width:900px) 100vw, 55vw" alt="บ้านพักตากอากาศริมทะเลสาบ เขาใหญ่" loading="lazy">
+        <span class="play"><span><svg class="ico" style="width:26px;height:26px"><use href="#i-play"/></svg></span>ชมวิดีโอ The Creston Hills</span>
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PROJECTS (Completed) ============ -->
+<div class="view" data-view="projects">
+  <section class="cp-hero" style="padding:0">
+    <div class="wrap cp-in">
+      <div class="cp-copy">
+        <div class="crumbs"><a href="#home">หน้าแรก</a><i></i><span>ผลงาน</span><i></i><span>Completed Projects</span></div>
+        <span class="eyebrow">Completed Projects</span>
+        <h1>ผลงานสร้างบ้าน<br><em>ที่แล้วเสร็จ</em></h1>
+        <p class="lead">บ้านที่ W House ออกแบบและก่อสร้างจนส่งมอบให้เจ้าของแล้ว ทั้งบ้านพักอาศัยในกรุงเทพฯ และบ้านพักตากอากาศที่เขาใหญ่</p>
+        <div class="cp-tabs" role="tablist" aria-label="สถานะโครงการ">
+          <button class="on" role="tab" aria-selected="true" data-tab="done">แล้วเสร็จ</button>
+          <button role="tab" aria-selected="false" data-tab="ongoing">กำลังก่อสร้าง</button>
+        </div>
+      </div>
+      <div class="cp-mosaic" aria-hidden="true">
+        <img class="a" src="img/m/pcreston-air.jpg" srcset="img/s/pcreston-air.jpg 640w, img/m/pcreston-air.jpg 1200w" sizes="(max-width:900px) 100vw, 34vw" alt="">
+        <img class="b" src="img/s/22.jpg" alt="">
+        <img class="c" src="img/s/pvibha.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <div id="cp-done">
+    <div class="wrap">
+      <a class="feat-card" href="#project-creston">
+        <div class="fimg"><img src="img/m/03.jpg" srcset="img/s/03.jpg 640w, img/m/03.jpg 1200w, img/03.jpg 1800w" sizes="(max-width:900px) 100vw, 60vw" alt="The Creston Hills เขาใหญ่" loading="lazy"><span class="flag">ผลงานล่าสุด</span></div>
+        <div class="ftx">
+          <div class="chips"><span class="chip g">Modern Tropical</span><span class="chip">บ้านพักตากอากาศ 2 ชั้น</span></div>
+          <h2>The Creston Hills</h2>
+          <span class="loc">เขาใหญ่ นครราชสีมา</span>
+          <p>บ้านริมทะเลสาบหันรับวิวภูเขา ทุกห้องหลักเปิดออกสู่สวนและสระว่ายน้ำ</p>
+          <div class="fspec"><div><b>535</b><small>ตร.ม.</small></div><div><b>3</b><small>ห้องนอน</small></div><div><b>4</b><small>ห้องน้ำ</small></div><div><b>7</b><small>ภาพ</small></div></div>
+          <span class="btn dark">ดูรายละเอียดโครงการ <svg class="ico"><use href="#i-arr"/></svg></span>
+        </div>
+      </a>
+    </div>
+
+    <div class="toolbar-wrap" id="cp-grid">
+      <div class="wrap toolbar">
+        <label class="search"><svg class="ico"><use href="#i-search"/></svg><input id="cp-q" type="search" placeholder="ค้นหาชื่อโครงการหรือทำเล" aria-label="ค้นหาผลงาน"></label>
+        <div class="filters" id="filters" role="tablist" aria-label="กรองตามสไตล์"></div>
+        <div class="tsel">
+          <select id="cp-area" aria-label="พื้นที่"><option value="all">ทุกพื้นที่</option><option value="bkk">กรุงเทพฯ</option><option value="khaoyai">เขาใหญ่</option></select>
+          <select id="cp-fl" aria-label="จำนวนชั้น"><option value="all">ทุกจำนวนชั้น</option><option value="2">2 ชั้น</option><option value="3">3 ชั้น</option></select>
+          <select id="cp-sort" aria-label="เรียงลำดับ"><option value="new">ล่าสุดก่อน</option><option value="big">พื้นที่มากที่สุด</option><option value="small">พื้นที่น้อยที่สุด</option></select>
+          <div class="vtog" role="group" aria-label="รูปแบบการแสดง"><button class="on" data-v="grid" aria-label="แสดงแบบตาราง" aria-pressed="true"><svg class="ico"><use href="#i-grid"/></svg></button><button data-v="list" aria-label="แสดงแบบรายการ" aria-pressed="false"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap" style="padding-block:28px 0">
+      <p class="rcount" id="rcount"></p>
+      <div class="pgrid" id="pgrid"></div>
+      <div class="pager">
+        <p>แสดงผลงานล่าสุด <b id="shown">9</b> โครงการ</p>
+        <div class="pbar"><i id="pbar"></i></div>
+        <button class="btn line" id="more">โหลดผลงานเพิ่ม <svg class="ico"><use href="#i-arr"/></svg></button>
+        <p class="note-s" id="morenote" hidden>หน้า 2–5 จะดึงผลงานที่เหลือจาก WordPress ตอนพัฒนาจริง<b> (mockup แสดง 9 หลังจากหน้าแรกของเว็บเดิม)</b></p>
+      </div>
+    </div>
+
+    <section class="wrap" style="padding-block:72px 88px">
+      <div class="head"><div><span class="eyebrow">By Location</span><h2>ผลงานตามพื้นที่</h2></div></div>
+      <div class="areas">
+        <button class="ar" data-area="bkk"><img src="img/m/17.jpg" srcset="img/s/17.jpg 640w, img/m/17.jpg 1200w" sizes="(max-width:700px) 100vw, 50vw" alt="" loading="lazy"><span class="cap"><span><small>บ้านพักอาศัย</small><b>กรุงเทพฯ</b></span><em id="n-bkk"></em></span></button>
+        <button class="ar" data-area="khaoyai"><img src="img/m/02.jpg" srcset="img/s/02.jpg 640w, img/m/02.jpg 1200w" sizes="(max-width:700px) 100vw, 50vw" alt="" loading="lazy"><span class="cap"><span><small>บ้านพักตากอากาศ</small><b>เขาใหญ่</b></span><em id="n-khaoyai"></em></span></button>
+      </div>
+    </section>
+  </div>
+
+  <div id="cp-ongoing" hidden>
+    <div class="wrap" style="padding-block:40px 88px">
+      <div class="empty">
+        <svg class="ico"><use href="#i-helmet"/></svg>
+        <b>โครงการที่กำลังก่อสร้าง</b>
+        <p>หน้านี้ใช้ layout เดียวกับผลงานที่แล้วเสร็จ เพิ่มแถบความคืบหน้า (%) และเดือนที่คาดว่าจะเสร็จบนการ์ด</p>
+        <button class="btn dark" data-tab="done">กลับไปดูผลงานที่แล้วเสร็จ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROJECT DETAIL ============ -->
+<div class="view" data-view="project">
+  <div class="wrap" style="padding-block:28px 88px" id="detail"></div>
+</div>
+
+<!-- ============ STYLES ============ -->
+<div class="view" data-view="styles">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href="#home">หน้าแรก</a><i></i><span>สไตล์บ้าน</span></div>
+    <h1>สไตล์บ้าน<em>ที่เราออกแบบ</em></h1>
+    <p class="lead">5 สไตล์ที่ลูกค้าเลือกบ่อย ทุกแบบปรับสัดส่วน วัสดุ และผังให้เข้ากับที่ดินและการใช้ชีวิตของแต่ละครอบครัว</p>
+  </div></div>
+  <div class="wrap sec tight" id="stylelist"></div>
+</div>
+
+<!-- ============ PROCESS ============ -->
+<div class="view" data-view="process">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href="#home">หน้าแรก</a><i></i><span>ขั้นตอนการทำงาน</span></div>
+    <h1>จากภาพร่างแรก<em> ถึงวันรับกุญแจ</em></h1>
+    <p class="lead">5 ขั้นตอนที่ทีมเดียวดูแลตลอด คุณรู้ล่วงหน้าทุกครั้งว่าแต่ละช่วงใช้เวลาเท่าไหร่และจะได้อะไร</p>
+  </div></div>
+  <div class="wrap sec tight">
+    <div class="steps2" id="steps2"></div>
+    <div style="margin-top:72px;display:grid;gap:22px">
+      <div><span class="eyebrow">FAQ</span><h2 style="font-size:clamp(26px,3vw,36px);margin-top:8px">คำถามที่พบบ่อย</h2></div>
+      <div class="faq">
+        <details open><summary>ยังไม่มีที่ดิน คุยกับ W House ได้ไหม</summary><p>ได้ครับ สถาปนิกช่วยดูทำเลที่สนใจและประเมินว่าที่ดินแต่ละแปลงสร้างบ้านตามโจทย์ได้แค่ไหน ก่อนตัดสินใจซื้อ</p></details>
+        <details><summary>ค่าออกแบบคิดอย่างไร</summary><p>คิดเป็นเปอร์เซ็นต์ของงบก่อสร้าง และหักคืนเมื่อทำสัญญาก่อสร้างกับ W House รายละเอียดจะอยู่ในใบเสนอราคาหลังคุยโจทย์ครั้งแรก</p></details>
+        <details><summary>แก้แบบได้กี่ครั้ง</summary><p>ช่วงออกแบบสถาปัตยกรรมแก้ได้ไม่จำกัดจนกว่าผังจะลงตัว หลังยื่นขออนุญาตแล้วการแก้ไขจะมีผลกับระยะเวลาและงบ</p></details>
+        <details><summary>ระหว่างก่อสร้างติดตามงานได้อย่างไร</summary><p>มีรายงานความคืบหน้าพร้อมรูปทุกสัปดาห์ และนัดตรวจงานหน้างานกับวิศวกรก่อนจ่ายแต่ละงวด</p></details>
+        <details><summary>รับสร้างบ้านต่างจังหวัดไหม</summary><p>รับครับ มีผลงานที่เขาใหญ่และหัวหิน ทีมวิศวกรประจำหน้างานตลอดช่วงก่อสร้าง</p></details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="view" data-view="about">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href="#home">หน้าแรก</a><i></i><span>เกี่ยวกับเรา</span></div>
+    <h1>W House <em>ออกแบบและสร้างบ้าน</em><br>ที่สะท้อนตัวตนของผู้อยู่</h1>
+  </div></div>
+  <div class="aband"><img src="img/m/02.jpg" srcset="img/s/02.jpg 640w, img/m/02.jpg 1200w, img/02.jpg 1800w" sizes="100vw" alt="บ้านริมทะเลสาบ The Creston Hills" loading="lazy"></div>
+  <div class="wrap sec">
+    <div class="story2">
+      <div><span class="eyebrow">Our Story</span><h2 style="margin-top:10px">บ้านที่ดี เริ่มจากการฟังให้ครบก่อนลงมือวาด</h2></div>
+      <div class="dtext">
+        <p>บริษัท ดับบลิว เฮ้าส์ จำกัด เป็นทีมสถาปนิกและวิศวกรที่ทำงานออกแบบและก่อสร้างบ้านเฉพาะหลังมาตลอด เราไม่มีแบบบ้านสำเร็จรูป บ้านทุกหลังเริ่มจากการคุยว่าใครจะอยู่ ใช้ชีวิตอย่างไร และที่ดินแปลงนั้นมีแดด ลม และวิวแบบไหน</p>
+        <p>ทีมเดียวกันดูแลตั้งแต่ภาพร่างแรก แบบก่อสร้าง การขออนุญาต ไปจนถึงคุมงานหน้างาน เจ้าของบ้านจึงคุยกับคนเดิมตลอดโครงการ และรู้ว่าทุกการตัดสินใจมีเหตุผลรองรับ</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="statsbig">
+      <div><b>15+</b><small>ปีประสบการณ์ออกแบบและก่อสร้าง</small></div>
+      <div><b>200+</b><small>หลังที่ส่งมอบให้เจ้าของบ้าน</small></div>
+      <div><b>35</b><small>สถาปนิก วิศวกร และโฟร์แมน</small></div>
+      <div><b>10 ปี</b><small>รับประกันงานโครงสร้าง</small></div>
+    </div>
+  </div>
+  <div class="wrap sec">
+    <div class="head"><div><span class="eyebrow">What We Believe</span><h2>สิ่งที่เรายึดถือ</h2></div></div>
+    <div class="vals">
+      <div class="val"><svg class="ico"><use href="#i-pen"/></svg><b>ออกแบบจากชีวิตจริง</b><p>ผังบ้านมาจากกิจวัตรของครอบครัว ไม่ใช่จากแบบที่มีอยู่แล้ว</p></div>
+      <div class="val"><svg class="ico"><use href="#i-leaf"/></svg><b>เข้าใจภูมิอากาศไทย</b><p>วางทิศ ชายคา และช่องลมให้บ้านเย็นสบาย ใช้แอร์น้อยลง</p></div>
+      <div class="val"><svg class="ico"><use href="#i-shield"/></svg><b>โปร่งใสทุกงวด</b><p>ใบเสนอราคาแยกรายการชัดเจน ตรวจงานร่วมกันก่อนจ่ายทุกงวด</p></div>
+    </div>
+  </div>
+  <div class="wrap" style="padding-bottom:88px">
+    <div class="head"><div><span class="eyebrow">Our Team</span><h2>ทีมที่ดูแลบ้านของคุณ</h2></div><span class="note-s">ชื่อและตำแหน่ง<b> เป็นตัวอย่าง</b></span></div>
+    <div class="team">
+      <div class="tm"><span class="av">ว</span><b>คุณวรเชษฐ์</b><small>ผู้ก่อตั้ง · สถาปนิกหลัก</small></div>
+      <div class="tm"><span class="av">ป</span><b>คุณปวีณา</b><small>หัวหน้าทีมออกแบบ</small></div>
+      <div class="tm"><span class="av">ธ</span><b>คุณธนากร</b><small>วิศวกรโครงสร้าง</small></div>
+      <div class="tm"><span class="av">ณ</span><b>คุณณัฐวุฒิ</b><small>ผู้จัดการโครงการก่อสร้าง</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ REVIEWS ============ -->
+<div class="view" data-view="reviews">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href="#home">หน้าแรก</a><i></i><span>รีวิว</span></div>
+    <h1>เสียงจาก<em>เจ้าของบ้าน</em></h1>
+    <div class="rsum"><span class="big">4.9</span><div><div class="stars" aria-label="4.9 จาก 5">★★★★★</div><p class="lead" style="font-size:14.5px">จาก 120 รีวิวของเจ้าของบ้าน</p></div><span class="note-s">รีวิวและคะแนน<b> เป็นข้อมูลตัวอย่าง</b></span></div>
+  </div></div>
+  <div class="wrap sec tight"><div class="rgrid" id="rgrid"></div></div>
+</div>
+
+<!-- ============ SAVED ============ -->
+<div class="view" data-view="saved">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href="#home">หน้าแรก</a><i></i><span>บ้านที่บันทึกไว้</span></div>
+    <h1>บ้านที่<em>บันทึกไว้</em></h1>
+    <p class="lead">กดรูปหัวใจบนการ์ดผลงานเพื่อเก็บบ้านที่ชอบไว้ แล้วนำไปคุยกับสถาปนิกได้ทันที</p>
+  </div></div>
+  <div class="wrap sec tight"><div class="pgrid" id="savedgrid"></div></div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="view" data-view="contact">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href="#home">หน้าแรก</a><i></i><span>นัดคุยสถาปนิก</span></div>
+    <h1>นัดคุยกับ<em>สถาปนิก</em></h1>
+    <p class="lead">ครั้งแรกไม่มีค่าใช้จ่าย ใช้เวลาประมาณ 1 ชั่วโมง เล่าโจทย์บ้านที่อยากได้ แล้วเราจะช่วยวางกรอบงบและระยะเวลาให้</p>
+  </div></div>
+  <div class="wrap sec tight">
+    <div class="cgrid">
+      <div class="formcard" id="formcard">
+        <form id="bookform" novalidate style="display:grid;gap:22px">
+          <div><h2>ข้อมูลการนัดหมาย</h2><p class="note-s" style="margin-top:6px" id="aboutproj"></p></div>
+          <div class="fg">
+            <div class="fi"><label for="c-name">ชื่อ-นามสกุล <span>*</span></label><input id="c-name" autocomplete="name" placeholder="เช่น สมชาย ใจดี"><span class="msg">กรุณากรอกชื่อ</span></div>
+            <div class="fi"><label for="c-tel">เบอร์โทร <span>*</span></label><input id="c-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="08x-xxx-xxxx"><span class="msg">กรอกเบอร์โทร 9–10 หลัก</span></div>
+            <div class="fi"><label for="c-line">LINE ID</label><input id="c-line" placeholder="ไม่บังคับ"></div>
+            <div class="fi"><label for="c-loc">ทำเลที่ดิน</label><select id="c-loc"><option>กรุงเทพฯ และปริมณฑล</option><option>เขาใหญ่ / ปากช่อง</option><option>หัวหิน / ชะอำ</option><option>ต่างจังหวัดอื่น ๆ</option><option>ยังไม่มีที่ดิน</option></select></div>
+            <div class="fi"><label for="c-style">สไตล์ที่สนใจ</label><select id="c-style"><option>ทุกสไตล์</option><option>Modern</option><option>Tropical</option><option>Contemporary</option><option>Classic</option><option>Villa</option></select></div>
+            <div class="fi"><label for="c-budget">งบก่อสร้าง</label><select id="c-budget"><option>5 – 10 ล้านบาท</option><option>10 – 20 ล้านบาท</option><option>20 ล้านบาทขึ้นไป</option><option>ยังไม่แน่ใจ</option></select></div>
+            <div class="fi"><label for="c-size">พื้นที่ใช้สอย</label><select id="c-size"><option>300 – 500 ตร.ม.</option><option>500 – 800 ตร.ม.</option><option>800 ตร.ม. ขึ้นไป</option></select></div>
+          </div>
+          <div class="fi"><label>รูปแบบการนัด</label>
+            <div class="seg">
+              <label><input type="radio" name="c-mode" value="ที่สำนักงาน รามอินทรา" checked><span>ที่สำนักงาน<small>รามอินทรา · มีบ้านตัวอย่างวัสดุ</small></span></label>
+              <label><input type="radio" name="c-mode" value="ออนไลน์ (Google Meet)"><span>ออนไลน์<small>Google Meet · สะดวกทุกที่</small></span></label>
+            </div>
+          </div>
+          <div class="fi"><label>วันที่สะดวก</label><div class="slots" id="days"></div></div>
+          <div class="fi"><label>เวลา</label><div class="slots" id="times"></div></div>
+          <div class="fi"><label for="c-msg">เล่าโจทย์บ้านเพิ่มเติม</label><textarea id="c-msg" placeholder="เช่น ครอบครัว 5 คน มีผู้สูงอายุ อยากได้ห้องนอนชั้นล่าง"></textarea></div>
+          <button class="btn gold" type="submit" style="justify-content:center;min-height:54px;font-size:15px"><svg class="ico"><use href="#i-cal"/></svg>ยืนยันนัดหมาย</button>
+          <p class="note-s" style="text-align:center">หน้านี้เป็น mockup ข้อมูลจะไม่ถูกส่งจริง</p>
+        </form>
+      </div>
+      <aside class="cinfo">
+        <div class="ci"><span class="icb"><svg class="ico"><use href="#i-phone"/></svg></span><div><b>โทร</b><p id="telnum">093-555-0596</p><button class="copy" data-copy="093-555-0596">คัดลอกเบอร์</button></div></div>
+        <div class="ci"><span class="icb"><svg class="ico"><use href="#i-pin"/></svg></span><div><b>สำนักงาน รามอินทรา</b><p>65/6 ซอยรามอินทรา 14 แขวงท่าแร้ง<br>เขตบางเขน กรุงเทพฯ 10230</p></div></div>
+        <div class="ci"><span class="icb"><svg class="ico"><use href="#i-chat"/></svg></span><div><b>อีเมล</b><p>marketing@whouse.co.th</p></div></div>
+        <div class="ci"><span class="icb"><svg class="ico"><use href="#i-clock"/></svg></span><div><b>เวลาทำการ</b><p>จันทร์ – เสาร์ 9:00 – 18:00<br>อาทิตย์ นัดล่วงหน้าเท่านั้น</p></div></div>
+        <div class="mapcard">
+          <svg class="map" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#F1ECEC"/><path d="M0 210 C120 190 220 230 400 170" stroke="#fff" stroke-width="16" fill="none"/><path d="M90 0 L150 300" stroke="#fff" stroke-width="12" fill="none"/><path d="M0 90 L400 120" stroke="#fff" stroke-width="8" fill="none"/><path d="M290 0 L250 300" stroke="#fff" stroke-width="8" fill="none"/><rect x="170" y="20" width="60" height="50" rx="6" fill="#E4EDE0"/><rect x="300" y="200" width="80" height="70" rx="6" fill="#E4EDE0"/><circle cx="200" cy="140" r="8" fill="#80192D"/></svg>
+          <span class="pinb">W House · รามอินทรา</span>
+          <a class="btn white" href="https://www.google.com/maps/search/W+House+%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2" target="_blank" rel="noopener"><svg class="ico"><use href="#i-map"/></svg>เปิดใน Google Maps</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+</main>
+
+<section class="cta" style="padding:0">
+  <div class="wrap">
+    <div><h2>เริ่มต้น <em>บ้านของคุณ</em> วันนี้</h2><p>นัดคุยกับสถาปนิกฟรี ที่สำนักงานหรือออนไลน์</p></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn gold" href="#contact"><svg class="ico"><use href="#i-cal"/></svg>นัดคุยสถาปนิก</a><span class="btn line" style="border-color:rgba(255,255,255,.4);color:#fff;cursor:text;user-select:all"><svg class="ico"><use href="#i-phone"/></svg>093-555-0596</span></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div style="display:grid;gap:14px;align-content:start">
+      <a class="logo" href="#home"><img src="img/brand/logo-footer.png" width="147" height="34" alt="W House"></a>
+      <p>บริษัท ดับบลิว เฮ้าส์ จำกัด<br>65/6 ซอยรามอินทรา 14 แขวงท่าแร้ง<br>เขตบางเขน กรุงเทพฯ 10230<br>marketing@whouse.co.th</p>
+    </div>
+    <div><h4>เมนู</h4><ul><li><a href="#projects">ผลงาน</a></li><li><a href="#styles">สไตล์บ้าน</a></li><li><a href="#about">เกี่ยวกับเรา</a></li><li><a href="#reviews">รีวิว</a></li></ul></div>
+    <div><h4>บริการ</h4><ul><li><a href="#process">ขั้นตอนการทำงาน</a></li><li><a href="#process">ออกแบบสถาปัตยกรรม</a></li><li><a href="#process">ก่อสร้างบ้าน</a></li><li><a href="#saved">บ้านที่บันทึกไว้</a></li></ul></div>
+    <div><h4>ติดต่อ</h4><ul><li>093-555-0596</li><li>สำนักงาน รามอินทรา</li><li>จันทร์ – เสาร์ 9:00 – 18:00</li><li><a href="#contact" style="color:var(--gold);font-weight:600">นัดคุยสถาปนิก →</a></li></ul></div>
+    <div class="copy">© 2026 W House · Mockup แบบ D สำหรับนำเสนอ · ตัวเลขบริษัท รีวิว และรายละเอียดบางส่วนของโครงการเป็นข้อมูลสมมติ</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="ภาพผลงาน">
+  <div class="top"><span id="lbcap"></span><button class="cbtn" data-lbclose aria-label="ปิด"><svg class="ico"><use href="#i-x"/></svg></button></div>
+  <div class="stage"><img id="lbimg" alt=""><button class="cbtn pv" id="lbprev" aria-label="ภาพก่อนหน้า"><svg class="ico"><use href="#i-arl"/></svg></button><button class="cbtn nx" id="lbnext" aria-label="ภาพถัดไป"><svg class="ico"><use href="#i-arr"/></svg></button></div>
+  <div class="thumbs" id="lbthumbs"></div>
+</div>
+<div class="lb vid" id="vid" hidden role="dialog" aria-modal="true" aria-label="วิดีโอผลงาน">
+  <div class="top"><span>The Creston Hills · เขาใหญ่ <span class="note-s" style="color:rgba(255,255,255,.6)">(ตัวอย่างสไลด์แทนวิดีโอจริง)</span></span><button class="cbtn" data-vidclose aria-label="ปิด"><svg class="ico"><use href="#i-x"/></svg></button></div>
+  <div class="stage"><img id="vidimg" alt="ภาพผลงาน The Creston Hills"></div>
+  <div style="display:grid;gap:12px;justify-items:center"><div class="bar2"><i id="vidbar"></i></div><a class="btn white" href="#project-creston" data-vidclose>ดูรายละเอียดโครงการ <svg class="ico"><use href="#i-arr"/></svg></a></div>
+</div>
+
+<script>
+const IMG=n=>({s:`img/s/${n}.jpg`,m:`img/m/${n}.jpg`,l:`img/${n}.jpg`});
+const STY={
+  modern:{n:'Modern',th:'โมเดิร์น',img:'s-modern',d:'เส้นสายเรียบ หลังคาแบน ผนังกระจกบานใหญ่ เน้นพื้นที่โล่งและแสงธรรมชาติ',k:['หลังคาแบน','กระจกบานใหญ่','โทนขาว-เทา']},
+  tropical:{n:'Tropical',th:'ทรอปิคอล',img:'s-tropical-2',d:'ชายคายื่นยาว ช่องลมเยอะ เปิดบ้านออกสู่สวน เหมาะกับแดดและฝนเมืองไทย',k:['ชายคายื่น','ระบายอากาศดี','เชื่อมต่อสวน']},
+  contemporary:{n:'Contemporary',th:'ร่วมสมัย',img:'s-contemporary-2',d:'ผสมหน้าจั่วกับวัสดุสมัยใหม่ งานไม้ตัดผนังขาว อบอุ่นแต่ไม่เชย',k:['หน้าจั่วร่วมสมัย','ไม้ + ปูนขาว','ฟังก์ชันครอบครัว']},
+  classic:{n:'Classic',th:'คลาสสิก',img:'s-classic-2',d:'สัดส่วนสมมาตร ซุ้มโค้ง บัวและคิ้วปูน ให้ความรู้สึกมั่นคงและสง่างาม',k:['สมมาตร','ซุ้มโค้ง','งานบัวปูน']},
+  villa:{n:'Villa',th:'บ้านพักตากอากาศ',img:'s-villa-style-2',d:'บ้านหลังที่สองสำหรับพักผ่อน วางผังรับวิว มีสระว่ายน้ำและเทอเรซกว้าง',k:['รับวิว','สระว่ายน้ำ','เทอเรซกว้าง']}
+};
+const PJ=[
+  {id:'creston',t:'The Creston Hills',type:'บ้านพักตากอากาศ',st:['tropical','villa'],sn:'Modern Tropical',area:'khaoyai',loc:'เขาใหญ่ นครราชสีมา',bed:3,bath:4,fl:2,a:'535',land:'1 ไร่ 2 งาน',yr:2026,dur:'14 เดือน',gal:['03','01','02','pcreston-air','04','05','06','07'],
+   d:['บ้านริมทะเลสาบหันรับวิวภูเขา ทุกห้องหลักเปิดออกสู่สวนและสระว่ายน้ำ','ผนังอิฐโทนส้มเลือกให้ทนแดดฝนและกลมกลืนกับเขาโดยรอบ ชายคายื่นยาวช่วยกันฝนสาดและลดความร้อนเข้าตัวบ้าน'],
+   f:['สระว่ายน้ำส่วนตัวหันรับวิวภูเขา','ผนังกระจกสูงสองชั้นในโถงนั่งเล่น','ชายคายื่นยาวกันแดดและฝน','ทางเดินสวนรอบทะเลสาบ']},
+  {id:'navathanee',t:'บ้านพักอาศัย หมู่บ้านนวธานี',type:'บ้านพักอาศัย',st:['contemporary','modern'],sn:'Modern Contemporary',area:'bkk',loc:'บึงกุ่ม กรุงเทพฯ',bed:5,bath:7,fl:2,a:'1,380',land:'400 ตร.วา',yr:2025,dur:'16 เดือน',gal:['18','19','20'],
+   d:['บ้านหลังใหญ่สำหรับครอบครัวหลายรุ่น พร้อมสนามบาสส่วนตัวและสวนกว้าง','แยกโซนผู้ใหญ่และโซนลูก ๆ ชัดเจน แต่ยังมีโถงกลางให้ทุกคนมาเจอกัน'],
+   f:['สนามบาสเกตบอลส่วนตัว','แยกโซนครอบครัวหลายรุ่น','ประตูรั้วออกแบบเฉพาะ','สวนกว้างรอบบ้าน']},
+  {id:'ramkhamhaeng',t:'บ้านพักอาศัย รามคำแหง',type:'บ้านพักอาศัย',st:['contemporary','modern'],sn:'Modern Contemporary',area:'bkk',loc:'รามคำแหง กรุงเทพฯ',bed:4,bath:5,fl:2,a:'710',land:'120 ตร.วา',yr:2025,dur:'11 เดือน',gal:['17','12','13','14','15','16'],
+   d:['หน้าจั่วสีขาวตัดงานไม้ พร้อมโรงจอดรถในตัว ใช้พื้นที่ดินในเมืองได้คุ้มที่สุด','ภายในเปิดโล่งต่อเนื่อง ห้องนั่งเล่นมีชั้นโชว์ไฟซ่อนสำหรับของสะสมของเจ้าของบ้าน'],
+   f:['โรงจอดรถในตัว 2 คัน','หน้าจั่วสูงพร้อมกระจกรับแสง','ประตูไม้ระแนงออกแบบเฉพาะ','ห้องนอนใหญ่พร้อม walk-in closet']},
+  {id:'thongsathit',t:'ทองสถิตย์ ฮิลล์',type:'บ้านพักตากอากาศ',st:['tropical','villa'],sn:'Modern Tropical',area:'khaoyai',loc:'เขาใหญ่ นครราชสีมา',bed:4,bath:6,fl:2,a:'540',land:'2 ไร่',yr:2024,dur:'12 เดือน',gal:['10','11','09'],
+   d:['“บ้านต้นไม้” บ้านพักตากอากาศใกล้ชิดธรรมชาติ ผนังกระจกรอบด้าน นั่งเล่นอยู่กลางต้นไม้','ห้องนอนทุกห้องวางมุมให้รับวิวสองด้าน พร้อมเทอเรซกึ่งเอาท์ดอร์สำหรับนั่งเล่นตอนเย็น'],
+   f:['ผนังกระจกมุมห้อง 270 องศา','ห้องนอนรับวิวสองด้าน','เทอเรซกึ่งเอาท์ดอร์','วัสดุโครงสร้างทนความชื้น']},
+  {id:'miracles',t:'Miracles V',type:'บ้านพักตากอากาศ',st:['tropical','villa'],sn:'Modern Tropical',area:'khaoyai',loc:'เขาใหญ่ นครราชสีมา',bed:4,bath:5,fl:2,a:'620',land:'1 ไร่',yr:2023,dur:'12 เดือน',gal:['22'],
+   d:['บ้านพักตากอากาศสองชั้น เสาสูงสองชั้นและระแนงไม้แนวตั้งเป็นหน้าตาของบ้าน หันหน้ารับสนามหญ้ากว้าง','หลังคาทรงปั้นหยาชายคายื่นช่วยกันแดดฝน เหมาะกับอากาศเขาใหญ่'],
+   f:['เสาสูงสองชั้นหน้าบ้าน','ระแนงไม้แนวตั้ง','ห้องนั่งเล่นเพดานสูง','หลังคาปั้นหยาชายคายื่น']},
+  {id:'talingchan',t:'บ้านพักอาศัย 3 ชั้น ตลิ่งชัน',type:'บ้านพักอาศัย',st:['modern'],sn:'Modern',area:'bkk',loc:'ตลิ่งชัน กรุงเทพฯ',bed:5,bath:6,fl:3,a:'850',land:'150 ตร.วา',yr:2022,dur:'14 เดือน',gal:['p3story'],
+   d:['บ้านสามชั้นโทนเข้ม ผนังหินธรรมชาติตัดระแนงไม้ ระเบียงกระจกรับวิวสวน','ชั้นสามเป็นโซนพักผ่อนส่วนตัวพร้อมดาดฟ้า'],
+   f:['ผนังหินธรรมชาติ','ระแนงไม้บังแดด','ระเบียงกระจก','ดาดฟ้าชั้นสาม']},
+  {id:'bangna',t:'บ้านพักอาศัย 2 ชั้น บางนา-ตราด',type:'บ้านพักอาศัย',st:['classic'],sn:'Classic',area:'bkk',loc:'บางนา-ตราด',bed:4,bath:5,fl:2,a:'620',land:'150 ตร.วา',yr:2022,dur:'12 เดือน',gal:['21'],
+   d:['บ้านสองชั้นสัดส่วนสมมาตร ซุ้มโค้งหน้าบ้านและงานบัวปูนรอบหน้าต่าง','โถงบันไดกลางบ้านสูงสองชั้น พร้อมโรงจอดรถด้านข้าง'],
+   f:['ซุ้มโค้งทางเข้า','งานบัวปูนรอบบ้าน','โถงบันไดสูงสองชั้น','ระเบียงเหล็กดัดลวดลายเฉพาะ']},
+  {id:'thawi',t:'บ้านพักอาศัย 2 ชั้น ทวีวัฒนา',type:'บ้านพักอาศัย',st:['contemporary'],sn:'Contemporary',area:'bkk',loc:'ทวีวัฒนา กรุงเทพฯ',bed:4,bath:5,fl:2,a:'650',land:'200 ตร.วา',yr:2022,dur:'12 เดือน',gal:['pthawi'],
+   d:['บ้านสองชั้นหน้ากว้าง ผนังหินเทาเข้มตัดผนังขาว กระจกบานใหญ่รับสนามหญ้าหน้าบ้าน','ประตูไม้บานใหญ่กลางบ้านเป็นจุดนำสายตา'],
+   f:['หน้าบ้านกว้างรับสนาม','ผนังหินเทาเข้ม','ประตูไม้บานใหญ่','กระจกบานสูง']},
+  {id:'vibha',t:'บ้านพักอาศัย 3 ชั้น วิภาวดี 58',type:'บ้านพักอาศัย',st:['modern'],sn:'Modern',area:'bkk',loc:'วิภาวดี 58 กรุงเทพฯ',bed:5,bath:6,fl:3,a:'780',land:'100 ตร.วา',yr:2023,dur:'15 เดือน',gal:['pvibha'],
+   d:['บ้านโมเดิร์นสามชั้นกล่องสีขาวยื่นลอยเหนือชั้นล่าง กระจกรอบด้านในชั้นสอง','รั้วระแนงสีเข้มให้ความเป็นส่วนตัวกับที่ดินในเมือง'],
+   f:['กล่องชั้นสองยื่นลอย','กระจกรอบด้าน','รั้วระแนงสีเข้ม','ที่จอดรถใต้ตัวบ้าน']}
+];
+
+const RV=[
+  {q:'ทีมฟังเราตั้งแต่วันแรก บ้านที่ได้ใช้ชีวิตง่ายกว่าที่คิดไว้มาก ทุกห้องมองเห็นสวน',n:'คุณสมชาย',p:'creston',img:'02'},
+  {q:'ชอบที่มีรายงานพร้อมรูปทุกสัปดาห์ อยู่ต่างประเทศก็ยังรู้ว่างานเดินถึงไหน',n:'คุณอรวรรณ',p:'thongsathit'},
+  {q:'ที่ดินในเมืองแคบกว่าที่คิด แต่สถาปนิกจัดผังให้มีที่จอดรถในตัวและยังได้สวนหลังบ้าน',n:'คุณภาคิน',p:'ramkhamhaeng',img:'17'},
+  {q:'บ้านเย็นกว่าบ้านหลังเก่ามาก เปิดแอร์น้อยลงเพราะวางทิศและชายคาไว้ดี',n:'คุณจิราพร',p:'miracles'},
+  {q:'ลูก ๆ ชอบสนามบาสที่สุด ส่วนผู้ใหญ่ชอบที่แยกโซนเป็นสัดส่วน',n:'คุณวิชัย',p:'navathanee',img:'19'},
+  {q:'ใบเสนอราคาแยกรายการชัด ไม่มีค่าใช้จ่ายแอบแฝงระหว่างทาง',n:'คุณศิริพร',p:'bangna'}
+];
+const STEPS=[
+  {t:'คุยโจทย์และดูที่ดิน',dur:'1 – 2 สัปดาห์',d:'สถาปนิกนั่งคุยว่าใครจะอยู่ ใช้ชีวิตแบบไหน แล้วลงพื้นที่ดูทิศแดด ลม ระดับดิน และวิวรอบที่ดิน',g:['สรุปโจทย์บ้าน (Design Brief)','กรอบงบประมาณเบื้องต้น']},
+  {t:'ออกแบบสถาปัตยกรรม',dur:'1 – 2 เดือน',d:'วางผังและรูปทรงบ้าน พร้อมภาพ 3D ให้เห็นบ้านก่อนสร้างจริง แก้ไขได้จนกว่าผังจะลงตัว',g:['ผังพื้นทุกชั้น','ภาพ 3D ภายนอกและภายใน']},
+  {t:'แบบก่อสร้างและขออนุญาต',dur:'1 – 2 เดือน',d:'ทำแบบก่อสร้าง งานระบบ และรายการวัสดุครบชุด พร้อมยื่นขออนุญาตก่อสร้างให้',g:['แบบก่อสร้างครบชุด','BOQ และใบเสนอราคา','ใบอนุญาตก่อสร้าง']},
+  {t:'ก่อสร้าง',dur:'8 – 16 เดือน',d:'วิศวกรของ W House คุมงานหน้างานเอง มีรายงานความคืบหน้าทุกสัปดาห์และตรวจงานร่วมกันก่อนจ่ายแต่ละงวด',g:['รายงานพร้อมรูปทุกสัปดาห์','ตรวจงานก่อนจ่ายทุกงวด']},
+  {t:'ส่งมอบและดูแลต่อ',dur:'รับประกัน 10 ปี',d:'ตรวจรับบ้านร่วมกันทีละห้อง ส่งมอบคู่มือบ้าน และทีมเดิมดูแลต่อหลังเข้าอยู่',g:['คู่มือบ้านและแบบ As-built','รับประกันโครงสร้าง 10 ปี']}
+];
+const u=id=>`<svg class="ico"><use href="#i-${id}"/></svg>`;
+const byId=id=>PJ.find(p=>p.id===id);
+let saved=[];try{saved=JSON.parse(localStorage.getItem('wh-saved')||'[]')}catch(e){}
+const saveSaved=()=>{try{localStorage.setItem('wh-saved',JSON.stringify(saved))}catch(e){}document.querySelectorAll('.savedn').forEach(e=>{e.textContent=saved.length;e.dataset.n=saved.length});document.querySelectorAll('.savedn2').forEach(e=>e.textContent=saved.length)};
+
+function card(p,sizes){const on=saved.includes(p.id);const i=IMG(p.gal[0]);return `<article class="card" data-go="${p.id}" tabindex="0" aria-label="${p.t}">
+  <div class="ph"><img src="${i.m}" srcset="${i.s} 640w, ${i.m} 1200w" sizes="${sizes}" alt="${p.t}" loading="lazy"><span class="yr">แล้วเสร็จ ${p.yr}</span>
+  <button class="heart${on?' on':''}" data-heart="${p.id}" aria-label="บันทึก ${p.t}" aria-pressed="${on}">${u('heart')}</button></div>
+  <div class="bd"><div class="chips"><span class="chip g">${p.sn}</span><span class="chip">${p.type}</span></div>
+  <h3>${p.t}</h3><span class="loc">${u('pin')}${p.loc}</span><p class="desc">${p.d[0]}</p>
+  <div class="specs"><span>${u('bed')}${p.bed} ห้องนอน</span><span>${u('bath')}${p.bath} ห้องน้ำ</span><span>${u('home')}${p.fl} ชั้น</span></div>
+  <div class="area"><small>พื้นที่ใช้สอย</small><b>${p.a} ตร.ม.</b></div></div></article>`}
+
+/* home */
+document.getElementById('cards').innerHTML=PJ.slice(0,4).map(p=>card(p,'(max-width:700px) 78vw, (max-width:1100px) 46vw, 290px')).join('');
+document.getElementById('types').innerHTML=Object.entries(STY).map(([k,s])=>{const i=IMG(s.img);return `<a class="type" href="#style-${k}"><img src="${i.m}" srcset="${i.s} 640w, ${i.m} 1200w" sizes="(max-width:700px) 50vw, 20vw" alt="บ้านสไตล์${s.th}" loading="lazy"><span class="cap"><span><b>${s.n}</b><small>${s.th}</small></span><span class="go">${u('arr')}</span></span></a>`}).join('');
+document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>document.getElementById('cards').scrollBy({left:(b.classList.contains('r')?1:-1)*300,behavior:'smooth'})));
+let qi=0;const showQ=()=>{const r=RV[qi];document.getElementById('hq').textContent=`“${r.q}”`;document.getElementById('hqa').textContent=r.n.replace('คุณ','')[0];document.getElementById('hqn').textContent=r.n;document.getElementById('hqp').textContent='เจ้าของบ้าน · '+byId(r.p).t};
+showQ();document.getElementById('qnext').onclick=()=>{qi=(qi+1)%RV.length;showQ()};document.getElementById('qprev').onclick=()=>{qi=(qi-1+RV.length)%RV.length;showQ()};
+
+/* completed projects page */
+let filt='all',area='all',fl='all',sort='new',q='',mode='grid',tab='done';
+const num=x=>+String(x).replace(/,/g,'');
+function syncSel(){const A=document.getElementById('cp-area'),F=document.getElementById('cp-fl');if(A)A.value=area;if(F)F.value=fl}
+function resetCP(){filt='all';area='all';fl='all';q='';const qi=document.getElementById('cp-q');if(qi)qi.value='';syncSel()}
+const ONGO=[
+  {t:'บ้านพักอาศัย 2 ชั้น (ตัวอย่าง)',loc:'นนทบุรี',img:'render',pct:65,end:'มี.ค. 2027',sn:'Modern'},
+  {t:'บ้านพักตากอากาศ (ตัวอย่าง)',loc:'เขาใหญ่',img:'s-villa-style-2',pct:40,end:'ส.ค. 2027',sn:'Villa'},
+  {t:'บ้านพักอาศัย 3 ชั้น (ตัวอย่าง)',loc:'กรุงเทพฯ',img:'s-contemporary-2',pct:15,end:'ม.ค. 2028',sn:'Contemporary'}
+];
+function renderProjects(){
+  document.querySelectorAll('.cp-tabs button').forEach(b=>{const on=b.dataset.tab===tab;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});
+  document.getElementById('cp-done').hidden=tab!=='done';document.getElementById('cp-ongoing').hidden=tab!=='ongoing';
+  if(tab==='ongoing'){
+    document.querySelector('#cp-ongoing .wrap').innerHTML=`<div class="ongo-head"><div><span class="eyebrow">Ongoing Projects</span><h2 style="font-size:clamp(26px,3vw,36px);margin-top:8px">บ้านที่กำลังก่อสร้าง</h2></div><span class="note-s">การ์ดหน้านี้<b> เป็นข้อมูลตัวอย่าง</b></span></div>
+    <div class="pgrid">${ONGO.map(o=>{const i=IMG(o.img);return `<article class="card" style="cursor:default"><div class="ph"><img src="${i.m}" srcset="${i.s} 640w, ${i.m} 1200w" sizes="(max-width:700px) 100vw, 390px" alt="${o.t}" loading="lazy"><span class="yr">คาดว่าเสร็จ ${o.end}</span></div><div class="bd"><div class="chips"><span class="chip g">${o.sn}</span><span class="chip">กำลังก่อสร้าง</span></div><h3>${o.t}</h3><span class="loc">${u('pin')}${o.loc}</span><div class="prog"><div class="row"><span>ความคืบหน้า</span><b>${o.pct}%</b></div><div class="bar"><i style="width:${o.pct}%"></i></div></div></div></article>`}).join('')}</div>
+    <div style="text-align:center;margin-top:36px"><button class="btn line" data-tab="done">ดูผลงานที่แล้วเสร็จ</button></div>`;
+    return}
+  const base=PJ.filter(p=>(area==='all'||p.area===area)&&(fl==='all'||String(p.fl)===fl)&&(!q||(p.t+p.loc+p.sn+p.type).toLowerCase().includes(q.toLowerCase())));
+  const counts={all:base.length};Object.keys(STY).forEach(k=>counts[k]=base.filter(p=>p.st.includes(k)).length);
+  document.getElementById('filters').innerHTML=[['all','ทั้งหมด'],...Object.entries(STY).map(([k,s])=>[k,s.n])].map(([k,n])=>`<button class="fchip${filt===k?' on':''}" data-f="${k}" role="tab" aria-selected="${filt===k}">${n}<span>${counts[k]}</span></button>`).join('');
+  let list=base.filter(p=>filt==='all'||p.st.includes(filt));
+  list=list.map((p,i)=>({p,i})).sort((x,y)=>sort==='big'?num(y.p.a)-num(x.p.a):sort==='small'?num(x.p.a)-num(y.p.a):(y.p.yr-x.p.yr)||(x.i-y.i)).map(x=>x.p);
+  const active=filt!=='all'||area!=='all'||fl!=='all'||q;
+  document.getElementById('rcount').innerHTML=`พบ <b>${list.length}</b> โครงการ${active?'<button id="clearf">ล้างตัวกรอง</button>':''}`;
+  const g=document.getElementById('pgrid');g.classList.toggle('list',mode==='list');g.style.display=list.length?'':'block';
+  g.innerHTML=list.length?list.map(p=>card(p,mode==='list'?'(max-width:700px) 100vw, 340px':'(max-width:700px) 100vw, (max-width:1100px) 46vw, 390px')).join(''):`<div class="empty">${u('search')}<b>ไม่พบผลงานที่ตรงกับตัวกรอง</b><p>ลองเลือกสไตล์หรือพื้นที่อื่น</p><button class="btn dark" id="clearf2">ล้างตัวกรอง</button></div>`;
+  document.getElementById('n-bkk').textContent=PJ.filter(p=>p.area==='bkk').length+' โครงการ';
+  document.getElementById('n-khaoyai').textContent=PJ.filter(p=>p.area==='khaoyai').length+' โครงการ';
+  document.querySelectorAll('.vtog button').forEach(b=>{const on=b.dataset.v===mode;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+}
+document.querySelector('[data-view="projects"]').addEventListener('click',e=>{
+  const f=e.target.closest('[data-f]');if(f){filt=f.dataset.f;history.replaceState(null,'',filt==='all'?'#projects':'#style-'+filt);renderProjects();return}
+  const t=e.target.closest('[data-tab]');if(t){tab=t.dataset.tab;renderProjects();return}
+  const v=e.target.closest('[data-v]');if(v){mode=v.dataset.v;renderProjects();return}
+  const ar=e.target.closest('[data-area]');if(ar){area=ar.dataset.area;syncSel();renderProjects();document.getElementById('cp-grid').scrollIntoView({behavior:'smooth'});return}
+  if(e.target.closest('#clearf,#clearf2')){resetCP();history.replaceState(null,'','#projects');renderProjects();return}
+  if(e.target.closest('#more')){const m=document.getElementById('more');m.disabled=true;m.textContent='แสดงครบใน mockup แล้ว';document.getElementById('morenote').hidden=false;document.getElementById('pbar').style.width='100%'}
+});
+document.getElementById('cp-area').addEventListener('change',e=>{area=e.target.value;renderProjects()});
+document.getElementById('cp-fl').addEventListener('change',e=>{fl=e.target.value;renderProjects()});
+document.getElementById('cp-sort').addEventListener('change',e=>{sort=e.target.value;renderProjects()});
+document.getElementById('cp-q').addEventListener('input',e=>{q=e.target.value.trim();renderProjects()});
+
+/* detail */
+let gal=[],gi=0,curP=null;
+function renderDetail(p){
+  curP=p;const g=p.gal;const cls=g.length===1?'one':g.length<=3?'three':'';
+  const shown=g.slice(0,g.length<=3?3:5);
+  const rel=PJ.filter(x=>x.id!==p.id&&x.st.some(s=>p.st.includes(s))).concat(PJ.filter(x=>x.id!==p.id&&!x.st.some(s=>p.st.includes(s)))).slice(0,3);
+  const on=saved.includes(p.id);
+  document.getElementById('detail').innerHTML=`
+  <div class="crumbs" style="margin-bottom:18px"><a href="#home">หน้าแรก</a><i></i><a href="#projects">Completed Projects</a><i></i><span>${p.t}</span></div>
+  <div class="gal ${cls}">${shown.map((n,i)=>{const im=IMG(n);return `<button data-lb="${i}" aria-label="ดูภาพที่ ${i+1}"><img src="${im.m}" srcset="${im.s} 640w, ${im.m} 1200w" sizes="${i===0?'(max-width:700px) 100vw, 60vw':'30vw'}" alt="${p.t} ภาพที่ ${i+1}"></button>`}).join('')}
+  ${g.length>1?`<button class="all" data-lb="0">${u('grid')}ดูรูปทั้งหมด (${g.length})</button>`:''}</div>
+  <div class="dlay">
+    <div>
+      <div class="chips"><span class="chip g">${p.sn}</span><span class="chip">${p.type}</span><span class="chip">แล้วเสร็จ ${p.yr}</span></div>
+      <h1>${p.t}</h1><span class="loc" style="font-size:14.5px">${u('pin')}${p.loc}</span>
+      <div class="bigspecs">
+        <div>${u('area')}<b>${p.a}</b><small>ตร.ม. พื้นที่ใช้สอย</small></div>
+        <div>${u('bed')}<b>${p.bed}</b><small>ห้องนอน</small></div>
+        <div>${u('bath')}<b>${p.bath}</b><small>ห้องน้ำ</small></div>
+        <div>${u('home')}<b>${p.fl}</b><small>ชั้น</small></div>
+      </div>
+      <div class="dtext">
+        <h2 style="margin-top:0">เกี่ยวกับบ้านหลังนี้</h2>${p.d.map(t=>`<p>${t}</p>`).join('')}
+        <h2>จุดเด่นของการออกแบบ</h2><ul class="feat">${p.f.map(t=>`<li>${u('check')}<span>${t}</span></li>`).join('')}</ul>
+      </div>
+    </div>
+    <aside class="side-card">
+      <div class="area"><small>พื้นที่ใช้สอย</small><b>${p.a} ตร.ม.</b></div>
+      <dl class="facts"><dt>ขนาดที่ดิน</dt><dd>${p.land}</dd><dt>ระยะเวลาก่อสร้าง</dt><dd>${p.dur}</dd><dt>ปีที่แล้วเสร็จ</dt><dd>${p.yr}</dd><dt>สไตล์</dt><dd>${p.sn}</dd></dl>
+      <hr>
+      <a class="btn gold" href="#contact" data-about="${p.id}">${u('cal')}นัดคุยเรื่องบ้านแบบนี้</a>
+      <button class="btn line" data-heart="${p.id}" aria-pressed="${on}" style="justify-content:center">${u('heart')}<span>${on?'บันทึกแล้ว':'บันทึกบ้านหลังนี้'}</span></button>
+      <hr>
+      <div class="agent"><span class="av">ป</span><div><b>คุณปวีณา</b><small>สถาปนิกผู้ดูแลโครงการ (ตัวอย่าง)</small></div></div>
+      <p class="note-s">ขนาดที่ดิน ระยะเวลา และปีที่แล้วเสร็จ<b> เป็นข้อมูลสมมติ</b></p>
+    </aside>
+  </div>
+  <div class="related"><div class="head"><div><span class="eyebrow">You May Also Like</span><h2>ผลงานที่ใกล้เคียง</h2></div><a class="more" href="#projects">ดูผลงานทั้งหมด ${u('arr')}</a></div>
+  <div class="pgrid">${rel.map(x=>card(x,'(max-width:700px) 100vw, 390px')).join('')}</div></div>`;
+  gal=g;
+}
+
+/* styles page */
+document.getElementById('stylelist').innerHTML=Object.entries(STY).map(([k,s])=>{const i=IMG(s.img);const n=PJ.filter(p=>p.st.includes(k)).length;return `<div class="srow"><div class="simg"><img src="${i.m}" srcset="${i.s} 640w, ${i.m} 1200w" sizes="(max-width:900px) 100vw, 55vw" alt="บ้านสไตล์${s.th}" loading="lazy"></div>
+<div class="stx"><span class="eyebrow">House Style</span><h2>${s.n}<small>${s.th}</small></h2><p>${s.d}</p><div class="chips">${s.k.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#style-${k}">ดูผลงานสไตล์นี้ (${n}) ${u('arr')}</a><a class="btn line" href="#contact" data-style="${s.n}">ปรึกษาสไตล์นี้</a></div></div></div>`}).join('');
+
+/* process */
+document.getElementById('steps2').innerHTML=STEPS.map((s,i)=>`<div class="st2"><span class="n">${String(i+1).padStart(2,'0')}</span><div><span class="dur">${u('clock')}${s.dur}</span><h3>${s.t}</h3><p>${s.d}</p></div><div class="get"><b>สิ่งที่คุณได้รับ</b><ul>${s.g.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>`).join('')+`<div style="padding-top:34px"><a class="btn gold" href="#contact">${u('cal')}เริ่มขั้นตอนแรก นัดคุยสถาปนิก</a></div>`;
+
+/* reviews */
+document.getElementById('rgrid').innerHTML=RV.map(r=>{const p=byId(r.p);const body=`<div class="stars">★★★★★</div><blockquote>“${r.q}”</blockquote><div class="who"><span class="av">${r.n.replace('คุณ','')[0]}</span><div><b>${r.n}</b><small>เจ้าของบ้าน</small></div></div><a class="proj" href="#project-${p.id}">${u('home')}${p.t}</a>`;
+ if(r.img){const i=IMG(r.img);return `<div class="rv ph"><img src="${i.m}" srcset="${i.s} 640w, ${i.m} 1200w" sizes="(max-width:700px) 100vw, 33vw" alt="${p.t}" loading="lazy"><div class="in">${body}</div></div>`}
+ return `<div class="rv">${body}</div>`}).join('');
+
+/* saved */
+function renderSaved(){const list=PJ.filter(p=>saved.includes(p.id));const el=document.getElementById('savedgrid');
+ el.style.display=list.length?'':'block';
+ el.innerHTML=list.length?list.map(p=>card(p,'(max-width:700px) 100vw, 390px')).join(''):`<div class="empty">${u('heart')}<b>ยังไม่มีบ้านที่บันทึกไว้</b><p>กดรูปหัวใจบนการ์ดผลงานเพื่อเก็บไว้ที่นี่</p><a class="btn dark" href="#projects">ไปดูผลงาน ${u('arr')}</a></div>`}
+
+/* contact */
+const TH_D=['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'],TH_M=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+(function(){const d=new Date();let out=[],x=new Date(d);while(out.length<6){x.setDate(x.getDate()+1);if(x.getDay()!==0)out.push(new Date(x))}
+ document.getElementById('days').innerHTML=out.map((t,i)=>`<label><input type="radio" name="c-day" value="${TH_D[t.getDay()]} ${t.getDate()} ${TH_M[t.getMonth()]}"${i===0?' checked':''}>${TH_D[t.getDay()]}<small>${t.getDate()} ${TH_M[t.getMonth()]}</small></label>`).join('');
+ document.getElementById('times').innerHTML=['10:00','11:30','13:00','14:30','16:00'].map((t,i)=>`<label><input type="radio" name="c-time" value="${t}"${i===2?' checked':''}>${t}</label>`).join('')})();
+let aboutId=null;
+function setAbout(){const el=document.getElementById('aboutproj');el.innerHTML=aboutId?`นัดคุยเกี่ยวกับ: <b>${byId(aboutId).t}</b>`:'กรอกข้อมูลสั้น ๆ ทีมงานจะโทรยืนยันภายใน 1 วันทำการ'}
+const formHTML=document.getElementById('formcard').innerHTML;
+function bindForm(){const f=document.getElementById('bookform');if(!f)return;f.addEventListener('submit',e=>{e.preventDefault();
+  const name=f.querySelector('#c-name'),tel=f.querySelector('#c-tel');let ok=true;
+  [[name,name.value.trim().length>1],[tel,/^0\d{8,9}$/.test(tel.value.replace(/[\s-]/g,''))]].forEach(([el,v])=>{el.parentElement.classList.toggle('err',!v);if(!v)ok=false});
+  if(!ok){f.querySelector('.err input').focus();return}
+  const v=n=>f.querySelector(`input[name="${n}"]:checked`).value;
+  document.getElementById('formcard').innerHTML=`<div class="done"><span class="ok">${u('check')}</span><h2>รับนัดหมายแล้ว</h2><p style="color:var(--soft);max-width:420px">ทีมงานจะโทรยืนยันที่เบอร์ ${tel.value} ภายใน 1 วันทำการ (ตัวอย่าง ไม่ได้ส่งข้อมูลจริง)</p>
+  <div class="sum"><div><span>ชื่อ</span><b>${name.value.replace(/</g,'&lt;')}</b></div><div><span>วันและเวลา</span><b>${v('c-day')} · ${v('c-time')}</b></div><div><span>รูปแบบ</span><b>${v('c-mode')}</b></div><div><span>สไตล์ / งบ</span><b>${f.querySelector('#c-style').value} · ${f.querySelector('#c-budget').value}</b></div>${aboutId?`<div><span>โครงการอ้างอิง</span><b>${byId(aboutId).t}</b></div>`:''}</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn dark" href="#projects">ดูผลงานระหว่างรอ</a><button class="btn line" id="again">แก้ไขนัดหมาย</button></div></div>`;
+  document.getElementById('again').onclick=()=>{document.getElementById('formcard').innerHTML=formHTML;setAbout();bindForm()};
+ })}
+bindForm();setAbout();
+document.getElementById('planner').addEventListener('submit',e=>{e.preventDefault();['loc','style','budget','size'].forEach(k=>{const s=document.getElementById('c-'+k);if(s)s.value=document.getElementById('f-'+k).value});aboutId=null;setAbout();location.hash='#contact'});
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{const t=b.dataset.copy;const done=()=>{b.textContent='คัดลอกแล้ว'};try{navigator.clipboard.writeText(t).then(done,()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('telnum'));getSelection().removeAllRanges();getSelection().addRange(r)})}catch(e){}}));
+
+/* global clicks */
+document.addEventListener('click',e=>{
+  const h=e.target.closest('[data-heart]');
+  if(h){e.preventDefault();e.stopPropagation();const id=h.dataset.heart;saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];saveSaved();
+    document.querySelectorAll(`[data-heart="${id}"]`).forEach(b=>{const on=saved.includes(id);b.classList.toggle('on',on&&b.classList.contains('heart'));b.setAttribute('aria-pressed',on);const sp=b.querySelector('span');if(sp)sp.textContent=on?'บันทึกแล้ว':'บันทึกบ้านหลังนี้'});
+    if(current==='saved')renderSaved();return}
+  const c=e.target.closest('[data-go]');if(c){location.hash='#project-'+c.dataset.go;return}
+  const ca=e.target.closest('a[href="#contact"]');if(ca){aboutId=ca.dataset.about||null;if(aboutId){const s=document.getElementById('c-style');if(s)s.value=byId(aboutId).st[0]==='classic'?'Classic':byId(aboutId).sn.split(' ').pop()}setAbout()}
+  const sb=e.target.closest('[data-style]');if(sb){const s=document.getElementById('c-style');if(s)s.value=sb.dataset.style}
+  const lb=e.target.closest('[data-lb]');if(lb){openLb(+lb.dataset.lb)}
+});
+document.addEventListener('keydown',e=>{const c=e.target.closest&&e.target.closest('[data-go]');if(c&&(e.key==='Enter'||e.key===' ')&&!e.target.closest('[data-heart]')){e.preventDefault();location.hash='#project-'+c.dataset.go}});
+
+/* lightbox */
+const lbEl=document.getElementById('lb');
+function lbShow(i){gi=(i+gal.length)%gal.length;const im=IMG(gal[gi]);const img=document.getElementById('lbimg');img.src=im.m;img.srcset=`${im.m} 1200w, ${im.l} 1800w`;img.sizes='100vw';img.alt=`${curP.t} ภาพที่ ${gi+1}`;document.getElementById('lbcap').textContent=`${curP.t} · ${gi+1} / ${gal.length}`;document.querySelectorAll('#lbthumbs button').forEach((b,k)=>b.classList.toggle('on',k===gi))}
+function openLb(i){document.getElementById('lbthumbs').innerHTML=gal.map((n,k)=>`<button data-t="${k}" aria-label="ภาพที่ ${k+1}"><img src="${IMG(n).s}" alt=""></button>`).join('');lbEl.hidden=false;document.body.style.overflow='hidden';lbShow(i);lbEl.querySelector('[data-lbclose]').focus()}
+function closeLb(){lbEl.hidden=true;document.body.style.overflow=''}
+document.getElementById('lbprev').onclick=()=>lbShow(gi-1);document.getElementById('lbnext').onclick=()=>lbShow(gi+1);
+document.getElementById('lbthumbs').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(b)lbShow(+b.dataset.t)});
+lbEl.addEventListener('click',e=>{if(e.target.closest('[data-lbclose]')||e.target.classList.contains('stage'))closeLb()});
+(function(){let x=null;lbEl.addEventListener('touchstart',e=>{x=e.touches[0].clientX},{passive:true});lbEl.addEventListener('touchend',e=>{if(x===null)return;const d=e.changedTouches[0].clientX-x;if(Math.abs(d)>40)lbShow(gi+(d<0?1:-1));x=null},{passive:true})})();
+
+/* video slideshow */
+const vid=document.getElementById('vid');let vt=null,vi=0;const VG=byId('creston').gal;
+function vstep(){const img=document.getElementById('vidimg');img.style.animation='none';img.offsetHeight;img.style.animation='';img.src=IMG(VG[vi]).m;const bar=document.getElementById('vidbar');bar.style.transition='none';bar.style.width=(vi/VG.length*100)+'%';requestAnimationFrame(()=>{bar.style.transition='width 3.5s linear';bar.style.width=((vi+1)/VG.length*100)+'%'});vi=(vi+1)%VG.length}
+document.getElementById('playvid').onclick=()=>{vid.hidden=false;document.body.style.overflow='hidden';vi=0;vstep();vt=setInterval(vstep,3500);vid.querySelector('[data-vidclose]').focus()};
+function closeVid(){vid.hidden=true;document.body.style.overflow='';clearInterval(vt)}
+vid.addEventListener('click',e=>{if(e.target.closest('[data-vidclose]'))closeVid()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!lbEl.hidden)closeLb();if(!vid.hidden)closeVid();closeDrawer()}if(!lbEl.hidden){if(e.key==='ArrowRight')lbShow(gi+1);if(e.key==='ArrowLeft')lbShow(gi-1)}});
+
+/* drawer */
+const dr=document.getElementById('drawer'),bg=document.getElementById('burger');
+function closeDrawer(){dr.classList.remove('open');dr.setAttribute('aria-hidden','true');bg.setAttribute('aria-expanded','false')}
+bg.onclick=()=>{dr.classList.add('open');dr.setAttribute('aria-hidden','false');bg.setAttribute('aria-expanded','true')};
+dr.addEventListener('click',e=>{if(e.target.closest('[data-close]')||e.target.closest('a'))closeDrawer()});
+
+/* router */
+let current='home';
+function route(){
+  const h=(location.hash||'#home').slice(1);let v=h,nav=h;
+  if(h.startsWith('project-')){const p=byId(h.slice(8));if(p){v='project';nav='projects';renderDetail(p)}else v='projects'}
+  else if(h.startsWith('style-')){filt=STY[h.slice(6)]?h.slice(6):'all';v='projects';nav='projects'}
+  else if(h==='projects'||h==='completed'){v='projects';resetCP()}
+  if(!document.querySelector(`[data-view="${v}"]`)){v='home';nav='home'}
+  if(v==='projects'){if(h.startsWith('style-')){area='all';fl='all';q='';const qi=document.getElementById('cp-q');if(qi)qi.value='';syncSel()}tab='done';renderProjects();if(h.startsWith('style-'))nav='styles'}
+  if(v==='saved')renderSaved();
+  current=v;
+  document.querySelectorAll('.view').forEach(el=>el.classList.toggle('on',el.dataset.view===v));
+  document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===nav));
+  document.title=v==='home'?'W House Option D':`${(document.querySelector('[data-nav="'+nav+'"]')||{}).textContent||'W House'} · W House`;
+  window.scrollTo({top:0,behavior:'instant'});
+}
+window.addEventListener('hashchange',route);
+saveSaved();route();
+</script>

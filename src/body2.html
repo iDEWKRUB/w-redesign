@@ -1,0 +1,114 @@
+<div class="intro" id="intro" aria-hidden="true"><div class="in"><img src="img/brand/logo-footer.png" width="147" height="34" alt=""><i></i><small>LUXURY HOME BUILDER</small></div></div>
+<script>(function(){var e=document.getElementById("intro");try{if(sessionStorage.getItem("wh-intro")){e.remove();return}sessionStorage.setItem("wh-intro","1")}catch(x){}var done=function(){e.classList.add("out");setTimeout(function(){e.remove()},700)};var t0=Date.now();window.addEventListener("load",function(){setTimeout(done,Math.max(0,1200-(Date.now()-t0)))});setTimeout(done,2500)})();</script>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#home" aria-label="W House หน้าแรก"><img src="img/brand/logo-footer.png" width="147" height="34" alt="W House"></a>
+    <nav class="main" aria-label="เมนูหลัก">
+      <a href="#home" data-nav="home" data-en="Home">หน้าแรก</a>
+      <div class="dd" data-nav="design">
+        <button aria-haspopup="true"><span data-en="Design">แบบบ้าน</span> <svg class="ico"><use href="#i-chev"/></svg></button>
+        <div class="panel"><div class="mega" id="mega"></div></div>
+      </div>
+      <div class="dd" data-nav="projects">
+        <button aria-haspopup="true"><span data-en="Projects">ผลงาน</span> <svg class="ico"><use href="#i-chev"/></svg></button>
+        <div class="panel">
+          <a href="#projects"><svg class="ico"><use href="#i-home"/></svg><span>ผลงานที่แล้วเสร็จ<small>Completed Projects</small></span></a>
+          <a href="#ongoing"><svg class="ico"><use href="#i-helmet"/></svg><span>กำลังก่อสร้าง<small>Ongoing Projects</small></span></a>
+          <a href="#reviews"><svg class="ico"><use href="#i-chat"/></svg><span>รีวิวจากเจ้าของบ้าน<small>Reviews</small></span></a>
+        </div>
+      </div>
+      <a href="#process" data-nav="process" data-en="Process">ขั้นตอน</a>
+      <div class="dd" data-nav="news">
+        <button aria-haspopup="true"><span data-en="News &amp; Event">ข่าวสาร</span> <svg class="ico"><use href="#i-chev"/></svg></button>
+        <div class="panel">
+          <a href="#news-event"><svg class="ico"><use href="#i-grid"/></svg><span>News &amp; Event<small>รวมทุกหมวด</small></span></a>
+          <a href="#blog"><svg class="ico"><use href="#i-pen"/></svg><span>Blog<small>บทความน่ารู้</small></span></a>
+          <a href="#news"><svg class="ico"><use href="#i-chat"/></svg><span>News<small>ข่าวสาร</small></span></a>
+          <a href="#event"><svg class="ico"><use href="#i-cal"/></svg><span>Event<small>กิจกรรม</small></span></a>
+        </div>
+      </div>
+      <a href="#about" data-nav="about" data-en="About">เกี่ยวกับเรา</a>
+      <a href="#contact" data-nav="contact" data-en="Contact">ติดต่อ</a>
+    </nav>
+    <div class="hicons">
+      <button class="iconbtn" id="openSearch" aria-label="ค้นหา"><svg class="ico"><use href="#i-search"/></svg></button>
+      <a class="iconbtn" href="#saved" aria-label="บ้านที่บันทึกไว้"><svg class="ico"><use href="#i-heart"/></svg><em class="savedn" data-n="0">0</em></a>
+      <div class="lang" role="group" aria-label="ภาษา"><button class="on" data-lang="th">TH</button><button data-lang="en">EN</button></div>
+    </div>
+    <a class="btn dark" href="#contact" data-en="Book a meeting">นัดคุยสถาปนิก</a>
+    <button class="burger" id="burger" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="drawer"><svg class="ico"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="scrim" data-close></div>
+  <div class="panel" role="dialog" aria-label="เมนู">
+    <button class="x" data-close aria-label="ปิดเมนู">×</button>
+    <a class="dl" href="#home">หน้าแรก</a>
+    <details><summary>แบบบ้าน</summary><a href="#design">ดูแบบบ้านทั้งหมด</a><a href="#design-modern">Modern</a><a href="#design-tropical">Tropical</a><a href="#design-contemporary">Contemporary</a><a href="#design-classic">Classic</a><a href="#design-villa">Villa</a><a href="#design-special">Special Design</a><a href="#more-is-more">More Is More</a><a href="#a-life-of-style">A Life of Style</a></details>
+    <details><summary>ผลงาน</summary><a href="#projects">ผลงานที่แล้วเสร็จ</a><a href="#ongoing">กำลังก่อสร้าง</a><a href="#reviews">รีวิว</a></details>
+    <a class="dl" href="#process">ขั้นตอนการทำงาน</a>
+    <details><summary>ข่าวสาร</summary><a href="#news-event">News &amp; Event</a><a href="#blog">Blog</a><a href="#news">News</a><a href="#event">Event</a></details>
+    <a class="dl" href="#about">เกี่ยวกับเรา</a>
+    <a class="dl" href="#contact">ติดต่อ</a>
+    <a class="dl" href="#saved">บ้านที่บันทึกไว้ (<span class="savedn2">0</span>)</a>
+    <div class="langm lang" role="group" aria-label="ภาษา"><button class="on" data-lang="th">ไทย</button><button data-lang="en">English</button></div>
+    <a class="btn gold" href="#contact">นัดคุยสถาปนิก</a>
+  </div>
+</div>
+
+<main id="app">
+  <div class="view" data-view="home"></div>
+  <div class="view" data-view="design"></div>
+  <div class="view" data-view="style"></div>
+  <div class="view" data-view="plan"></div>
+  <div class="view mim" data-view="mim"></div>
+  <div class="view" data-view="alife"></div>
+  <div class="view" data-view="projects"></div>
+  <div class="view" data-view="project"></div>
+  <div class="view" data-view="reviews"></div>
+  <div class="view" data-view="newshub"></div>
+  <div class="view" data-view="postlist"></div>
+  <div class="view" data-view="article"></div>
+  <div class="view" data-view="process"></div>
+  <div class="view" data-view="about"></div>
+  <div class="view" data-view="contact"></div>
+  <div class="view" data-view="saved"></div>
+  <div class="view" data-view="privacy"></div>
+  <div class="view" data-view="404"></div>
+</main>
+
+<section class="cta" style="padding:0">
+  <div class="wrap">
+    <div><h2>เริ่มต้น <em>บ้านของคุณ</em> วันนี้</h2><p>นัดคุยกับสถาปนิกฟรี ที่สำนักงานรามอินทราหรือออนไลน์</p></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn gold" href="#contact"><svg class="ico"><use href="#i-cal"/></svg>นัดคุยสถาปนิก</a><span class="btn line" style="border-color:rgba(255,255,255,.4);color:#fff;cursor:text;user-select:all"><svg class="ico"><use href="#i-phone"/></svg>093-555-0596</span></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div style="display:grid;gap:14px;align-content:start">
+      <a class="logo" href="#home"><img src="img/brand/logo-footer.png" width="147" height="34" alt="W House"></a>
+      <p>บริษัท ดับบลิว เฮ้าส์ จำกัด<br>65/6 ซอยรามอินทรา 14 แขวงท่าแร้ง<br>เขตบางเขน กรุงเทพฯ 10230</p>
+      <p>ISO 9001:2015 · ก่อตั้ง พ.ศ. 2543</p>
+    </div>
+    <div><h4>แบบบ้าน</h4><ul><li><a href="#design-modern">Modern</a></li><li><a href="#design-tropical">Tropical</a></li><li><a href="#design-contemporary">Contemporary</a></li><li><a href="#design-classic">Classic</a></li><li><a href="#design-special">Special Design</a></li><li><a href="#more-is-more">More Is More</a></li><li><a href="#a-life-of-style">A Life of Style</a></li></ul></div>
+    <div><h4>ผลงาน &amp; ข่าวสาร</h4><ul><li><a href="#projects">Completed Projects</a></li><li><a href="#ongoing">Ongoing Projects</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#blog">Blog</a></li><li><a href="#news">News</a></li><li><a href="#event">Event</a></li></ul></div>
+    <div><h4>ติดต่อ</h4><ul><li>โทร 093-555-0596</li><li>แฟกซ์ 029-437-554</li><li>marketing@whouse.co.th</li><li>จันทร์ – ศุกร์ 8:30 – 17:30</li><li><a href="#contact" style="color:var(--gold);font-weight:600">นัดคุยสถาปนิก →</a></li></ul></div>
+    <div class="copy">© 2026 W House · Mockup แบบ D (ทั้งระบบ) · <a href="#privacy">นโยบายความเป็นส่วนตัว</a> · ข้อมูลแบบบ้าน ผลงาน และบทความดึงจาก whouse.co.th</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="ภาพ">
+  <div class="top"><span id="lbcap"></span><button class="cbtn" data-lbclose aria-label="ปิด"><svg class="ico"><use href="#i-x"/></svg></button></div>
+  <div class="stage"><img id="lbimg" alt=""><button class="cbtn pv" id="lbprev" aria-label="ภาพก่อนหน้า"><svg class="ico"><use href="#i-arl"/></svg></button><button class="cbtn nx" id="lbnext" aria-label="ภาพถัดไป"><svg class="ico"><use href="#i-arr"/></svg></button></div>
+  <div class="thumbs" id="lbthumbs"></div>
+</div>
+
+<div class="sov" id="sov" hidden role="dialog" aria-modal="true" aria-label="ค้นหา">
+  <div class="in">
+    <div class="top"><label class="sfield"><svg class="ico"><use href="#i-search"/></svg><input id="sq" type="search" placeholder="ค้นหาแบบบ้าน ผลงาน หรือบทความ" aria-label="คำค้นหา" autocomplete="off"><button type="button" class="sclear" id="sclear" aria-label="ล้างคำค้นหา" hidden>ล้าง</button></label><button class="sclose" id="closeSearch" aria-label="ปิดการค้นหา"><svg class="ico"><use href="#i-x"/></svg></button></div>
+    <div class="hint" id="shint"><span class="note-s">ลองค้นหา:</span><button>เขาใหญ่</button><button>Tropical</button><button>3 ชั้น</button><button>รีโนเวต</button><button>M062</button></div>
+    <div id="sres"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
