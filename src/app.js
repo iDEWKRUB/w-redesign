@@ -420,17 +420,26 @@ const STEPS = [
   ['ตรวจสอบผลงาน', ['ตรวจตามระบบมาตรฐานคุณภาพ ISO 9001:2015', 'ตรวจบ้านร่วมกับวิศวกรผู้ดูแลของบริษัท'], 'shield'],
   ['การชำระเงิน', ['แบ่งชำระเป็นงวดตามผลงานก่อสร้างจริง', 'ตามเงื่อนไขที่ระบุในสัญญา'], 'coin']
 ];
-V.process = () => phead(crumbs('ขั้นตอนการทำงาน'), 'Work Process', '7 Steps <em>to Your Dream Home</em>', 'รังสรรค์บ้านหรู อยู่สบาย สไตล์คุณ ทุกขั้นตอนดูแลโดยทีมเดียว ตั้งแต่คุยความต้องการจนถึงตรวจรับบ้าน')
-  + `<div class="wrap sec tight"><div class="steps2">${STEPS.map(([t, b, ic], i) => `<div class="st2"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><span class="dur">${u(ic)}ขั้นตอนที่ ${i + 1}</span><h3>${t}</h3></div><div class="get"><b>รายละเอียด</b><ul>${b.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('')}</div>
-  <div style="margin-top:64px;display:grid;gap:22px"><div><span class="eyebrow">Warranty</span><h2 style="font-size:clamp(26px,3vw,36px);margin-top:8px">การรับประกันหลังส่งมอบ</h2></div>
-  <div class="warranty"><div class="wc"><b>20 ปี</b><span>โครงสร้าง</span><small>นับจากวันรับมอบบ้าน</small></div><div class="wc"><b>5 ปี</b><span>หลังคา</span><small>นับจากวันรับมอบบ้าน</small></div><div class="wc"><b>1 ปี</b><span>งานสถาปัตยกรรม ไฟฟ้า และประปา</span><small>บริษัทออกใบรับประกันผลงานให้</small></div></div></div>
-  <div style="margin-top:64px;display:grid;gap:22px"><div><span class="eyebrow">FAQ</span><h2 style="font-size:clamp(26px,3vw,36px);margin-top:8px">คำถามที่พบบ่อย</h2></div><div class="faq">
+const PHASES = [
+  ['วางแผน', 'Plan', 'คุยความต้องการ งบประมาณ และหาที่ดินที่ใช่', [0, 1]],
+  ['เตรียมก่อสร้าง', 'Prepare', 'ทำสัญญา เทียบราคาวัสดุ และขออนุญาตทั้งหมด', [2, 3]],
+  ['ก่อสร้างและส่งมอบ', 'Build', 'สร้างตามแผน ตรวจร่วมกับวิศวกร และชำระตามงานจริง', [4, 5, 6]]
+];
+V.process = () => phead(crumbs('ขั้นตอนการทำงาน'), 'Work Process', '7 Steps <em>to Your Dream Home</em>', 'รังสรรค์บ้านหรู อยู่สบาย สไตล์คุณ ทุกขั้นตอนดูแลโดยทีมเดียว ตั้งแต่คุยความต้องการจนถึงตรวจรับบ้าน', `<div class="phstats"><span><b class="n">7</b>ขั้นตอน</span><span><b class="n">3</b>ช่วงงาน</span><span><b>${u('check')}</b>ISO 9001:2015</span></div>`)
+  + `<div class="wrap pr2">
+  ${PHASES.map(([th, en, d, ids], pi) => `<section class="ph2"><div class="ph2h"><span class="k">Phase <span class="n">0${pi + 1}</span> · ${en}</span><h2>${th}</h2><p>${d}</p></div>
+   <div class="ph2g c${ids.length}">${ids.map(i => { const [t, b, ic] = STEPS[i]; return `<article class="sc2"><div class="top"><span class="no n">${String(i + 1).padStart(2, '0')}</span><span class="ic">${u(ic)}</span></div><h3>${t}</h3><ul>${b.map(x => `<li>${x}</li>`).join('')}</ul></article>`; }).join('')}</div></section>`).join('')}
+  <div class="pr2b">
+   <div class="wr2"><span class="eyebrow">Warranty</span><h2>การรับประกันหลังส่งมอบ</h2><p>นับจากวันรับมอบบ้าน บริษัทออกใบรับประกันผลงานให้ทุกหลัง</p>
+    <div class="wr2l"><div><b class="n">20</b><span>ปี</span><em>โครงสร้าง</em></div><div><b class="n">5</b><span>ปี</span><em>หลังคา</em></div><div><b class="n">1</b><span>ปี</span><em>งานสถาปัตยกรรม ไฟฟ้า และประปา</em></div></div>
+    <a class="btn white" href="#contact">${u('cal')}เริ่มขั้นตอนแรก นัดคุยสถาปนิก</a></div>
+   <div class="fq2"><span class="eyebrow">FAQ</span><h2>คำถามที่พบบ่อย</h2><div class="faq">
   <details open><summary>ยังไม่มีที่ดิน คุยกับ W House ได้ไหม</summary><p>ได้ครับ ขั้นตอนที่ 2 ของเราคือช่วยตรวจสอบและจัดหาที่ดิน พร้อมคำนวณระยะเวลาและค่าก่อสร้างให้ก่อนตัดสินใจ</p></details>
   <details><summary>ต้องออกแบบใหม่ทั้งหลัง หรือเลือกจากแบบที่มีได้</summary><p>ได้ทั้งสองแบบ จะออกแบบใหม่ หรือเลือกปรับจากแบบบ้านมาตรฐานของ W House ก็ได้ ดูตัวอย่างแบบได้ที่หน้าแบบบ้าน</p></details>
   <details><summary>การชำระเงินแบ่งอย่างไร</summary><p>แบ่งชำระเป็นงวด ส่วนที่เหลือชำระตามผลงานก่อสร้างจริงตามเงื่อนไขในสัญญา</p></details>
   <details><summary>รับประกันอะไรบ้าง</summary><p>โครงสร้าง 20 ปี หลังคา 5 ปี งานสถาปัตยกรรมและงานระบบไฟฟ้าประปา 1 ปี นับจากวันรับมอบบ้าน</p></details>
   <details><summary>รับสร้างบ้านพื้นที่ไหนบ้าง</summary><p>กรุงเทพฯ ปริมณฑล และเขาใหญ่ ครอบคลุมสุขุมวิท พระราม 9 ราชพฤกษ์ เลียบด่วน บางนา รังสิต รวมถึงต่างจังหวัด เช่น นนทบุรี สมุทรสาคร เพชรบุรี และเชียงใหม่</p></details></div></div>
-  <div style="padding-block:40px 20px"><a class="btn gold" href="#contact">${u('cal')}เริ่มขั้นตอนแรก นัดคุยสถาปนิก</a></div></div>`;
+  </div></div>`;
 V.about = () => phead(crumbs('เกี่ยวกับเรา'), 'About Us', 'บริษัท ดับบลิว เฮ้าส์ จำกัด<br><em>บริษัทรับสร้างบ้านมาตรฐานสูง</em>')
   + `<div class="aband">${img('02', 'The Creston Hills', '100vw')}</div>
   <div class="wrap sec"><div class="story2"><div><span class="eyebrow">Our Story</span><h2 style="margin-top:10px">ก่อตั้ง พ.ศ. 2543 ด้วยทุนจดทะเบียน 15 ล้านบาท</h2></div>
