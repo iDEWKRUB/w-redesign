@@ -159,7 +159,7 @@ function flowLayout() {
   cards.forEach((c, j) => {
     let o = j - FL.i; if (o > n / 2) o -= n; if (o < -n / 2) o += n;
     const a = Math.abs(o);
-    const x = mob ? o * 62 : (a === 0 ? 0 : Math.sign(o) * (a === 1 ? 175 : 300));
+    const x = mob ? o * 62 : (a === 0 ? 0 : Math.sign(o) * (a === 1 ? 235 : 390));
     const sc = a === 0 ? 1 : a === 1 ? (mob ? .84 : .78) : .6;
     c.style.transform = mob ? `translateX(calc(-50% + ${x}vw)) scale(${sc})` : `translateX(calc(-50% + ${x}px)) scale(${sc})`;
     c.style.zIndex = 10 - a; c.style.opacity = a > (mob ? 1 : 2) ? 0 : 1; c.style.pointerEvents = a > (mob ? 1 : 2) ? 'none' : '';
