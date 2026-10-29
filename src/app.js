@@ -123,34 +123,24 @@ function bindHero() {
 
 /* ---------- style coverflow (home) ---------- */
 const FL = { i: 0 };
-function sfModels(k) {
-  const l = DS.filter(d => d.st.includes(k));
-  return [...l.filter(d => d.area && d.popular), ...l.filter(d => d.area && !d.popular), ...l.filter(d => !d.area)].slice(0, 5);
-}
-function sfPanel(i) {
-  const keys = Object.keys(STY); const k = keys[i]; const s = STY[k]; const list = DS.filter(d => d.st.includes(k)); const ar = list.map(d => d.area).filter(Boolean);
-  const range = ar.length ? `${fmt(Math.min(...ar))}–${fmt(Math.max(...ar))}` : '';
-  return `<span class="sfpno"><b class="n">${String(i + 1).padStart(2, '0')}</b> / ${String(keys.length).padStart(2, '0')} · สไตล์${s.th}</span>
-  <h3>${s.n}</h3><p class="sfpd">${s.d}</p>
-  <div class="sfpmeta"><span>${u('home')}<b class="n">${list.length}</b> แบบบ้าน</span>${range ? `<span>${u('area')}<b class="n">${range}</b> ตร.ม.</span>` : ''}</div>
-  <ul class="sfml" aria-label="แบบบ้านสไตล์ ${s.n}">${sfModels(k).map((d, j) => `<li><a href="#plan-${d.slug}"><img src="${SRC(d.key, 's')}" alt="" loading="lazy" decoding="async"><span class="t"><b>${esc(d.name ? d.code + ' · ' + d.name : d.code)}</b><small>${d.area ? `<em class="n">${fmt(d.area)}</em> ตร.ม.` : 'ออกแบบตามโจทย์'}${d.bed ? ` · ${d.bed} ห้องนอน` : ''}${d.bath ? ` · ${d.bath} ห้องน้ำ` : ''}</small></span>${d.popular && !j ? '<i class="hot">ยอดนิยม</i>' : ''}${u('arr')}</a></li>`).join('')}</ul>
-  <div class="sfpcta"><a class="btn dark" href="#design-${k}">ดูแบบบ้านสไตล์${s.th}ทั้งหมด ${u('arr')}</a><a class="fround2" href="#contact" aria-label="ปรึกษาสไตล์ ${s.n}">${u('chat')}</a></div>`;
-}
 function styleFlow() {
   const keys = Object.keys(STY);
   const cards = keys.map((k, i) => {
-    const s = STY[k];
+    const s = STY[k]; const list = DS.filter(d => d.st.includes(k)); const ar = list.map(d => d.area).filter(Boolean);
+    const range = ar.length ? `${fmt(Math.min(...ar))}–${fmt(Math.max(...ar))}` : '';
     return `<article class="fcard" data-sfi="${i}" aria-label="สไตล์ ${s.n}"><img src="${isX(s.img) ? SRC(s.img, 'm') : 'img/' + s.img + '.webp'}" alt="${esc('บ้านสไตล์' + s.th)}" decoding="async"${i < 3 ? '' : ' loading="lazy"'}>
-    <span class="fnum">${String(i + 1).padStart(2, '0')}</span><div class="fbody"><span class="fth">สไตล์${s.th}</span><h3>${s.n}</h3></div></article>`;
+    <span class="fnum">${String(i + 1).padStart(2, '0')}/${String(keys.length).padStart(2, '0')}</span>
+    <div class="fbody"><span class="fth">สไตล์${s.th}</span><h3>${s.n}</h3><div class="fmeta"><span>${u('home')}<b class="n">${list.length}</b> แบบบ้าน</span>${range ? `<span>${u('area')}<b class="n">${range}</b> ตร.ม.</span>` : ''}</div>
+    <div class="fcta"><a class="btn white" href="#design-${k}">ดูแบบบ้านสไตล์นี้ ${u('arr')}</a><a class="fround" href="#contact" aria-label="ปรึกษาสไตล์ ${s.n}">${u('chat')}</a></div></div></article>`;
   }).join('');
-  return `<section class="sflow sfx"><div class="wrap">
+  return `<section class="sflow"><div class="wrap">
    <div class="sfhead2"><span class="eyebrow">House Styles</span><h2 class="sftitle">เลือก<em>สไตล์</em>บ้านที่ใช่</h2>
     <p class="sflead"><b class="n">${DS.length}</b> แบบบ้านจริงจาก W House ใน 6 สไตล์<br>ปรับผังให้เข้ากับที่ดินและการใช้ชีวิตของคุณได้ทุกแบบ</p>
     <div class="sfpills">${keys.map((k, i) => `<button class="sfpill${i ? '' : ' on'}" data-sfi="${i}">${STY[k].n}</button>`).join('')}</div>
     </div>
-   <div class="sfgrid"><div class="sfpanel" id="sfpanel" aria-live="polite">${sfPanel(0)}</div>
-   <div class="sfright"><div class="fstage" id="fstage">${cards}</div>
-   <div class="fnav"><button data-sfstep="-1" aria-label="สไตล์ก่อนหน้า">${u('arl')}</button><div class="fdots">${keys.map((_, i) => `<i data-sfi="${i}"></i>`).join('')}</div><button data-sfstep="1" aria-label="สไตล์ถัดไป">${u('arr')}</button></div></div></div>
+   <div class="fstage" id="fstage">${cards}</div>
+   <div class="fnav"><button data-sfstep="-1" aria-label="สไตล์ก่อนหน้า">${u('arl')}</button><div class="fdots">${keys.map((_, i) => `<i data-sfi="${i}"></i>`).join('')}</div><button data-sfstep="1" aria-label="สไตล์ถัดไป">${u('arr')}</button></div>
+   <div class="sfall"><a class="more" href="#design">ดูแบบบ้านทั้งหมด ${u('arr')}</a></div>
   </div></section>`;
 }
 function flowLayout() {
@@ -159,15 +149,13 @@ function flowLayout() {
   cards.forEach((c, j) => {
     let o = j - FL.i; if (o > n / 2) o -= n; if (o < -n / 2) o += n;
     const a = Math.abs(o);
-    const x = mob ? o * 62 : (a === 0 ? 0 : Math.sign(o) * (a === 1 ? 235 : 390));
-    const sc = a === 0 ? 1 : a === 1 ? (mob ? .84 : .78) : .6;
+    const x = mob ? o * 64 : (a === 0 ? 0 : Math.sign(o) * (a === 1 ? 330 : 580));
+    const sc = a === 0 ? 1 : a === 1 ? (mob ? .84 : .8) : .64;
     c.style.transform = mob ? `translateX(calc(-50% + ${x}vw)) scale(${sc})` : `translateX(calc(-50% + ${x}px)) scale(${sc})`;
     c.style.zIndex = 10 - a; c.style.opacity = a > (mob ? 1 : 2) ? 0 : 1; c.style.pointerEvents = a > (mob ? 1 : 2) ? 'none' : '';
     c.classList.toggle('on', a === 0); c.setAttribute('aria-hidden', a !== 0);
     c.querySelectorAll('a').forEach(l => l.tabIndex = a === 0 ? 0 : -1);
   });
-  const pn = document.getElementById('sfpanel');
-  if (pn && +pn.dataset.i !== FL.i) { const go = () => { pn.innerHTML = sfPanel(FL.i); pn.dataset.i = FL.i; numFont(pn); pn.classList.remove('fade'); }; if (pn.dataset.i == null) go(); else { pn.classList.add('fade'); clearTimeout(pn._t); pn._t = setTimeout(go, 220); } }
   document.querySelectorAll('.sfpill').forEach((b, j) => b.classList.toggle('on', j === FL.i));
   document.querySelectorAll('.fdots i').forEach((d, j) => d.classList.toggle('on', j === FL.i));
 }
