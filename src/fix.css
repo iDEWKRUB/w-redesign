@@ -724,3 +724,10 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
 .ytvh p{max-width:620px}
 @media(max-width:560px){.ytc.big .tt b{font-size:15px}.ytc.big .pl{top:42%}}
 .ytc.rv{aspect-ratio:16/10}
+/* play icon: soft glass instead of solid wine */
+.ytc .pl{width:64px;height:64px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.7);box-shadow:none;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.85;transition:opacity .3s,transform .3s,background .3s}
+.ytc .pl .ico{width:22px;height:22px;margin-left:3px;fill:#fff}
+.ytc:hover .pl{opacity:1;background:rgba(255,255,255,.28);transform:translate(-50%,-50%) scale(1.06)}
+.ytc.sm .pl{width:40px;height:40px;box-shadow:none;border-width:1.2px}
+.ytc.sm .pl .ico{width:15px;height:15px;margin-left:2px}
+@media(max-width:560px){.ytc .pl{width:52px;height:52px}}
