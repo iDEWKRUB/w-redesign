@@ -1552,19 +1552,13 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
 @media(max-width:1000px){.st3in{grid-template-columns:1fr;gap:24px}.st3g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.st3{padding-block:64px!important}.st3g{gap:10px}.st3g a{padding:14px}.st3g .no{font-size:24px}.st3g b{font-size:14px}}
 @media(max-width:1000px){.st3h h2 br{display:none}}
-/* trust v2: numeral-led */
-.trust2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:44px;margin-bottom:8px}
-.trust2 .ti{position:relative;display:flex;flex-direction:column;padding:6px 28px 8px;border-left:1px solid var(--line)}
-.trust2 .ti:first-child{border-left:0;padding-left:4px}
-.trust2 .big{display:flex;align-items:baseline;gap:6px;line-height:1;color:var(--gold);margin-bottom:12px}
-.trust2 .big b{font-family:var(--num);font-weight:300;font-size:clamp(44px,4.4vw,60px);letter-spacing:-.02em}
-.trust2 .big i{font-style:normal;font-size:16px;font-weight:600;color:var(--ink)}
-.trust2 .big i.pre{font-size:15px;letter-spacing:.14em;color:var(--soft);margin-right:2px}
-.trust2 .tl{font-size:15.5px;font-weight:600;color:var(--ink);line-height:1.35}
-.trust2 small{font-size:13px;color:var(--soft);line-height:1.5;margin-top:3px}
-.trust2 .ti::before{content:"";position:absolute;left:28px;top:-14px;width:28px;height:2px;background:var(--gold);border-radius:2px}
-.trust2 .ti:first-child::before{left:4px}
-@media(max-width:900px){.trust2{grid-template-columns:1fr 1fr;row-gap:30px;margin-top:40px}.trust2 .ti{padding:4px 14px}.trust2 .ti:nth-child(odd){border-left:0;padding-left:4px}.trust2 .ti::before{left:14px}.trust2 .ti:nth-child(odd)::before{left:4px}.trust2 .big b{font-size:42px}.trust2 .tl{font-size:14px}.trust2 small{font-size:12px}}
+/* trust row inside the search card */
+.ptrust{grid-column:1/-1;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 34px;margin:12px -14px -14px;padding:12px 20px;border-top:1px solid var(--line);background:#FBF8F8;border-radius:0 0 16px 16px;font-size:13px;color:var(--soft)}
+.ptrust span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.ptrust .ico{width:15px;height:15px;color:var(--gold);stroke-width:2.2}
+.ptrust b{color:var(--ink);font-weight:600}
+@media(max-width:900px){.ptrust{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;justify-content:start;margin:10px -14px -14px;padding:12px 16px;font-size:12px}.ptrust span{white-space:normal}}
+.ptrust em{font-style:normal}@media(max-width:900px){.ptrust{grid-template-columns:1fr}.ptrust span{white-space:nowrap}}@media(min-width:421px) and (max-width:900px){.ptrust{grid-template-columns:1fr 1fr}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1982,12 +1976,8 @@ V.home = () => {
    <div class="fld">${u('style')}<div style="min-width:0;flex:1"><label for="f-style">สไตล์บ้าน</label><select id="f-style"><option value="">ทุกสไตล์</option>${Object.entries(STY).map(([k, s]) => `<option value="${k}">${s.n}</option>`).join('')}</select></div></div>
    <div class="fld">${u('bed')}<div style="min-width:0;flex:1"><label for="f-bed">ห้องนอน</label><select id="f-bed"><option value="">ไม่ระบุ</option><option value="3">3 ห้องนอน</option><option value="4">4 ห้องนอน</option><option value="5">5 ห้องนอนขึ้นไป</option></select></div></div>
    <div class="fld">${u('area')}<div style="min-width:0;flex:1"><label for="f-size">พื้นที่ใช้สอย</label><select id="f-size"><option value="">ไม่ระบุ</option><option value="s">ไม่เกิน 500 ตร.ม.</option><option value="m">500 – 800 ตร.ม.</option><option value="l">800 ตร.ม. ขึ้นไป</option></select></div></div>
-   <button class="btn gold" type="submit">ค้นหาแบบบ้าน ${u('arr')}</button></form></div>
-  <div class="wrap trust2" aria-label="มาตรฐาน W House">
-   <div class="ti"><span class="big"><b class="n">26</b><i>ปี</i></span><span class="tl">ประสบการณ์บ้านหรู</span><small>ตั้งแต่ พ.ศ. 2543</small></div>
-   <div class="ti"><span class="big"><b class="n">121+</b><i>หลัง</i></span><span class="tl">ผลงานที่ส่งมอบแล้ว</span><small>ทั่วประเทศ</small></div>
-   <div class="ti"><span class="big"><i class="pre">ISO</i><b class="n">9001</b></span><span class="tl">มาตรฐานสากล</span><small>ISO 9001:2015</small></div>
-   <div class="ti"><span class="big"><b class="n">20</b><i>ปี</i></span><span class="tl">รับประกันโครงสร้าง</span><small>จ่ายตามงานจริงทุกงวด</small></div></div>
+   <button class="btn gold" type="submit">ค้นหาแบบบ้าน ${u('arr')}</button>
+   <div class="ptrust" aria-label="มาตรฐาน W House"><span>${u('check')}<em>ประสบการณ์ <b class="n">26</b> ปี</em></span><span>${u('check')}<em>ISO <b class="n">9001:2015</b></em></span><span>${u('check')}<em>รับประกันโครงสร้าง <b class="n">20</b> ปี</em></span><span>${u('check')}<em>จ่ายตามงานจริงทุกงวด</em></span></div></form></div>
   <section><div class="wrap">${head('Signature Residences', 'ผลงานบ้านที่เราภูมิใจ', '#projects', 'ดูผลงานทั้งหมด')}
    ${rail('cards', four.map(projCard).join(''), 'ผลงาน')}</div></section>
   ${styleFlow()}

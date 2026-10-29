@@ -241,12 +241,8 @@ V.home = () => {
    <div class="fld">${u('style')}<div style="min-width:0;flex:1"><label for="f-style">สไตล์บ้าน</label><select id="f-style"><option value="">ทุกสไตล์</option>${Object.entries(STY).map(([k, s]) => `<option value="${k}">${s.n}</option>`).join('')}</select></div></div>
    <div class="fld">${u('bed')}<div style="min-width:0;flex:1"><label for="f-bed">ห้องนอน</label><select id="f-bed"><option value="">ไม่ระบุ</option><option value="3">3 ห้องนอน</option><option value="4">4 ห้องนอน</option><option value="5">5 ห้องนอนขึ้นไป</option></select></div></div>
    <div class="fld">${u('area')}<div style="min-width:0;flex:1"><label for="f-size">พื้นที่ใช้สอย</label><select id="f-size"><option value="">ไม่ระบุ</option><option value="s">ไม่เกิน 500 ตร.ม.</option><option value="m">500 – 800 ตร.ม.</option><option value="l">800 ตร.ม. ขึ้นไป</option></select></div></div>
-   <button class="btn gold" type="submit">ค้นหาแบบบ้าน ${u('arr')}</button></form></div>
-  <div class="wrap trust2" aria-label="มาตรฐาน W House">
-   <div class="ti"><span class="big"><b class="n">26</b><i>ปี</i></span><span class="tl">ประสบการณ์บ้านหรู</span><small>ตั้งแต่ พ.ศ. 2543</small></div>
-   <div class="ti"><span class="big"><b class="n">121+</b><i>หลัง</i></span><span class="tl">ผลงานที่ส่งมอบแล้ว</span><small>ทั่วประเทศ</small></div>
-   <div class="ti"><span class="big"><i class="pre">ISO</i><b class="n">9001</b></span><span class="tl">มาตรฐานสากล</span><small>ISO 9001:2015</small></div>
-   <div class="ti"><span class="big"><b class="n">20</b><i>ปี</i></span><span class="tl">รับประกันโครงสร้าง</span><small>จ่ายตามงานจริงทุกงวด</small></div></div>
+   <button class="btn gold" type="submit">ค้นหาแบบบ้าน ${u('arr')}</button>
+   <div class="ptrust" aria-label="มาตรฐาน W House"><span>${u('check')}<em>ประสบการณ์ <b class="n">26</b> ปี</em></span><span>${u('check')}<em>ISO <b class="n">9001:2015</b></em></span><span>${u('check')}<em>รับประกันโครงสร้าง <b class="n">20</b> ปี</em></span><span>${u('check')}<em>จ่ายตามงานจริงทุกงวด</em></span></div></form></div>
   <section><div class="wrap">${head('Signature Residences', 'ผลงานบ้านที่เราภูมิใจ', '#projects', 'ดูผลงานทั้งหมด')}
    ${rail('cards', four.map(projCard).join(''), 'ผลงาน')}</div></section>
   ${styleFlow()}
