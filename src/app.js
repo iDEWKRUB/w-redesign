@@ -352,7 +352,7 @@ V.projects = (tab) => {
    <p class="lead">${tab === 'done' ? 'บ้านที่ W House ออกแบบและก่อสร้างจนส่งมอบให้เจ้าของแล้ว ทั้งบ้านพักอาศัยในกรุงเทพฯ บ้านพักตากอากาศ และอาคารพิเศษ' : 'อัปเดตความคืบหน้าจากหน้างานจริง ตรวจตามระบบ ISO 9001:2015 ร่วมกับวิศวกรผู้ดูแลของบริษัท'}</p>
    <div class="cp-tabs" role="tablist" aria-label="สถานะโครงการ"><a role="tab" href="#projects" class="${tab === 'done' ? 'on' : ''}" aria-selected="${tab === 'done'}">แล้วเสร็จ</a><a role="tab" href="#ongoing" class="${tab === 'ongoing' ? 'on' : ''}" aria-selected="${tab === 'ongoing'}">กำลังก่อสร้าง</a></div></div>
    <div class="cp-mosaic" aria-hidden="true"><img class="a" src="img/m/pcreston-air.jpg" alt=""><img class="b" src="img/s/22.jpg" alt=""><img class="c" src="img/s/pvibha.jpg" alt=""></div></div></section>`
-    + (tab === 'ongoing' ? `<div class="wrap sec2"><div class="grid3">${W.ongoing.map(o => `<article class="card" style="cursor:default"><div class="ph">${img(o.key, o.t, '(max-width:700px) 100vw, 390px')}</div><div class="bd"><span class="upd"><i></i>อัปเดตล่าสุด ${thDate(o.date)}</span><h3>${esc(o.t)}</h3><span class="chip" style="justify-self:start">กำลังก่อสร้าง</span></div></article>`).join('')}</div><p class="note-s" style="margin-top:24px">รายการและภาพจากหมวด “โครงการที่กำลังดำเนินการก่อสร้าง” บนเว็บจริง (10 โครงการ)</p></div>`
+    + (tab === 'ongoing' ? `<div class="wrap sec2"><div class="grid3">${W.ongoing.map((o, oi) => `<article class="card" data-og="${oi}" tabindex="0" role="button" aria-label="ดูภาพ ${esc(o.t)}"><div class="ph">${img(o.key, o.t, '(max-width:700px) 100vw, 390px')}</div><div class="bd"><span class="upd"><i></i>อัปเดตล่าสุด ${thDate(o.date)}</span><h3>${esc(o.t)}</h3><span class="chip" style="justify-self:start">กำลังก่อสร้าง</span><span class="oglink">ดูภาพความคืบหน้า ${u('arr')}</span></div></article>`).join('')}</div><p class="note-s" style="margin-top:24px">รายการและภาพจากหมวด “โครงการที่กำลังดำเนินการก่อสร้าง” บนเว็บจริง (10 โครงการ)</p></div>`
       : `<div class="wrap"><a class="feat-card" href="#project-${cr.id}"><div class="fimg">${img('03', 'The Creston Hills', '(max-width:900px) 100vw, 60vw')}<span class="flag">ผลงานล่าสุด</span></div><div class="ftx"><div class="chips"><span class="chip g">Modern Tropical</span><span class="chip">บ้านพักตากอากาศ 2 ชั้น</span></div><h2>The Creston Hills</h2><span class="loc">เขาใหญ่ นครราชสีมา</span><p>บ้านพักตากอากาศท่ามกลางวิวภูเขาและผืนน้ำ ทุกห้องหลักเปิดออกสู่สวนและสระว่ายน้ำ</p><div class="fspec"><div><b>535</b><small>ตร.ม.</small></div><div><b>3</b><small>ห้องนอน</small></div><div><b>4</b><small>ห้องน้ำ</small></div><div><b>2026</b><small>แล้วเสร็จ</small></div></div><span class="btn dark">ดูรายละเอียดโครงการ ${u('arr')}</span></div></a></div>
    <div class="toolbar-wrap" id="cp-grid"><div class="wrap toolbar"><label class="search">${u('search')}<input id="cp-q" type="search" placeholder="ค้นหาชื่อโครงการหรือทำเล" aria-label="ค้นหาผลงาน" value="${esc(PF.q)}"></label>
     <div class="filters" id="pfilters" role="tablist" aria-label="ประเภท"></div>
@@ -527,7 +527,11 @@ function numFont(root) {
 const CUR = { gal: [], title: '' };
 let current = '', aboutRef = null;
 function route() {
-  const h = decodeURIComponent((location.hash || '#home').slice(1)) || 'home';
+  // a page change must never inherit a scroll lock from an overlay left open (gallery, search, video, menu)
+  ['lb', 'sov'].forEach(id => { const o = document.getElementById(id); if (o) o.hidden = true; });
+  const dw = document.getElementById('drawer'); if (dw) { dw.classList.remove('open'); dw.setAttribute('aria-hidden', 'true'); }
+  document.body.style.overflow = '';
+  const h =decodeURIComponent((location.hash || '#home').slice(1)) || 'home';
   let v = h, arg = null, nav = h;
   if (h === 'home') v = 'home';
   else if (h === 'design') { v = 'design'; nav = 'design'; }
@@ -603,6 +607,7 @@ document.addEventListener('click', e => {
   const po = t.closest('[data-post]'); if (po) { location.hash = '#article-' + po.dataset.post; return; }
   const ca = t.closest('a[href="#contact"]'); if (ca) { aboutRef = ca.dataset.about || null; if (current === 'contact') setAbout(); }
   const lb = t.closest('[data-lb]'); if (lb) { openLb(+lb.dataset.lb); return; }
+  const og = t.closest('[data-og]'); if (og) { CUR.gal = W.ongoing.map(o => o.key); CUR.caps = W.ongoing.map(o => o.t + ' · อัปเดต ' + thDate(o.date)); CUR.title = 'โครงการกำลังก่อสร้าง'; openLb(+og.dataset.og); return; }
   const hs = t.closest('[data-hs]'); if (hs) { heroGo(+hs.dataset.hs); return; }
   const hst = t.closest('[data-hstep]'); if (hst) { heroGo(HS.i + +hst.dataset.hstep); return; }
   const sfc = t.closest('.fcard[data-sfi]:not(.on)'); if (sfc) { e.preventDefault(); flowGo(+sfc.dataset.sfi); return; }
@@ -628,7 +633,7 @@ document.addEventListener('click', e => {
   if (!t.closest('.dd')) document.querySelectorAll('.dd.open').forEach(x => x.classList.remove('open'));
 });
 document.addEventListener('keydown', e => {
-  const c = e.target.closest && e.target.closest('[data-plan],[data-proj],[data-post]');
+  const c = e.target.closest && e.target.closest('[data-plan],[data-proj],[data-post],[data-og]');
   if (c && (e.key === 'Enter' || e.key === ' ') && !e.target.closest('[data-heart]')) { e.preventDefault(); c.click(); }
   if (e.key === 'Escape') { closeLb(); closeSearch(); closeDrawer(); document.querySelectorAll('.dd.open').forEach(x => x.classList.remove('open')); }
   if (!lbEl.hidden) { if (e.key === 'ArrowRight') lbShow(gi + 1); if (e.key === 'ArrowLeft') lbShow(gi - 1); }
