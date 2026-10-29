@@ -1,7 +1,7 @@
 const fs=require('fs'),path=require('path');
 const SITE=path.resolve(__dirname,'../site');
 const old=fs.readFileSync(__dirname+'/d-parts/backup-v5.html','utf8').replace('family=Noto+Serif+Thai:wght@400;500','family=Anuphan:wght@300;400;500;600').replace('family=Fraunces:opsz,wght@9..144,400;9..144,500','family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400');
-let head=old.slice(0,old.indexOf('<header>'));
+let head=old.slice(0,old.indexOf('<header>')).replace('<title>','<meta name="robots" content="noindex,nofollow">\n<title>');
 const fix=fs.readFileSync(__dirname+'/fix.css','utf8');
 let css=fs.readFileSync(__dirname+'/extra2.css','utf8').replace('@media(max-width:1100px){nav.main,.lang,.bar>.btn{display:none!important}','@media(max-width:1100px){nav.main,.hicons .lang,.bar>.btn{display:none!important}');
 head=head.replace('</style>',css+fix+'</style>');
