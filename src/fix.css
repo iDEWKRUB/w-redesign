@@ -650,3 +650,77 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
 @media(prefers-reduced-motion:reduce){.cfab-btn::before{animation:none}.cf{transition:opacity .2s}}
 .cfab::after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(36,10,18,.32);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .3s}
 .cfab.open::after{opacity:1}
+
+/* ---- YouTube cards, section and player ---- */
+.ytc{position:relative;display:block;width:100%;padding:0;border:0;border-radius:22px;overflow:hidden;cursor:pointer;background:#2a1419;color:#fff;text-align:left;aspect-ratio:16/9;font:inherit}
+.ytc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.ytc:hover>img{transform:scale(1.04)}
+.ytc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,6,10,0) 40%,rgba(20,6,10,.82) 100%)}
+.ytc .pl{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:rgba(128,25,45,.92);box-shadow:0 0 0 10px rgba(255,255,255,.18);transition:transform .3s,background .3s}
+.ytc .pl .ico{width:28px;height:28px;fill:#fff;stroke:none;margin-left:4px}
+.ytc:hover .pl{transform:translate(-50%,-50%) scale(1.08);background:#A32846}
+.ytc .yb{position:absolute;z-index:2;left:16px;top:16px;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink);font-size:12px;font-weight:600}
+.ytc .yb::before{content:"";width:14px;height:10px;border-radius:3px;background:#FF0000;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.ytc .tt{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;display:grid;gap:4px}
+.ytc .tt b{font-size:17px;font-weight:600;line-height:1.35}
+.ytc .tt small{font-size:13px;color:rgba(255,255,255,.8)}
+.ytc.big .tt b{font-size:clamp(18px,1.8vw,24px)}
+.ytc.sm{border-radius:16px}
+.ytc.sm .pl{width:44px;height:44px;box-shadow:0 0 0 6px rgba(255,255,255,.16)}
+.ytc.sm .pl .ico{width:18px;height:18px;margin-left:3px}
+.ytc.sm .yb{display:none}
+.ytc.sm .tt{left:14px;right:14px;bottom:12px}
+.ytc.sm .tt b{font-size:13.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ytc.sm .tt small{font-size:11.5px}
+.ytc.rv{aspect-ratio:4/3.6}
+.ytc.inl{margin:0 0 28px}
+.ytv{background:var(--mist);padding-block:96px!important;margin-top:88px}
+.ytvh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+.ytvh h2{font-size:clamp(32px,3.6vw,48px);margin:8px 0 10px}
+.ytvh h2 em{color:var(--gold)}
+.ytvh p{color:var(--soft);font-size:15.5px;margin:0;max-width:520px}
+.ytvs{display:flex;align-items:center;gap:20px}
+.ytvs .cnt{display:grid;font-size:13px;color:var(--soft);text-align:right}
+.ytvs .cnt b{font-size:30px;color:var(--gold);line-height:1}
+.ytvs .btn .ico{fill:currentColor;stroke:none}
+.ytvg{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px}
+.ytvg .big{aspect-ratio:auto;height:100%;min-height:420px}
+.ytvside{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ytvside .ytc{aspect-ratio:16/10}
+.ytvf{display:flex;justify-content:center;margin-top:26px}
+.ytv+section,.ytv+.ab2{margin-top:0}
+.mimbtn{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ytbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:12px;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.06);color:#fff;font:600 14px/1 var(--sans);cursor:pointer;transition:background .25s,color .25s}
+.ytbtn .ico{width:16px;height:16px;fill:currentColor;stroke:none}
+.ytbtn:hover{background:#fff;color:var(--gold)}
+.ytm{position:fixed;inset:0;z-index:75;display:grid;place-items:center;padding:24px;background:rgba(24,8,13,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ytm[hidden]{display:none}
+.ytin{width:min(1100px,100%);display:grid;gap:12px}
+.ytbar{display:flex;align-items:center;gap:16px;color:#fff}
+.ytbar b{flex:1;font-size:16px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ytbar a{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.85);font-size:13.5px;white-space:nowrap}
+.ytbar a:hover{color:#fff}
+.ytf{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.ytf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ytfb{position:absolute;inset:0;display:grid;place-items:center}
+.ytfb>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.ytfb>div{position:relative;display:grid;gap:14px;justify-items:center;color:#fff;font-size:18px}
+@media(max-width:900px){.ytvg{grid-template-columns:1fr}.ytvg .big{min-height:0;aspect-ratio:16/9;height:auto}.ytv{padding-block:64px!important;margin-top:64px}.ytvs .cnt{text-align:left}}
+@media(max-width:560px){.ytvside{grid-template-columns:1fr 1fr;gap:10px}.ytc .pl{width:60px;height:60px}.ytm{padding:12px}.ytbar b{font-size:14px}}
+/* yt cards v2: thumbnail block + caption */
+.ytc .th{position:absolute;inset:0;display:block}
+.ytc .th>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.ytc:hover .th>img{transform:scale(1.04)}
+.ytc .tt small::before{content:"";display:inline-block;width:13px;height:9px;border-radius:2.5px;background:#FF0000;margin-right:7px;vertical-align:1px}
+.ytc.sm{aspect-ratio:auto!important;background:none;color:var(--ink);overflow:visible;border-radius:0;display:grid;gap:10px;align-content:start}
+.ytc.sm::after{display:none}
+.ytc.sm .th{position:relative;inset:auto;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
+.ytc.sm .th::after{content:"";position:absolute;inset:0;background:rgba(20,6,10,.18);transition:background .3s}
+.ytc.sm:hover .th::after{background:rgba(20,6,10,.05)}
+.ytc.sm .tt{position:static;padding:0 2px}
+.ytc.sm .tt b{font-size:14.5px;color:var(--ink)}
+.ytc.sm .tt small{color:var(--soft);font-size:12.5px}
+.ytvside{align-content:space-between;row-gap:20px}
+.ytvh p{max-width:620px}
+@media(max-width:560px){.ytc.big .tt b{font-size:15px}.ytc.big .pl{top:42%}}
+.ytc.rv{aspect-ratio:16/10}

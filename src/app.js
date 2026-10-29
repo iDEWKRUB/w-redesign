@@ -177,6 +177,19 @@ function videoPlayer(cap) {
   <button class="vplay" data-vplay aria-label="เล่นวิดีโอ"><span>${u('play')}</span><em>เล่นวิดีโอ</em></button><span class="vbadge">A Life of Style</span></div>
   <figcaption><div><b>Timeless White</b><span>Modern Luxury · 660 ตร.ม. · 3 ห้องนอน · 4 ห้องน้ำ</span></div><a class="more" href="${YT}" target="_blank" rel="noopener">${cap || 'ดูคลิปเต็มบน YouTube'} ${u('arr')}</a></figcaption></figure>`;
 }
+const YTCH = 'https://www.youtube.com/@whouseonline';
+const MIMV = { 'The Wind': 'kPwZTpXdD4g', 'The Moon': 'UNw1tB41Rqo', 'The Sun': 'TpLtskOY_Bo', 'The Flame': 'S5bV_T6F-J0', 'The Ocean': 'YgH2a8uq66k', 'The Forest': 'YCsnYbfq98Q' };
+const ytCard = (id, t, meta, cls) => `<button type="button" class="ytc ${cls || ''}" data-yt="${id}" data-ytt="${esc(t)}" aria-label="เล่นวิดีโอ ${esc(t)}"><span class="th"><img src="img/yt/${id}.webp" alt="" loading="lazy"><span class="pl">${u('play')}</span></span><span class="tt"><b>${esc(t)}</b>${meta ? `<small>${esc(meta)}</small>` : ''}</span></button>`;
+function ytSection() {
+  const side = [['UNw1tB41Rqo', 'THE MOON · คฤหาสน์ 3 ชั้น เหนือกาลเวลา', 'More Is More · ดู 1 แสนครั้ง'], ['y_4jjIH2x2I', 'More is More · พื้นที่แห่งความสุขที่ไร้ขีดจำกัด', 'ดู 2.3 หมื่นครั้ง'], ['_Swt6ngnSXc', "DESIGN YOUR FUTURE ที่งานสถาปนิก'68", 'ดู 1.4 หมื่นครั้ง'], ['zs7FAUn34X4', 'รีโนเวทบ้านเก่า vs ทุบสร้างใหม่ แบบไหนคุ้มกว่า?', 'ดู 6.3 พันครั้ง']];
+  return `<section class="ytv"><div class="wrap">
+   <div class="ytvh"><div><span class="eyebrow">W House Channel</span><h2>ชมบ้านจริง<em>ผ่านวิดีโอ</em></h2><p>เดินชมคฤหาสน์ ผลงานจริง และเกร็ดความรู้การสร้างบ้าน จากช่อง YouTube ของ W House</p></div>
+    <div class="ytvs"><span class="cnt"><b class="n">356</b>คลิปบนช่อง</span><a class="btn gold" href="${YTCH}?sub_confirmation=1" target="_blank" rel="noopener">${u('play')}Subscribe</a></div></div>
+   <div class="ytvg">${ytCard('kPwZTpXdD4g', 'THE WIND · คฤหาสน์ Super Luxury Modern สูง 4 ชั้น', 'More Is More · ดู 4 แสนครั้ง', 'big')}
+    <div class="ytvside">${side.map(([id, t, m]) => ytCard(id, t, m, 'sm')).join('')}</div></div>
+   <div class="ytvf"><a class="more" href="${YTCH}/videos" target="_blank" rel="noopener">ดูวิดีโอทั้งหมดบน YouTube ${u('arr')}</a></div>
+  </div></section>`;
+}
 function reviewVideo() {
   const r = W.posts.reviews; const main = POSTS.find(x => x.id === r[2].id); const others = [r[1], r[0], r[3]].map(p => POSTS.find(x => x.id === p.id));
   return `<section class="rvsec"><div class="wrap rvgrid">
@@ -187,7 +200,7 @@ function reviewVideo() {
     <div class="rvbtn"><a class="btn dark" href="#article-${main.id}">อ่านบทสัมภาษณ์ ${u('arr')}</a><a class="more" href="#reviews">รีวิวทั้งหมด 19 เรื่อง ${u('arr')}</a></div>
     <div class="rvlist"><span class="lbl">รีวิวอื่น ๆ</span>${others.map(p => `<a href="#article-${p.id}"><img src="${SRC(p.key, 's')}" alt="" loading="lazy"><span><b>${esc(cleanT(p.t))}</b><small>${thDate(p.date)}</small></span>${u('arr')}</a>`).join('')}</div>
    </div>
-   <div class="rvv">${videoPlayer()}</div></div></section>`;
+   <div class="rvv">${ytCard('uvE02SHj2Ks', 'สัมภาษณ์ลูกค้า · ผ่าน 25 ปี บ้านยังมั่นคง', 'เสียงจริงจากเจ้าของบ้าน · ดู 5.9 พันครั้ง', 'rv')}</div></div></section>`;
 }
 
 /* ---------- project rail (home) ---------- */
@@ -238,6 +251,7 @@ V.home = () => {
    ${rail('cards', four.map(projCard).join(''), 'ผลงาน')}</div></section>
   ${styleFlow()}
   <section><div class="wrap">${head('W House Concept', 'คอลเลกชันแบบบ้านพิเศษ')}${conceptBanners()}</div></section>
+  ${ytSection()}
   <section class="ab2"><div class="wrap ab2in">
    <div class="ab2ph">${img('05', 'The Creston Hills เขาใหญ่', '(max-width:900px) 100vw, 48vw')}
     <div class="ab2badge"><b class="n">26</b><span>ปีแห่งการสร้าง<br>บ้านหรู</span></div>
@@ -326,12 +340,12 @@ V.plan = (slug) => {
 };
 V.mim = () => {
   return `<div class="hero2"><img src="img/x/d-s019.jpg" alt="" aria-hidden="true"><div class="in wrap">${crumbs(['แบบบ้าน', '#design'], 'More Is More').replace('class="crumbs"', 'class="crumbs" style="color:#9AA3BA"')}<span class="eyebrow" style="color:var(--gold2)">W House Concept</span><h1>MORE <span class="gold">IS</span> MORE</h1><p>เพราะพื้นที่แห่งความสุข งดงามที่สุด เมื่อไร้ขีดจำกัด<br>ทุกสัดส่วน Super Luxury เริ่มต้น 1,000 ตร.ม.</p><a class="btn gold" href="#mimlist" data-scroll="mimlist" style="background:var(--gold2);color:var(--night)">ชม 6 คฤหาสน์ ${u('arr')}</a></div></div>
-  <div class="wrap mimlist" id="mimlist">${MIM.map(([im, slug]) => { const d = ds(slug); return `<article class="mimrow"><div class="mi">${img(d.key, d.name, "(max-width:900px) 100vw, 60vw")}</div><div class="tx"><span class="eyebrow" style="color:var(--gold2)">${esc(d.code)}</span><h3>${esc((d.name || '').toUpperCase())}</h3><div class="sp"><span><b>${fmt(d.area)}</b> ตร.ม.</span><span><b>${d.bed}</b> ห้องนอน</span><span><b>${d.bath}</b> ห้องน้ำ</span><span><b>${d.park}</b> ที่จอดรถ</span></div><p>${esc(d.text)}</p><a class="btn" href="#plan-${d.slug}">ดูรายละเอียดแบบ ${u('arr')}</a></div></article>`; }).join('')}</div>`;
+  <div class="wrap mimlist" id="mimlist">${MIM.map(([im, slug]) => { const d = ds(slug); return `<article class="mimrow"><div class="mi">${img(d.key, d.name, "(max-width:900px) 100vw, 60vw")}</div><div class="tx"><span class="eyebrow" style="color:var(--gold2)">${esc(d.code)}</span><h3>${esc((d.name || '').toUpperCase())}</h3><div class="sp"><span><b>${fmt(d.area)}</b> ตร.ม.</span><span><b>${d.bed}</b> ห้องนอน</span><span><b>${d.bath}</b> ห้องน้ำ</span><span><b>${d.park}</b> ที่จอดรถ</span></div><p>${esc(d.text)}</p><div class="mimbtn"><a class="btn" href="#plan-${d.slug}">ดูรายละเอียดแบบ ${u('arr')}</a>${MIMV[d.name] ? `<button type="button" class="ytbtn" data-yt="${MIMV[d.name]}" data-ytt="${esc(d.name)} · More Is More">${u('play')}ดูวิดีโอ</button>` : ''}</div></div></article>`; }).join('')}</div>`;
 };
 V.alife = () => {
   const ds3 = DS.filter(d => d.concept === 'alife');
   return `<div class="wrap">${crumbs(['แบบบ้าน', '#design'], 'A Life of Style')}<div class="als-hero"><span class="eyebrow">W House Concept</span><div class="logo2">A Life <small style="font-size:.45em">of</small><b>Style</b></div><blockquote>“ทุกสถานที่ มีเรื่องราว”</blockquote><p class="lead2">นิยามแห่งสถาปัตยกรรมเพื่อการอยู่อาศัย ที่สะท้อนตัวตนอย่างเหนือระดับ แบบบ้านคอลเลกชันใหม่ของ W House</p></div>
-  ${videoPlayer()}
+  ${ytCard('wO6SwWoxeu8', 'Timeless White · Modern Luxury 660 ตร.ม.', 'A Life of Style · วิดีโอนำชมบ้าน', 'big al')}
   <section style="padding-block:64px 88px">${head('The Collection', '3 แบบบ้านในคอนเซปต์')}<div class="grid3">${ds3.map(planCard).join('')}</div></section></div>`;
 };
 const PF = { tab: 'done', type: 'all', area: 'all', fl: 'all', sort: 'new', q: '', mode: 'grid', shown: 9 };
@@ -379,7 +393,7 @@ V.project = (id) => {
   <div class="dlay"><div><div class="chips">${R ? `<span class="chip g">${esc(R.sn)}</span>` : ''}<span class="chip">${esc(p.type)}</span>${p.fl ? `<span class="chip">${p.fl} ชั้น</span>` : ''}${R && R.yr ? `<span class="chip">แล้วเสร็จ ${R.yr}</span>` : ''}</div>
    <h1>${esc(p.title)}</h1>${p.loc ? `<span class="loc" style="font-size:14.5px">${u('pin')}${esc(p.loc)}</span>` : ''}
    ${R && R.a ? `<div class="bigspecs"><div>${u('area')}<b>${fmt(R.a)}</b><small>ตร.ม. พื้นที่ใช้สอย</small></div><div>${u('bed')}<b>${R.bed}</b><small>ห้องนอน</small></div><div>${u('bath')}<b>${R.bath}</b><small>ห้องน้ำ</small></div><div>${u('home')}<b>${R.fl}</b><small>ชั้น</small></div></div>` : '<div style="height:20px"></div>'}
-   <div class="dtext"><h2 style="margin-top:0">เกี่ยวกับโครงการ</h2>${R && R.d ? R.d.map(t => `<p>${esc(t)}</p>`).join('') : `<p>${esc(p.t)}</p><p class="note-s">หน้ารายละเอียดของโครงการนี้จะดึงคำบรรยาย ภาพแกลเลอรี และวิดีโอจากหน้าเดิมใน WordPress</p>`}
+   <div class="dtext">${p.rich === 'creston' ? ytCard('z1N84CZHUZ8', 'ผลงานบ้านพักตากอากาศ Banyan Tree Residences Creston Hill', 'วิดีโอผลงานจริง · W House', 'inl') : ''}<h2 style="margin-top:0">เกี่ยวกับโครงการ</h2>${R && R.d ? R.d.map(t => `<p>${esc(t)}</p>`).join('') : `<p>${esc(p.t)}</p><p class="note-s">หน้ารายละเอียดของโครงการนี้จะดึงคำบรรยาย ภาพแกลเลอรี และวิดีโอจากหน้าเดิมใน WordPress</p>`}
    ${R && R.f ? `<h2>จุดเด่นของการออกแบบ</h2><ul class="feat">${R.f.map(t => `<li>${u('check')}<span>${esc(t)}</span></li>`).join('')}</ul>` : ''}</div></div>
    <aside class="side-card">${R && R.a ? `<div class="area"><small>พื้นที่ใช้สอย</small><b>${fmt(R.a)} ตร.ม.</b></div>` : `<b style="font-family:var(--serif);font-weight:400;font-size:22px">อยากได้บ้านแบบนี้?</b>`}
    <p style="color:var(--soft);font-size:14px">คุยกับสถาปนิกเรื่องบ้านลักษณะนี้ ฟรี ไม่มีค่าใช้จ่าย</p><a class="btn gold" href="#contact" data-about="p:${p.id}">${u('cal')}นัดคุยเรื่องบ้านแบบนี้</a>
@@ -714,5 +728,22 @@ new MutationObserver(ms => {
   document.addEventListener('pointerdown', e => { if (!box.contains(e.target)) set(false); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && box.classList.contains('open')) { set(false); btn.focus(); } });
   window.addEventListener('hashchange', () => set(false));
+})();
+/* ---------- YouTube player (loads only on click) ---------- */
+(() => {
+  const m = document.getElementById('ytm'), f = document.getElementById('ytf'), tt = document.getElementById('ytt'), op = document.getElementById('ytopen');
+  let last = null, cur = '';
+  const fallback = () => { f.innerHTML = `<div class="ytfb"><img src="img/yt/${cur}.webp" alt=""><div><b>เปิดดูวิดีโอบน YouTube</b><a class="btn gold" href="https://www.youtube.com/watch?v=${cur}" target="_blank" rel="noopener">${u('play')}ดูบน YouTube</a></div></div>`; };
+  const open = (id, title, from) => {
+    cur = id; last = from; tt.textContent = title || 'W House'; op.href = 'https://www.youtube.com/watch?v=' + id;
+    f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="${esc(title || 'W House')}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    m.hidden = false; document.body.style.overflow = 'hidden'; m.querySelector('[data-ytclose]').focus();
+  };
+  const close = () => { if (m.hidden) return; m.hidden = true; f.innerHTML = ''; document.body.style.overflow = ''; if (last) last.focus(); };
+  document.addEventListener('click', e => { const b = e.target.closest('[data-yt]'); if (b) { e.preventDefault(); e.stopPropagation(); open(b.dataset.yt, b.dataset.ytt, b); } }, true);
+  m.addEventListener('click', e => { if (e.target === m || e.target.closest('[data-ytclose]')) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  document.addEventListener('securitypolicyviolation', e => { if (!m.hidden && /youtube/.test(e.blockedURI || '')) fallback(); });
+  window.addEventListener('hashchange', close);
 })();
 syncSaved(); route();
