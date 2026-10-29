@@ -514,7 +514,7 @@ V.saved = () => {
     ${ps.length ? `<h2 style="font-size:26px;margin-bottom:18px">ผลงาน (${ps.length})</h2><div class="pgrid">${ps.map(projCard).join('')}</div>` : ''}</div>`;
 };
 V.privacy = () => phead(crumbs('นโยบายความเป็นส่วนตัว'), 'Privacy', 'นโยบาย<em>ความเป็นส่วนตัว</em>') + `<div class="wrap"><div class="legal"><p class="realnote">ข้อความตัวอย่าง · ใช้เนื้อหาจริงจากหน้า Privacy Policy เดิมของลูกค้า</p><h2>ข้อมูลที่เราเก็บ</h2><p>ชื่อ เบอร์โทร อีเมล และรายละเอียดโจทย์บ้านที่คุณกรอกในแบบฟอร์มนัดหมาย</p><h2>การนำไปใช้</h2><p>ใช้ติดต่อกลับเพื่อนัดหมายและให้ข้อมูลบริการเท่านั้น</p><h2>ติดต่อเรา</h2><p>marketing@whouse.co.th · 093-555-0596</p></div></div>`;
-V['404'] = () => `<div class="e404"><div style="display:grid;gap:14px;justify-items:center"><b>404</b><h1 style="font-size:28px">ไม่พบหน้าที่คุณค้นหา</h1><p class="lead2">ลิงก์อาจถูกย้าย ลองค้นหาแบบบ้านหรือกลับหน้าแรก</p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn dark" href="#home">กลับหน้าแรก</a><button class="btn line" data-opensearch>ค้นหา</button></div></div></div>`;
+V['404'] = () => `<div class="e404"><div class="e4in"><span class="e4k">Error 404</span><b>404</b><h1>ไม่พบหน้าที่คุณค้นหา</h1><p class="lead2">ลิงก์นี้อาจถูกย้ายหรือไม่มีอยู่แล้ว ลองค้นหาแบบบ้าน หรือเลือกไปยังหน้าที่ต้องการ</p><div class="e4btn"><a class="btn dark" href="#home">${u('home')} กลับหน้าแรก</a><button class="btn line" data-opensearch>${u('search')} ค้นหา</button></div><div class="e4links"><a href="#design">แบบบ้าน</a><a href="#projects">ผลงาน</a><a href="#process">ขั้นตอน</a><a href="#contact">ติดต่อเรา</a></div></div></div>`;
 
 /* serif headings: render digits in the number font */
 function numFont(root) {
@@ -674,7 +674,7 @@ function runSearch(q) {
   r.innerHTML = (d.length ? `<div class="grp"><h4>แบบบ้าน (${d.length})</h4><div class="res">${d.map(x => row('#plan-' + x.slug, x.key, x.code + (x.name ? ' · ' + x.name : ''), `${x.st.map(stName).join(', ')} · ${fmt(x.area)} ตร.ม.`)).join('')}</div></div>` : '')
     + (p.length ? `<div class="grp"><h4>ผลงาน (${p.length})</h4><div class="res">${p.map(x => row('#project-' + x.id, x.cover, x.title, x.type)).join('')}</div></div>` : '')
     + (a.length ? `<div class="grp"><h4>บทความ (${a.length})</h4><div class="res">${a.map(x => row('#article-' + x.id, x.key, x.t, CATN[x.cat] + ' · ' + thDate(x.date))).join('')}</div></div>` : '')
-    || `<p class="lead2">ไม่พบ “${esc(q)}” ลองคำอื่น เช่น Modern, เขาใหญ่, 4 ห้องนอน</p>`;
+    || `<div class="snone"><span class="sic">${u('search')}</span><b>ไม่พบผลลัพธ์สำหรับ “${esc(q)}”</b><p>ลองคำอื่น เช่น Modern, เขาใหญ่ หรือ 4 ห้องนอน</p><div class="sgo"><a class="btn dark" href="#design">ดูแบบบ้านทั้งหมด ${u('arr')}</a><a class="btn line" href="#projects">ดูผลงาน</a></div></div>`;
 }
 
 /* language (mockup) */
