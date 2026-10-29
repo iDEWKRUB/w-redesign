@@ -706,4 +706,13 @@ new MutationObserver(ms => {
   for (const m of ms) m.addedNodes.forEach(n => { if (n.nodeType !== 1) return; if (n.tagName === 'IMG') { imgMark(n); any = true; } else n.querySelectorAll('img').forEach(i => { imgMark(i); any = true; }); });
   if (any) prefetchLazy();
 }).observe(document.getElementById('app'), { childList: true, subtree: true });
+/* ---------- floating contact button ---------- */
+(() => {
+  const box = document.getElementById('cfab'), btn = document.getElementById('cfabBtn');
+  const set = o => { box.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'ปิดช่องทางติดต่อ' : 'ติดต่อเรา'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); set(!box.classList.contains('open')); });
+  document.addEventListener('pointerdown', e => { if (!box.contains(e.target)) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && box.classList.contains('open')) { set(false); btn.focus(); } });
+  window.addEventListener('hashchange', () => set(false));
+})();
 syncSaved(); route();

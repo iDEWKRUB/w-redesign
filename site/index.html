@@ -1413,6 +1413,40 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
 .view :not(#himg):has(> img.ld){background-color:#EFE7E9;background-image:linear-gradient(100deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.6) 50%,rgba(255,255,255,0) 70%);background-size:220% 100%;animation:imgShim 1.3s linear infinite}
 @keyframes imgShim{from{background-position:130% 0}to{background-position:-30% 0}}
 @media(prefers-reduced-motion:reduce){.view img.fin{animation:none}.view :has(> img.ld){animation:none}}
+
+/* ---- floating contact button ---- */
+.cfab{position:fixed;right:max(24px,env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:55;display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.cfab-btn{position:relative;width:62px;height:62px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;color:#fff;background:radial-gradient(120% 120% at 20% 10%,#A32846 0%,#80192D 55%,#5E1221 100%);box-shadow:0 16px 34px -12px rgba(94,18,33,.7),0 0 0 6px rgba(255,255,255,.7);transition:transform .3s}
+.cfab-btn:hover{transform:scale(1.06)}
+.cfab-btn::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(128,25,45,.45);animation:cfPulse 2.4s ease-out infinite}
+.cfab.open .cfab-btn::before{animation:none;opacity:0}
+.cfab-btn .ico{position:absolute;width:26px;height:26px;stroke-width:1.8;transition:transform .35s,opacity .25s}
+.cfab-btn .i2{opacity:0;transform:rotate(-90deg) scale(.6)}
+.cfab.open .cfab-btn .i1{opacity:0;transform:rotate(90deg) scale(.6)}
+.cfab.open .cfab-btn .i2{opacity:1;transform:none}
+.cfab-btn .tip{position:absolute;right:76px;top:50%;transform:translateY(-50%);white-space:nowrap;background:#fff;color:var(--ink);font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:999px;box-shadow:0 10px 24px -12px rgba(43,20,26,.45);pointer-events:none;opacity:0;transition:opacity .25s}
+.cfab-btn:hover .tip{opacity:1}
+.cfab.open .cfab-btn .tip{opacity:0}
+@keyframes cfPulse{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.cfab-list{display:flex;flex-direction:column;align-items:flex-end;gap:12px;pointer-events:none}
+.cf{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);opacity:0;transform:translateY(14px) scale(.9);transition:opacity .25s ease,transform .35s cubic-bezier(.2,.8,.2,1.2);transition-delay:calc(var(--d) * 45ms)}
+.cfab.open .cfab-list{pointer-events:auto}
+.cfab.open .cf{opacity:1;transform:none}
+.cf .cfi{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;color:#fff;box-shadow:0 12px 26px -12px rgba(0,0,0,.45);transition:transform .25s}
+.cf .cfi svg{width:26px;height:26px}
+.cf .cfi .ico{width:23px;height:23px;stroke-width:1.8}
+.cf:hover .cfi{transform:scale(1.08)}
+.cf .cfl{display:grid;gap:1px;text-align:right;background:#fff;padding:7px 14px;border-radius:14px;box-shadow:0 10px 26px -14px rgba(43,20,26,.5);line-height:1.25}
+.cf .cfl b{font-size:14px;font-weight:600}
+.cf .cfl small{font-size:12px;color:var(--soft)}
+.cf-tel .cfi{background:var(--gold)}
+.cf-line .cfi{background:#06C755}
+.cf-ig .cfi{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+.cf-fb .cfi{background:#1877F2}
+@media(max-width:700px){.cfab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}.cfab-btn{width:56px;height:56px}.cf .cfi{width:48px;height:48px}.cfab-btn .tip{display:none}}
+@media(prefers-reduced-motion:reduce){.cfab-btn::before{animation:none}.cf{transition:opacity .2s}}
+.cfab::after{content:"";position:fixed;inset:0;z-index:-1;background:rgba(36,10,18,.32);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .3s}
+.cfab.open::after{opacity:1}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1557,7 +1591,7 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
   </div>
 </footer>
 
-<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="ภาพ">
+<div class="cfl" id="lb" hidden role="dialog" aria-modal="true" aria-label="ภาพ">
   <div class="top"><span id="lbcap"></span><button class="cbtn" data-lbclose aria-label="ปิด"><svg class="ico"><use href="#i-x"/></svg></button></div>
   <div class="stage"><img id="lbimg" alt=""><button class="cbtn pv" id="lbprev" aria-label="ภาพก่อนหน้า"><svg class="ico"><use href="#i-arl"/></svg></button><button class="cbtn nx" id="lbnext" aria-label="ภาพถัดไป"><svg class="ico"><use href="#i-arr"/></svg></button></div>
   <div class="thumbs" id="lbthumbs"></div>
@@ -1569,6 +1603,15 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
     <div class="hint" id="shint"><span class="note-s">ลองค้นหา:</span><button>เขาใหญ่</button><button>Tropical</button><button>3 ชั้น</button><button>รีโนเวต</button><button>M062</button></div>
     <div id="sres"></div>
   </div>
+</div>
+<div class="cfab" id="cfab">
+  <div class="cfab-list" id="cfabList" aria-label="ช่องทางติดต่อ">
+    <a class="cf cf-fb" href="https://www.facebook.com/WH.Whouse/" target="_blank" rel="noopener" style="--d:3"><span class="cfl"><b>Facebook</b><small>W House</small></span><span class="cfi"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg></span></a>
+    <a class="cf cf-ig" href="https://www.instagram.com/whouseonline/" target="_blank" rel="noopener" style="--d:2"><span class="cfl"><b>Instagram</b><small>@whouseonline</small></span><span class="cfi"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span></a>
+    <a class="cf cf-line" href="https://line.me/R/ti/p/@151elccu" target="_blank" rel="noopener" style="--d:1"><span class="cfl"><b>LINE</b><small>@151elccu</small></span><span class="cfi"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3.2c-5 0-9 3.3-9 7.3 0 3.6 3.1 6.6 7.4 7.2.3.1.7.2.8.5.1.2.1.6 0 .8l-.1.8c0 .2-.2.9.8.5s5.4-3.2 7.4-5.5c1.3-1.5 1.9-3 1.9-4.3 0-4-4-7.3-9.2-7.3zM8.3 12.9H6.5c-.3 0-.5-.2-.5-.5V8.9c0-.3.2-.5.5-.5s.5.2.5.5v3h1.3c.3 0 .5.2.5.5s-.2.5-.5.5zm1.9-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.9c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm4.3 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-1.8-2.5v2.2c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.9c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l1.8 2.5V8.9c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm2.9-2.2c.3 0 .5.2.5.5s-.2.5-.5.5h-1.3v.8h1.3c.3 0 .5.2.5.5s-.2.5-.5.5h-1.8c-.3 0-.5-.2-.5-.5V8.9c0-.3.2-.5.5-.5h1.8c.3 0 .5.2.5.5s-.2.5-.5.5h-1.3v.8h1.3z"/></svg></span></a>
+    <a class="cf cf-tel" href="tel:0935550596" style="--d:0"><span class="cfl"><b>โทร</b><small class="n">093-555-0596</small></span><span class="cfi"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
+  </div>
+  <button class="cfab-btn" id="cfabBtn" type="button" aria-expanded="false" aria-controls="cfabList" aria-label="ติดต่อเรา"><svg class="ico i1" aria-hidden="true"><use href="#i-chat"/></svg><svg class="ico i2" aria-hidden="true"><use href="#i-x"/></svg><span class="tip">ติดต่อเรา</span></button>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -2282,6 +2325,15 @@ new MutationObserver(ms => {
   for (const m of ms) m.addedNodes.forEach(n => { if (n.nodeType !== 1) return; if (n.tagName === 'IMG') { imgMark(n); any = true; } else n.querySelectorAll('img').forEach(i => { imgMark(i); any = true; }); });
   if (any) prefetchLazy();
 }).observe(document.getElementById('app'), { childList: true, subtree: true });
+/* ---------- floating contact button ---------- */
+(() => {
+  const box = document.getElementById('cfab'), btn = document.getElementById('cfabBtn');
+  const set = o => { box.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'ปิดช่องทางติดต่อ' : 'ติดต่อเรา'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); set(!box.classList.contains('open')); });
+  document.addEventListener('pointerdown', e => { if (!box.contains(e.target)) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && box.classList.contains('open')) { set(false); btn.focus(); } });
+  window.addEventListener('hashchange', () => set(false));
+})();
 syncSaved(); route();
 
 </script>
