@@ -1528,6 +1528,30 @@ h1 em,h2 em,.sftitle em,.phead h1 em,.cta h2 em{font-style:normal}
 .ytc.sm .pl{width:40px;height:40px;box-shadow:none;border-width:1.2px}
 .ytc.sm .pl .ico{width:15px;height:15px;margin-left:2px}
 @media(max-width:560px){.ytc .pl{width:52px;height:52px}}
+
+/* ---- 7 steps v4: compact grid on light background ---- */
+.st3{padding-block:88px!important;margin:0!important;border-top:1px solid var(--line)}
+.st3in{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:48px;align-items:center}
+.st3h{display:grid;gap:12px;justify-items:start}
+.st3h h2{font-size:clamp(28px,2.8vw,38px);line-height:1.2;margin:0}
+.st3h h2 em{color:var(--gold)}
+.st3h p{color:var(--soft);font-size:14.5px;line-height:1.7;margin:0}
+.st3g{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st3g a{display:grid;gap:6px;align-content:start;height:100%;padding:16px 16px 18px;border-radius:16px;background:var(--mist);color:inherit;text-decoration:none;transition:background .25s,box-shadow .25s}
+.st3g a:hover{background:#fff;box-shadow:0 14px 30px -22px rgba(94,18,33,.5)}
+.st3g .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.st3g .no{font-family:"Jost",var(--num);font-weight:300;font-size:28px;line-height:1;color:var(--gold)}
+.st3g .ico{width:18px;height:18px;color:var(--rose);stroke-width:1.7}
+.st3g b{font-size:15px;font-weight:600;line-height:1.35}
+.st3g small{font-size:12.5px;line-height:1.5;color:var(--soft)}
+.st3g .st3go a{background:transparent;border:1.5px dashed rgba(128,25,45,.35)}
+.st3g .st3go a:hover{background:var(--goldSoft);border-style:solid}
+.st3g .st3go .ico{width:22px;height:22px;color:var(--gold)}
+.st3g .st3go b{color:var(--gold)}
+.st3+.rvsec{margin-top:0!important}
+@media(max-width:1000px){.st3in{grid-template-columns:1fr;gap:24px}.st3g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.st3{padding-block:64px!important}.st3g{gap:10px}.st3g a{padding:14px}.st3g .no{font-size:24px}.st3g b{font-size:14px}}
+@media(max-width:1000px){.st3h h2 br{display:none}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1970,13 +1994,12 @@ V.home = () => {
      <a href="#about">${u('team')}<span><b>ทีมเดียวดูแลครบ</b><small>ตั้งแต่ภาพร่างแรกจนถึงวันรับกุญแจ</small></span></a></div>
     <div class="ab2cta"><a class="btn gold" href="#about">รู้จัก W House ${u('arr')}</a><a class="more" href="#contact">นัดคุยสถาปนิก ${u('arr')}</a></div>
    </div></div></section>
-  <section class="jr"><div class="wrap jrin">
-   <div class="jrhead"><span class="eyebrow">Work Process</span>
+  <section class="st3"><div class="wrap st3in">
+   <div class="st3h"><span class="eyebrow">Work Process</span>
     <h2><span class="n">7</span> ขั้นตอน<br><em>สู่บ้านในฝัน</em></h2>
-    <p>ทีมเดียวดูแลครบทุกขั้น ตั้งแต่คุยความต้องการ หาที่ดิน ขออนุญาต จนถึงตรวจรับบ้าน แบ่งชำระตามผลงานจริง</p>
-    <div class="jrbadges"><span>${u('check')}ISO 9001:2015</span><span>${u('shield')}รับประกันโครงสร้าง 20 ปี</span></div>
-    <a class="btn white" href="#process">ดูรายละเอียดทุกขั้นตอน ${u('arr')}</a></div>
-   <ol class="jrlist">${STEPS.map(([t, b, ic], i) => `<li><a href="#process"><span class="no n">${String(i + 1).padStart(2, '0')}</span><span class="tx"><b>${t}</b><small>${b.join(' · ')}</small></span><span class="ic">${u(ic)}</span></a></li>`).join('')}</ol>
+    <p>ทีมเดียวดูแลครบ ตั้งแต่คุยความต้องการจนถึงตรวจรับบ้าน แบ่งชำระตามผลงานจริง</p>
+    <a class="more" href="#process">ดูรายละเอียดทุกขั้นตอน ${u('arr')}</a></div>
+   <ol class="st3g">${STEPS.map(([t, b, ic], i) => `<li><a href="#process"><span class="top"><span class="no n">${String(i + 1).padStart(2, '0')}</span>${u(ic)}</span><b>${t}</b><small>${b[0]}</small></a></li>`).join('')}<li class="st3go"><a href="#contact"><span class="top">${u('cal')}</span><b>เริ่มขั้นตอนแรก</b><small>นัดคุยสถาปนิกฟรี</small></a></li></ol>
   </div></section>
   ${reviewVideo()}
   <section style="padding-bottom:88px"><div class="wrap">${head('News & Event', 'ข่าวสารและบทความล่าสุด', '#news-event')}<div class="grid3">${latest.map(p => postCard(p)).join('')}</div></div></section>`;

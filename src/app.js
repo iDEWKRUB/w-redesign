@@ -266,13 +266,12 @@ V.home = () => {
      <a href="#about">${u('team')}<span><b>ทีมเดียวดูแลครบ</b><small>ตั้งแต่ภาพร่างแรกจนถึงวันรับกุญแจ</small></span></a></div>
     <div class="ab2cta"><a class="btn gold" href="#about">รู้จัก W House ${u('arr')}</a><a class="more" href="#contact">นัดคุยสถาปนิก ${u('arr')}</a></div>
    </div></div></section>
-  <section class="jr"><div class="wrap jrin">
-   <div class="jrhead"><span class="eyebrow">Work Process</span>
+  <section class="st3"><div class="wrap st3in">
+   <div class="st3h"><span class="eyebrow">Work Process</span>
     <h2><span class="n">7</span> ขั้นตอน<br><em>สู่บ้านในฝัน</em></h2>
-    <p>ทีมเดียวดูแลครบทุกขั้น ตั้งแต่คุยความต้องการ หาที่ดิน ขออนุญาต จนถึงตรวจรับบ้าน แบ่งชำระตามผลงานจริง</p>
-    <div class="jrbadges"><span>${u('check')}ISO 9001:2015</span><span>${u('shield')}รับประกันโครงสร้าง 20 ปี</span></div>
-    <a class="btn white" href="#process">ดูรายละเอียดทุกขั้นตอน ${u('arr')}</a></div>
-   <ol class="jrlist">${STEPS.map(([t, b, ic], i) => `<li><a href="#process"><span class="no n">${String(i + 1).padStart(2, '0')}</span><span class="tx"><b>${t}</b><small>${b.join(' · ')}</small></span><span class="ic">${u(ic)}</span></a></li>`).join('')}</ol>
+    <p>ทีมเดียวดูแลครบ ตั้งแต่คุยความต้องการจนถึงตรวจรับบ้าน แบ่งชำระตามผลงานจริง</p>
+    <a class="more" href="#process">ดูรายละเอียดทุกขั้นตอน ${u('arr')}</a></div>
+   <ol class="st3g">${STEPS.map(([t, b, ic], i) => `<li><a href="#process"><span class="top"><span class="no n">${String(i + 1).padStart(2, '0')}</span>${u(ic)}</span><b>${t}</b><small>${b[0]}</small></a></li>`).join('')}<li class="st3go"><a href="#contact"><span class="top">${u('cal')}</span><b>เริ่มขั้นตอนแรก</b><small>นัดคุยสถาปนิกฟรี</small></a></li></ol>
   </div></section>
   ${reviewVideo()}
   <section style="padding-bottom:88px"><div class="wrap">${head('News & Event', 'ข่าวสารและบทความล่าสุด', '#news-event')}<div class="grid3">${latest.map(p => postCard(p)).join('')}</div></div></section>`;
