@@ -970,3 +970,4 @@ body:has(.drawer.open) .cfab,body:has(#lb:not([hidden])) .cfab,body:has(#sov:not
 .lb{background:#0E0609!important}
 .lb .cbtn:focus,.ytm .cbtn:focus{outline:none}
 .lb .cbtn:focus-visible,.ytm .cbtn:focus-visible{outline:2px solid #E9C99A;outline-offset:3px}
+.lb{grid-template-columns:minmax(0,1fr)!important}.lb .top,.lb .stage,.lb .thumbs{min-width:0}#lbcap{white-space:normal!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.4}
