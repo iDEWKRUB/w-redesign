@@ -7,4 +7,6 @@ let css=fs.readFileSync(__dirname+'/extra2.css','utf8').replace('@media(max-widt
 head=head.replace('</style>',css+fix+'</style>');
 const sprite=fs.readFileSync(__dirname+'/sprite.svg','utf8');
 const out=head+sprite+fs.readFileSync(__dirname+'/body2.html','utf8')+'\n<script src="data.js"></script>\n<script>\n'+fs.readFileSync(__dirname+'/app.js','utf8')+'\n</script>\n';
-fs.writeFileSync(SITE+'/index.html',out);console.log('assembled',(out.length/1024).toFixed(0)+'KB');
+// standalone hosting needs the document shell the artifact viewer normally adds
+const shell='<!doctype html>\n<html lang="th">\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n';
+fs.writeFileSync(SITE+'/index.html',shell+out);console.log('assembled',(out.length/1024).toFixed(0)+'KB');
