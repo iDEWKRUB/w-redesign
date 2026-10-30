@@ -330,7 +330,7 @@ V.plan = (slug) => {
    <a class="btn gold" href="#contact" data-about="d:${d.slug}">${u('cal')}นัดคุยเรื่องแบบนี้</a>
    <button class="btn line" data-heart="d:${d.slug}" aria-pressed="${isSaved('d:' + d.slug)}" style="justify-content:center">${u('heart')}<span>${isSaved('d:' + d.slug) ? 'บันทึกแล้ว' : 'บันทึกแบบนี้'}</span></button>
    <button class="btn line" data-toast="ตัวอย่าง: ระบบจะส่งแบบแปลนทางอีเมลหลังกรอกชื่อและเบอร์โทร" style="justify-content:center">${u('area')}ขอแบบแปลน (PDF)</button>
-   <p class="note-s">ข้อมูลแบบ ภาพ และแนวคิดดึงจากหน้า ${esc(d.code)} บน whouse.co.th</p></aside></div>
+   <p class="note-s">ข้อมูลแบบ ภาพ และแนวคิดอ้างอิงจากหน้า ${esc(d.code)} บน whouse.co.th</p></aside></div>
   <div class="related">${head('Similar Designs', 'แบบบ้านที่ใกล้เคียง', '#design-' + d.st[0])}<div class="grid3">${rel.map(planCard).join('')}</div></div></div>`;
 };
 V.mim = () => {
