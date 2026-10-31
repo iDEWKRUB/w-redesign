@@ -1,0 +1,52 @@
+<main>
+<section class="pg-hero" data-hero data-tone="dark">
+  <div class="pg-hero-bg"><img src="img/19.jpg" alt=""></div>
+  <div class="pg-hero-in">
+    <p class="eyebrow">Our Projects</p>
+    <h1>ผลงานของเรา</h1>
+    <p>บ้านที่ W House ออกแบบ ก่อสร้าง และส่งมอบให้เจ้าของบ้าน ในกรุงเทพฯ เขาใหญ่ และชายทะเล</p>
+  </div>
+  <dl class="pg-stats" id="pStats"></dl>
+</section>
+
+<nav class="df" id="filters" aria-label="กรองผลงาน">
+  <div class="df-in tabs-row" id="pTabs"></div>
+</nav>
+
+<div class="dl" id="plist" aria-live="polite"></div>
+
+<section class="d-cta" data-tone="dark">
+  <div class="wrap d-cta-in">
+    <div>
+      <p class="eyebrow">Your Home Next</p>
+      <h2>บ้านหลังต่อไปในผลงานของเรา<br><em>อาจเป็นบ้านของคุณ</em></h2>
+    </div>
+    <a class="btn solid" href="contact.html">นัดคุยกับสถาปนิก <svg><use href="#i-arr"/></svg></a>
+  </div>
+</section>
+</main>
+
+<dialog class="dd" id="pd" aria-labelledby="pd-name">
+  <div class="dd-card">
+    <button class="xbtn" id="pdClose" aria-label="ปิด"><svg><use href="#i-x"/></svg></button>
+    <div class="dd-media">
+      <div class="dd-main"><img id="pdImg" alt=""></div>
+      <div class="dd-thumbs" id="pdThumbs"></div>
+    </div>
+    <div class="dd-body">
+      <p class="eyebrow" id="pdKind"></p>
+      <h3 id="pd-name"></h3>
+      <p class="dd-sub" id="pdSub"></p>
+      <dl class="dd-specs" id="pdSpecs"></dl>
+      <div id="pdText"></div>
+      <div class="dd-act">
+        <a class="btn-more" href="contact.html">นัดคุยกับสถาปนิก <svg><use href="#i-arr"/></svg></a>
+        <div class="dd-nav">
+          <button class="abtn light" id="pdPrev" aria-label="ผลงานก่อนหน้า"><svg style="transform:scaleX(-1)"><use href="#i-arr"/></svg></button>
+          <span id="pdPos"></span>
+          <button class="abtn light" id="pdNext" aria-label="ผลงานถัดไป"><svg><use href="#i-arr"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

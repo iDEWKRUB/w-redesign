@@ -1,0 +1,77 @@
+<main>
+<section class="pg-hero ci" data-hero data-tone="dark">
+  <div class="pg-hero-bg"><img src="img/h/s024.jpg" alt=""></div>
+  <svg class="w-mark" viewBox="0 0 114.6 76" aria-hidden="true"><path d="M0 0H9.6L34.6 65.5L53.3 16.5H61.3L40.1 72Q38.6 76 36 76H31.5Q29 76 27.5 72Z M47 0H56.6L81.6 65.5L106.6 0H114.6L87.1 72Q85.6 76 83 76H78.5Q76 76 74.5 72Z M25 0H34.6L63.6 76H54Z"/></svg>
+  <div class="pg-hero-in">
+    <p class="eyebrow">Get in Touch</p>
+    <h1>นัดคุยกับสถาปนิก</h1>
+    <p>Let’s Build Something That Lasts · นัดหมายล่วงหน้าเพื่อคุยโจทย์บ้าน ที่สำนักงานรามอินทราหรือออนไลน์</p>
+  </div>
+</section>
+
+<section class="ct-sec" data-tone="light">
+  <div class="wrap ct-grid">
+    <div class="formcard" id="formcard">
+      <form id="bookform" novalidate>
+        <h2>ข้อมูลการนัดหมาย</h2>
+        <p class="hint-s">กรอกข้อมูลเบื้องต้น ทีมสถาปนิกจะติดต่อกลับเพื่อยืนยันเวลา</p>
+        <div class="picked" id="picked"><img id="pkImg" alt=""><div><small>แบบที่สนใจ</small><b id="pkName"></b></div><button type="button" id="pkClear">ไม่ระบุแบบ</button></div>
+        <div class="fgrid">
+          <div class="fi"><label for="c-name">ชื่อ-นามสกุล <span>*</span></label><input id="c-name" autocomplete="name" placeholder="เช่น สมชาย ใจดี"><span class="msg">กรุณากรอกชื่อ</span></div>
+          <div class="fi"><label for="c-tel">เบอร์โทร <span>*</span></label><input id="c-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="08x-xxx-xxxx"><span class="msg">กรอกเบอร์โทร 9–10 หลัก</span></div>
+          <div class="fi"><label for="c-mail">อีเมล</label><input id="c-mail" type="email" autocomplete="email" placeholder="ไม่บังคับ"><span class="msg">รูปแบบอีเมลไม่ถูกต้อง</span></div>
+          <div class="fi"><label for="c-loc">ทำเลที่ดิน</label><select id="c-loc"><option>กรุงเทพฯ และปริมณฑล</option><option>เขาใหญ่ / ปากช่อง</option><option>ต่างจังหวัดอื่น ๆ</option><option>ยังไม่มีที่ดิน</option></select></div>
+          <div class="fi full"><span class="lbl" id="l-need">สิ่งที่สนใจ</span><div class="opts" role="radiogroup" aria-labelledby="l-need">
+            <label class="opt"><input type="radio" name="need" value="ออกแบบใหม่ทั้งหลัง" checked><span>ออกแบบใหม่ทั้งหลัง</span></label>
+            <label class="opt"><input type="radio" name="need" value="ปรับจากแบบบ้านมาตรฐาน"><span>ปรับจากแบบบ้านมาตรฐาน</span></label>
+            <label class="opt"><input type="radio" name="need" value="ยังไม่แน่ใจ ขอคำแนะนำ"><span>ยังไม่แน่ใจ ขอคำแนะนำ</span></label>
+          </div></div>
+          <div class="fi full"><span class="lbl" id="l-day">วันที่สะดวก <span>*</span></span><div class="opts" id="days" role="radiogroup" aria-labelledby="l-day"></div><span class="msg">กรุณาเลือกวัน</span></div>
+          <div class="fi full"><span class="lbl" id="l-time">ช่วงเวลา</span><div class="opts" role="radiogroup" aria-labelledby="l-time">
+            <label class="opt"><input type="radio" name="time" value="09:00" checked><span>09:00</span></label>
+            <label class="opt"><input type="radio" name="time" value="10:30"><span>10:30</span></label>
+            <label class="opt"><input type="radio" name="time" value="13:00"><span>13:00</span></label>
+            <label class="opt"><input type="radio" name="time" value="14:30"><span>14:30</span></label>
+            <label class="opt"><input type="radio" name="time" value="16:00"><span>16:00</span></label>
+          </div></div>
+          <div class="fi full"><span class="lbl" id="l-mode">รูปแบบ</span><div class="opts" role="radiogroup" aria-labelledby="l-mode">
+            <label class="opt"><input type="radio" name="mode" value="ที่สำนักงาน รามอินทรา 14" checked><span>ที่สำนักงาน<small>รามอินทรา 14</small></span></label>
+            <label class="opt"><input type="radio" name="mode" value="ออนไลน์"><span>ออนไลน์<small>วิดีโอคอล</small></span></label>
+          </div></div>
+          <div class="fi full"><label for="c-msg">รายละเอียดเพิ่มเติม</label><textarea id="c-msg" placeholder="เช่น ขนาดที่ดิน จำนวนสมาชิก งบประมาณโดยประมาณ"></textarea></div>
+        </div>
+        <div class="f-submit">
+          <button class="btn-more" type="submit">ส่งคำขอนัดหมาย <svg><use href="#i-arr"/></svg></button>
+          <p>วันทำการ จันทร์ – ศุกร์ 8:30 – 17:30</p>
+        </div>
+      </form>
+      <div class="done" id="done" hidden>
+        <span class="ok"><svg><use href="#i-check"/></svg></span>
+        <h2>รับคำขอนัดหมายแล้ว</h2>
+        <dl id="doneList"></dl>
+        <p class="note">ตัวอย่างหน้าเว็บ: ในระบบจริง ข้อมูลนี้จะส่งถึงทีมขาย และทีมจะโทรยืนยันเวลาภายในวันทำการ</p>
+        <div class="btn-row"><button class="btn-ghost" type="button" id="editAgain">แก้ไขข้อมูล</button><a class="btn-ghost" href="designs.html">ดูแบบบ้านระหว่างรอ <svg><use href="#i-arr"/></svg></a></div>
+      </div>
+    </div>
+
+    <aside class="cinfo" aria-label="ช่องทางติดต่อ">
+      <div class="cbox"><span class="icb"><svg><use href="#i-phone"/></svg></span><div><small>โทร</small><b class="n" id="telTxt">093-555-0596</b></div><button class="copy dark" type="button" data-copy="093-555-0596">คัดลอก</button></div>
+      <div class="cbox"><span class="icb"><svg><use href="#i-line"/></svg></span><div><small>LINE Official</small><b>@151elccu</b></div><a class="copy dark" href="https://line.me/R/ti/p/@151elccu" target="_blank" rel="noopener">เปิด</a></div>
+      <div class="cbox"><span class="icb"><svg><use href="#i-mail"/></svg></span><div><small>อีเมล</small><b>marketing@whouse.co.th</b></div><button class="copy dark" type="button" data-copy="marketing@whouse.co.th">คัดลอก</button></div>
+      <div class="cbox"><span class="icb"><svg><use href="#i-clock"/></svg></span><div><small>เวลาทำการ</small><b>จันทร์ – ศุกร์ 8:30 – 17:30</b></div></div>
+      <div class="mapcard">
+        <svg class="map" viewBox="0 0 400 275" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="275" fill="#EFE8E6"/><path d="M0 200 C120 180 220 220 400 160" stroke="#fff" stroke-width="16" fill="none"/><path d="M90 0 L150 275" stroke="#fff" stroke-width="12" fill="none"/><path d="M0 85 L400 112" stroke="#fff" stroke-width="8" fill="none"/><path d="M260 0 L240 275" stroke="#fff" stroke-width="6" fill="none"/><rect x="168" y="22" width="60" height="44" rx="6" fill="#E3EADF"/><rect x="290" y="190" width="70" height="50" rx="6" fill="#E3EADF"/><circle cx="200" cy="128" r="9" fill="#9E2A2F"/><circle cx="200" cy="128" r="18" fill="#9E2A2F" opacity=".15"/></svg>
+        <span class="pinb">W House · รามอินทรา 14</span>
+        <a class="btn-ghost" href="https://maps.google.com/maps?q=W%20House%20Co.%2CLtd" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>เปิดใน Google Maps</a>
+      </div>
+      <div class="cbox"><span class="icb"><svg><use href="#i-pin"/></svg></span><div><small>สำนักงาน</small><b>65/6 ซอยรามอินทรา 14 แขวงท่าแร้ง เขตบางเขน กรุงเทพฯ 10230</b></div></div>
+      <div class="socials-row">
+        <a href="https://line.me/R/ti/p/@151elccu" target="_blank" rel="noopener" aria-label="LINE"><svg><use href="#i-line"/></svg></a>
+        <a href="https://www.facebook.com/WH.Whouse/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="https://www.instagram.com/whouseonline/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="https://www.youtube.com/@whouseonline" target="_blank" rel="noopener" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>

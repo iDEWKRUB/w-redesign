@@ -1,0 +1,37 @@
+<main>
+<section class="pg-hero" data-hero data-tone="dark">
+  <div class="pg-hero-bg"><img id="nhImg" src="img/h/the-space-modern-luxury.jpg" alt=""></div>
+  <div class="pg-hero-in">
+    <p class="eyebrow">News &amp; Stories</p>
+    <p class="nmeta" id="nhMeta" style="margin-top:22px"></p>
+    <h1 class="post-t" id="nhTitle">ข่าวสารและบทความ</h1>
+    <button class="hero-read" id="nhRead" type="button">อ่านเรื่องนี้ <svg><use href="#i-arr"/></svg></button>
+  </div>
+</section>
+
+<nav class="df" id="filters" aria-label="กรองตามหมวด">
+  <div class="df-in" id="nTabs"></div>
+</nav>
+
+<div class="dl" id="nlist" aria-live="polite"></div>
+</main>
+
+<dialog class="reader" id="reader" aria-labelledby="rd-t">
+  <article class="reader-card">
+    <button class="xbtn" id="rdClose" aria-label="ปิด"><svg><use href="#i-x"/></svg></button>
+    <div class="reader-cover"><img id="rdImg" alt=""></div>
+    <div class="reader-body">
+      <p class="nmeta" id="rdMeta"></p>
+      <h2 id="rd-t"></h2>
+      <div class="reader-text" id="rdText"></div>
+      <div class="reader-foot">
+        <a class="btn-ghost" href="https://www.youtube.com/@whouseonline" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg>ช่อง YouTube W House</a>
+        <div class="dd-nav">
+          <button class="abtn light" id="rdPrev" aria-label="เรื่องก่อนหน้า"><svg style="transform:scaleX(-1)"><use href="#i-arr"/></svg></button>
+          <span id="rdPos"></span>
+          <button class="abtn light" id="rdNext" aria-label="เรื่องถัดไป"><svg><use href="#i-arr"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </article>
+</dialog>
