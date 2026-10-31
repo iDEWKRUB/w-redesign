@@ -1,0 +1,8 @@
+{
+  "name": "whouse-figma-tools",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "puppeteer-core": "^22.15.0"
+  }
+}

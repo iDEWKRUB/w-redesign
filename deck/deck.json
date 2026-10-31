@@ -1,0 +1,61 @@
+{
+  "v": 4,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-10-29T13:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "faces": {
+    "anuphan": {
+      "family": "Anuphan",
+      "href": "https://fonts.googleapis.com/css2?family=Anuphan:wght@300..700&display=swap"
+    },
+    "cormorant-garamond": {
+      "family": "Cormorant Garamond",
+      "href": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    },
+    "sarabun": {
+      "family": "Sarabun",
+      "href": "https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600&display=swap"
+    }
+  },
+  "lists": "css",
+  "order": [
+    "cover",
+    "problem",
+    "brief",
+    "goals",
+    "ia",
+    "home",
+    "design",
+    "content",
+    "trust",
+    "mobile",
+    "system",
+    "build"
+  ],
+  "sections": {
+    "s1": {
+      "description": "ปกและภาพรวมโปรเจกต์",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "ปัญหาของเว็บเดิม และเป้าหมายการออกแบบ",
+      "start": "problem"
+    },
+    "s3": {
+      "description": "โครงสร้างและหน้าจอหลักของระบบใหม่",
+      "start": "ia"
+    },
+    "s4": {
+      "description": "มือถือ ระบบดีไซน์ และทางเลือกที่ 2",
+      "start": "mobile"
+    },
+    "s5": {
+      "description": "แผนพัฒนาบน WordPress และแพ็กเกจ",
+      "start": "build"
+    }
+  },
+  "title": "W House Website Redesign — UX/UI Proposal"
+}

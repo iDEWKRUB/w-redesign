@@ -4,6 +4,7 @@ Mockup เว็บไซต์ใหม่ของ [whouse.co.th](https://www.
 
 - ดูออนไลน์: https://claude.ai/artifact/MrHauU2Jofq9YsEKzjcarN
 - Figma: https://www.figma.com/design/IAvkeKfth0zhlBDsQbxm5t
+- เด็คนำเสนอ: https://claude.ai/artifact/VkCnfJFiWgccrUe2vM8571 · Figma Slides: https://www.figma.com/slides/DRtEzx5NAqss3TU06YSiO3
 
 ## โครงสร้าง
 
@@ -20,6 +21,9 @@ src/           ไฟล์ต้นฉบับสำหรับ build
   sprite.svg   ไอคอน
   d-parts/     head + CSS พื้นฐาน
   assemble.js  รวมไฟล์ทั้งหมดเป็น site/index.html
+deck/          สไลด์นำเสนอลูกค้า 12 หน้า (HTML + รูป)
+tools/figma/   สคริปต์แปลงเว็บ/เด็คเป็นเลเยอร์ใน Figma
+mockups/       ภาพ mockup สำหรับพรีเซนต์
 ```
 
 ## Build
